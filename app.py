@@ -9,7 +9,7 @@ st.set_page_config(
     initial_sidebar_state="collapsed",
 )
 
-# Gönderdiğin görsellere ve mistik konsepte uygun yumuşak, lüks ve modern tasarım
+# Mistik ve şık tasarım entegrasyonu
 page_bg_img = """
 <style>
 [data-testid="stAppViewContainer"] > .main {
@@ -42,7 +42,6 @@ margin-bottom: 20px;
 backdrop-filter: blur(12px);
 box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
-/* Dikey ve Dikdörtgen Tarot Kartı Arkası Tasarımı */
 .tarot-back {
 background: linear-gradient(145deg, #1a2234 0%, #0f172a 100%);
 border: 2px solid #d4af37;
@@ -69,7 +68,6 @@ p, label, span { color: #cbd5e1 !important; }
 st.markdown(page_bg_img, unsafe_allow_html=True)
 
 
-# Doğum tarihine göre otomatik burç hesaplama fonksiyonu
 def burc_hesapla(dogum_tarihi):
   gun = dogum_tarihi.day
   ay = dogum_tarihi.month
@@ -100,7 +98,7 @@ def burc_hesapla(dogum_tarihi):
     return "Balık"
 
 
-# 78 Kartlık Tam Tarot Destesi Veritabanı
+# 78 Kartlık Tam Destenin Sözlüğü
 tum_kartlar = {
     # Majör Arkanalar (22 Kart)
     "Deli (The Fool)": {
@@ -310,7 +308,7 @@ tum_kartlar = {
         ),
         "ters": (
             "Geçmişteki pişmanlıklara takılı kalma.",
-            "Artık kendini suçlamayı bırakıp önстере bakma zamanı.",
+            "Artık kendini suçlamayı bırakıp önüne bakma zamanı.",
         ),
     },
     "Dünya (The World)": {
@@ -325,7 +323,7 @@ tum_kartlar = {
     },
 }
 
-# Minör Arkanaları Güvenli Ekleme
+# Minör Arkanalar (Kupa, Kılıç, Tılsım, Asa - 56 Kartın Tamamı)
 minor_seriler = ["Kupa", "Kılıç", "Tılsım", "Asa"]
 minör_kartlar = [
     "Ası",
@@ -350,15 +348,14 @@ for seri in minor_seriler:
     tum_kartlar[isim_key] = {
         "duz": (
             f"{isim_key} düz enerjisi: Akışta huzur ve uyumlu gelişmeler.",
-            "Hayatının bu alanında beklediğin dengeli ve tatlı akış seni buluyor.",
+            f"Hayatının bu alanında {isim_key.lower()} enerjisiyle beklediğin dengeli ve tatlı akış seni buluyor.",
         ),
         "ters": (
             f"{isim_key} ters enerjisi: Ufak aksaklıklar veya içsel yavaşlama.",
-            "Acele etmek yerine biraz dinlenmek ve akışı izlemek sana iyi gelecektir.",
+            f"{isim_key} kartının ters gelmesi, bu süreçte acele etmek yerine biraz dinlenmen gerektiğini fısıldıyor.",
         ),
     }
 
-# Oturum yönetimi
 if "adim" not in st.session_state:
   st.session_state.adim = "giriş"
 
@@ -389,7 +386,6 @@ if st.session_state.adim == "giriş":
         ["Bekar & Özgür", "İlişkisi Var / Kalbi Dolu", "Evli", "Karmaşık / Akışta"],
     )
 
-    # İstediğin net ve kısa iş durumu seçenekleri
     is_durumu = st.selectbox(
         "Çalışma Durumun:", ["Çalışıyor", "Çalışmıyor", "Öğrenci"]
     )
@@ -411,18 +407,17 @@ if st.session_state.adim == "giriş":
         )
       else:
         st.session_state.isim = isim
-        # Burcu doğum tarihinden otomatik hesaplıyoruz
         st.session_state.burc = burc_hesapla(dogum_tarihi)
         st.session_state.medeni_durum = medeni_durum
         st.session_state.is_durumu = is_durumu
         st.session_state.adim = "secim"
         st.rerun()
 
-# --- 2. KART SEÇİM SAYFASI (Dikdörtgen, Dikey Tarot Kartları) ---
+# --- 2. KART SEÇİM SAYFASI ---
 elif st.session_state.adim == "secim":
   st.markdown(
-      f"<h2>Hoş geldin sevgili {st.session_state.isim} ({st.session_state.burc"
-      " Burcu})</h2>",
+      f"<h2>Hoş geldin sevgili {st.session_state.isim} ({st.session_state.burc}"
+      " Burcu)</h2>",
       unsafe_allow_html=True,
   )
   st.write(
@@ -436,7 +431,6 @@ elif st.session_state.adim == "secim":
   for idx in range(78):
     col_idx = idx % 4
     with cols[col_idx]:
-      # Dikdörtgen, dikey ve estetik tarot kartı arkası görünümü
       st.markdown(
           "<div class='tarot-back'>"
           "<span style='font-size: 20px;'>✨</span>"
@@ -502,7 +496,6 @@ elif st.session_state.adim == "sonuc":
     ):
       durum_str = "Düz Akış" if durum == "duz" else "Ters Enerji"
 
-      # Yumuşak ve kişiselleştirilmiş dokunuşlar
       ekstra_yorum = ""
       if i == 1 and st.session_state.is_durumu == "Çalışmıyor":
         ekstra_yorum = (
