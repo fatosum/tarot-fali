@@ -3,7 +3,7 @@ import random
 import streamlit as st
 
 st.set_page_config(
-    page_title="Mistik Tarot Deneyimi",
+    page_title=" Tarot bakımıi",
     page_icon="💎",
     layout="centered",
     initial_sidebar_state="collapsed",
