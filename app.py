@@ -12,7 +12,6 @@ st.set_page_config(
 # Beyaz/gold tül dalgaları ve yıldız tozlu arka plan estetiği
 page_bg_img = """
 <style>
-/* Ana uygulama arka planı: Derin gece mavisi, beyaz dalgalı tül hissi ve gold parıltılar */
 [data-testid="stAppViewContainer"] > .main {
 background: 
     radial-gradient(circle at 50% 30%, rgba(255, 255, 255, 0.07) 0%, transparent 60%),
@@ -22,7 +21,6 @@ font-family: 'Cinzel', 'Inter', serif;
 background-attachment: fixed;
 }
 
-/* Sayfa başlıkları ve yazı zarifliği */
 h1, h2, h3 { 
 color: #fef08a !important; 
 font-family: 'Cinzel', serif; 
@@ -30,7 +28,6 @@ text-shadow: 0 2px 10px rgba(255, 215, 0, 0.2);
 }
 p, label, span { color: #e2e8f0 !important; }
 
-/* Buton tasarımı */
 .stButton>button {
 width: 100%;
 background: linear-gradient(135deg, #c59b27 0%, #8a6414 100%);
@@ -48,7 +45,6 @@ background: linear-gradient(135deg, #e5b83b 0%, #c59b27 100%);
 box-shadow: 0 6px 25px rgba(229, 184, 59, 0.6);
 }
 
-/* Tarot kart sonuç kutusu */
 .tarot-card-box {
 background: rgba(22, 14, 38, 0.85);
 border: 1px solid rgba(197, 155, 39, 0.4);
@@ -59,7 +55,6 @@ backdrop-filter: blur(16px);
 box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
 }
 
-/* SEÇİM EKRANI İÇİN KARTLARIN ARKA YÜZÜ: Tül, gold yıldız ve işlemeli estetik */
 .tarot-back {
 background: 
     radial-gradient(circle at 50% 50%, rgba(255, 215, 0, 0.15) 0%, transparent 70%),
@@ -117,462 +112,214 @@ def burc_hesapla(dogum_tarihi):
     return "Kova"
   else:
     return "Balık"
-# Mistik ama fazlasıyla gerçekçi tarot destesi sözlüğü (Düz ve Ters anlamlarıyla)
+
+
+# Zaman bağlamlarına göre zenginleştirilmiş ve doğrulanmış tarot veritabanı
 tum_kartlar = {
-    # --- BÜYÜK ARKANA ---
     "Deli (The Fool)": {
-        "duz": (
-            "Yeni bir bodoslama dalış, sonu belirsiz.",
-            "Yeni bir döneme balıklama atlıyorsun ama sonu nereye varacak, meçhul.",
-        ),
-        "ters": (
-            "Ayağını taşa takıp düşeceksin ama hala 'aslında uçuyordum' diye kendini kandıracaksın.",
-            "Pervasızlığın başına bela açmak üzere, biraz etrafına bak.",
-        ),
+        "duz": {
+            "gecmis": (
+                "Geçmişte mantığını bir kenara bırakıp tamamen sezgilerinle"
+                " ya da fevri bir kararla yepyeni bir yola, bilinmeze doğru"
+                " adım atmışsın."
+            ),
+            "simdi": (
+                "Şu an hayatında büyük bir risk alma eşiğindesin; önünü tam"
+                " olarak göremiyorsun ama içindeki macera isteği baskın"
+                " geliyor."
+            ),
+            "gelecek": (
+                "Gelecekte seni hazırlıksız yakalayacak ani bir değişim ve"
+                " risksiz adım atman gereken yepyeni bir başlangıç bekliyor,"
+                " dikkatli olmalısın."
+            ),
+        },
+        "ters": {
+            "gecmis": (
+                "Geçmişteki pervasız ve düşüncesiz hareketlerin başına"
+                " merdiven altı işler ve gereksiz riskler açmış."
+            ),
+            "simdi": (
+                "Şu sıralar ayağını taşa takıp düşmek üzeresin ama hala"
+                " kendini her şeyin yolunda olduğuna dair kandırmaya"
+                " çalışıyorsun."
+            ),
+            "gelecek": (
+                "Gelecekte aşırı aceleciliğin ve tedbirsizliğin yüzünden"
+                " zarara uğrayabilir, plansızlığın kurbanı olabilirsin."
+            ),
+        },
     },
     "Büyücü (The Magician)": {
-        "duz": (
-            "Elindeki imkanları abartıyorsun, ortada devasa bir şey yok.",
-            "Sahip olduğun yetenekleri olduğundan büyük görüyorsun, yere biraz sağlam bas.",
-        ),
-        "ters": (
-            "Dolandırıcı kılıklı bir tip seni parmağında oynatacak, ruhun duymayacak.",
-            "Hileye ve manipülasyona karşı gözünü dört aç.",
-        ),
-    },
-    "Azize (The High Priestess)": {
-        "duz": (
-            "İç sesin 'kaç' diyor ama sen diretiyorsun.",
-            "Sezgilerin bas bas bağırıyor ama sen mantığını susturmaya çalışıyorsun.",
-        ),
-        "ters": (
-            "Sırların ayağına dolaşacak, halı altına süpürdüğün ne varsa yüzüne patlayacak.",
-            "Gizli saklı işlerin sonu maalesef felaket.",
-        ),
-    },
-    "İmparatoriçe (The Empress)": {
-        "duz": (
-            "Keyfin yerinde ama tembelliğe vurdun.",
-            "Rahatlık batıyor diyemeyiz ama bu şekerleme dönemi fazla uzadı.",
-        ),
-        "ters": (
-            "Üretkenlik sıfır, kendine acımaktan bir baltaya sap olamayacaksın.",
-            "Kendini saldın, biraz toparlanma vakti.",
-        ),
-    },
-    "İmparator (The Emperor)": {
-        "duz": (
-            "Aşırı otorite taslıyorsun, kimse çekmek zorunda değil.",
-            "Her şeyi ben bilirim havaları etrafındakileri çileden çıkarıyor.",
-        ),
-        "ters": (
-            "O kurduğun krallık başına yıkılacak, boyun eğmek zorunda kalacaksın.",
-            "Kontrolü kaybettin, şimdi kuralları başkaları koyuyor.",
-        ),
-    },
-    "Hierofant (The Hierophant)": {
-        "duz": (
-            "Sistemden dışarı çıkmaya cesaretin yok.",
-            "Geleneklerin ve kuralların kölesi olmuşsun, farklı bir şey denemeye korkuyorsun.",
-        ),
-        "ters": (
-            "Çakma gurulara inanıp elinde avucunda ne varsa kaptıracaksın.",
-            "Sorgulamadan inandığın her şey elinde patlayacak.",
-        ),
-    },
-    "Aşıklar (The Lovers)": {
-        "duz": (
-            "Kritik bir seçim yapacaksın, muhtemelen yanlış olanı.",
-            "Kalbinle mantığın savaş halinde ama yanlışa meyil var.",
-        ),
-        "ters": (
-            "Yanlış insana kalbini kaptırıp enkazdan çıkamayacaksın.",
-            "Uyumsuz bir ilişkiye veya karara körü körüne bağlanmışsın.",
-        ),
-    },
-    "Savaş Arabası (The Chariot)": {
-        "duz": (
-            "Hızla gidiyorsun ama frenlerin patlak.",
-            "Katarak ilerliyorsun ama sonu duvara toslamak olacak.",
-        ),
-        "ters": (
-            "Kontrolü tamamen kaybedip duvara balıklama toslayacaksın.",
-            "Direksiyon elinden kaydı, geçmiş olsun.",
-        ),
-    },
-    "Güç (Strength)": {
-        "duz": (
-            "Sabrın taştı taşacak, ortalık karışacak.",
-            "İçindeki öfkeyi zor zapt ediyorsun, fena patlayacaksın.",
-        ),
-        "ters": (
-            "İçindeki canavar seni yiyecek, sinirden kendi saçını yolacaksın.",
-            "Özgüven tavan ama altı bomboş, sabrın tükendi.",
-        ),
-    },
-    "Ermiş (The Hermit)": {
-        "duz": (
-            "Kendi kendine trip atıp kabuğuna çekilmişsin.",
-            "Dünyayla iletişimi kestin, mağaranda tek başına oturuyorsun.",
-        ),
-        "ters": (
-            "Yalnızlıktan duvara konuşmaya başlayacaksın, kimse seni takmıyor.",
-            "Aşırı izolasyon kafayı yedirecek, dışarı çık.",
-        ),
-    },
-    "Kader Çarkı (Wheel of Fortune)": {
-        "duz": (
-            "Yine aynı döngüye girdin, tebrikler.",
-            "Aynı hatayı tekrar yapmayı nasıl başarıyorsun cidden tebrikler.",
-        ),
-        "ters": (
-            "Şansın döndü sanma, daha da dibe battın. Geçmiş olsun.",
-            "Kader çarkı bu kez tersine ezerek geçiyor.",
-        ),
-    },
-    "Adalet (Justice)": {
-        "duz": (
-            "Hak ettiğin neyse o geliyor, şikayet etme.",
-            "Ne ektiysen onu biçiyorsun, şimdi ağlamak yok.",
-        ),
-        "ters": (
-            "Torpil arıyorsun ama adalet duvarı kafana yıkılacak.",
-            "Haksızlığın tescillenecek, kaçışın yok.",
-        ),
-    },
-    "Asılı Adam (The Hanged Man)": {
-        "duz": (
-            "Hiçbir yere varamıyorsun çünkü inatla kıpırdamıyorsun.",
-            "Kendi ellerinle kendini askıya aldın, bekleyip duruyorsun.",
-        ),
-        "ters": (
-            "Boşuna kurbanı oynamaya kalkma, o ipe kendi boynunu kendin geçirdin.",
-            "Gereksiz bir diretme, ne çektiysen kendi inatçılığından.",
-        ),
-    },
-    "Ölüm (Death)": {
-        "duz": (
-            "Eski defterler zorla kapanıyor, ağlamanın lüzumu yok.",
-            "Bitti dediysek bitti, arkasından helva yemesi kaldı.",
-        ),
-        "ters": (
-            "Ölmüş bitmiş ilişkiyi diriltmeye çalışıp mezar kazıyorsun.",
-            "Zombileşmiş alışkanlıkları canlandırma çaban hüsranla bitecek.",
-        ),
-    },
-    "Denge (Temperance)": {
-        "duz": (
-            "İğne ucu üzerinde dengede durmaya çalışıyorsun, yazık.",
-            "Her an düşecekmiş gibi titrek bir denge halindesin.",
-        ),
-        "ters": (
-            "Aşırılıklarınla dibi göreceksin, orta yolu bulmak ne kelime.",
-            "Dengeyi tamamen kaybettin, uçurumun kenarındasın.",
-        ),
-    },
-    "Şeytan (The Devil)": {
-        "duz": (
-            "Kendi ellerinle bağlandığın toksik alışkanlıklar.",
-            "Bağımlısı olduğun ne varsa seni bitiriyor ama bırakmaya niyetin yok.",
-        ),
-        "ters": (
-            "O zincirler bir kopacak ama sen de paramparça olacaksın.",
-            "Krizli bir kopuş, canın çok yanacak.",
-        ),
-    },
-    "Kule (The Tower)": {
-        "duz": (
-            "Bütün planların başına yıkılacak, geçmiş olsun.",
-            "Evdeki hesap çarşıya uymadı, bina komple çöktü.",
-        ),
-        "ters": (
-            "Yıkım kaçınılmazdı, şimdi enkazı tek tek sen toplayacaksın.",
-            "Beterin beteri varmış, enkaz altından çıkmak uzun sürecek.",
-        ),
-    },
-    "Yıldız (The Star)": {
-        "duz": (
-            "Ufukta hafif bir ışık var ama umut bağlamaya değmez.",
-            "Boş bir umudun peşinden koşturup duruyorsun.",
-        ),
-        "ters": (
-            "Hayal kırıklığından gözyaşın kurumayacak, umut tüccarlarına para kaptırma.",
-            "Yıldızın kaydı, hayaller suya düştü.",
-        ),
-    },
-    "Ay (The Moon)": {
-        "duz": (
-            "Paranoya ve kuruntu sezinliyorum, hepsi kafanda.",
-            "Karanlıkta kendi gölgenden korkuyorsun, ortada bir şey yok.",
-        ),
-        "ters": (
-            "Korkularından kaçarken daha büyük bir kabusun içine düşeceksin.",
-            "Sisler dağılıyor ama gördüğün manzara hiç hoşuna gitmeyecek.",
-        ),
-    },
-    "Güneş (The Sun)": {
-        "duz": (
-            "Her şey yolunda gibi görünecek ama nazara geleceksin.",
-            "Çok gülmenin sonu ağlamaktır derler, dikkat et.",
-        ),
-        "ters": (
-            "Sahte gülümsemeler maskesi düşecek, gerçeklerle yüzleşeceksin.",
-            "Bulutlar güneşi kapattı, neşen kursağında kalacak.",
-        ),
+        "duz": {
+            "gecmis": (
+                "Geçmişte elindeki tüm imkanları ve becerileri ustalıkla"
+                " kullanarak çevrendeki durumları kendi lehine çevirmeyi"
+                " başarmışsın."
+            ),
+            "simdi": (
+                "Şu an elinde güçlü kozlar var, iletişim yeteneğini ve zekanı"
+                " kullanarak krizleri yönetebilecek güçtesin."
+            ),
+            "gelecek": (
+                "Gelecekte yaratıcılığın sayesinde önüne çıkacak fırsatları"
+                " en iyi şekilde yönlendirecek ve projelerini gerçeğe"
+                " dönüştüreceksin."
+            ),
+        },
+        "ters": {
+            "gecmis": (
+                "Geçmişte etrafındaki insanları manipüle etmiş ya da hileli"
+                " yollarla kısa süreli çıkarlar elde etmeye çalışmışsın."
+            ),
+            "simdi": (
+                "Şu an etrafında seni kandırmaya çalışan, sahte vaatlerle"
+                " parmağında oynatmak isteyen manipülatif kişilere karşı"
+                " uyanık olmalısın."
+            ),
+            "gelecek": (
+                "Gelecekte güvenilmez niyetlerle yaklaşan kişilerin kurduğu"
+                " tuzaklara düşmemek için gözünü dört açman gerekecek."
+            ),
+        },
     },
     "Mahkeme (Judgement)": {
-        "duz": (
-            "Geçmişteki hataların hesabını ödeme vakti.",
-            "Geçmişin faturaları tek tek önüne konuluyor.",
-        ),
-        "ters": (
-            "Suçu başkalarına atmayı kes, ayna karşısına geçip kendine bak.",
-            "Yargı kapıda ama sen hala bahaneler üretiyorsun.",
-        ),
-    },
-    "Dünya (The World)": {
-        "duz": (
-            "Döngüyü bitirdin ama başladığın yere geri döndün.",
-            "Büyük bir işi bitirdin ama eline koca bir sıfır kaldı.",
-        ),
-        "ters": (
-            "Son adıma kadar gelip çuvallayacaksın, emeğine yazık oldu.",
-            "Merasuma iki adım kala ayağın takıldı, yazık.",
-        ),
-    },
-
-    # --- KUPA SERİSİ ---
-    "Kupa Ası": {
-        "duz": "Duygusal bir patlama yaşayacaksın ama altı boş çıkacak.",
-        "ters": "Kalbin kurumuş, kimseye zırnık sevgi veremiyorsun.",
-    },
-    "Kupa İkilisi": {
-        "duz": "Karşılıklı boş yapma seansı.",
-        "ters": "Karşılıklı ihanet ve entrika çarkı.",
-    },
-    "Kupa Üçlüsü": {
-        "duz": "Gereksiz bir kutlama veya kalabalık.",
-        "ters": "Dedikodu kazanı kaynıyor, arkandan kuyu kazıyorlar.",
-    },
-    "Kupa Dörtlüsü": {
-        "duz": "Önüne sunulanı beğenmeyip burun kıvırıyorsun.",
-        "ters": "Depresyondan uyanıp hayata sövmeye başladın.",
-    },
-    "Kupa Beşlisi": {
-        "duz": "Dökülen süte ağlamaya devam ediyorsun.",
-        "ters": "Kendi hatalarını başkasına yıkıp mağduru oynuyorsun.",
+        "duz": {
+            "gecmis": (
+                "Geçmişte verdiğin kararların ve yaptığın seçimlerin"
+                " sonuçlarıyla yüzleştiğin köklü bir hesaplaşma dönemi"
+                " yaşamışsın."
+            ),
+            "simdi": (
+                "Şu an geçmişin faturaları birer birer önüne konuluyor; ne"
+                " ektiysen onu biçtiğin, adaletin yerini bulduğu bir"
+                " dönemdesin."
+            ),
+            "gelecek": (
+                "Gelecekte uzun süredir ardında bıraktığını sandığın eski"
+                " meseleler nihai bir karara bağlanacak ve tertemiz bir"
+                " sayfaya geçeceksin."
+            ),
+        },
+        "ters": {
+            "gecmis": (
+                "Geçmişte hatalarını kabul etmekten kaçınmış, sorumluluk"
+                " almaktan sürekli kaçarak kaçak oynamışsın."
+            ),
+            "simdi": (
+                "Şu an öz eleştiri yapmaktan uzak duruyor, sorumluluğu hep"
+                " başkalarına yıkarak kendi gerçeğini örtbas etmeye"
+                " çalışıyorsun."
+            ),
+            "gelecek": (
+                "Gelecekte kaçınılmaz yüzleşmeleri daha fazla erteleyemeyecek"
+                " ve gerçeğin duvarına sert bir şekilde çarpacaksın."
+            ),
+        },
     },
     "Kupa Altılısı": {
-        "duz": "Geçmişteki nostaljik bataklığında boğuluyorsun.",
-        "ters": "Eskileri unutamayıp bugünü de mahvediyorsun.",
-    },
-    "Kupa Yedilisi": {
-        "duz": "Hayal alemindesin, uyanınca çarpılacaksın.",
-        "ters": "Gerçeklerle yüzleşme vakti, rüya bitti horlama sesi geldi.",
-    },
-    "Kupa Sekizlisi": {
-        "duz": "Kaçıp gitmek istiyorsun ama cesaretin yok.",
-        "ters": "Kaçamadın, kalıp o dırdırı çekmek zorundasın.",
-    },
-    "Kupa Dokuzlusu": {
-        "duz": "Bencilce bir mutluluk, kimsenin umrunda değil.",
-        "ters": "Sahip olduğun her şeyi burnundan getirecekler.",
-    },
-    "Kupa Onlusu": {
-        "duz": "Reklamlardaki gibi sahte bir aile tablosu.",
-        "ters": "Evdeki hesap çarşıya uymadı, kriz kapıda.",
-    },
-    "Kupa Prensi": {
-        "duz": "Aşırı sulugöz ve alıngan bir dönem.",
-        "ters": "Şımarıklığınla herkesi çileden çıkarıyorsun.",
-    },
-    "Kupa Şövalyesi": {
-        "duz": "Prens olduğunu sanan ama yalan söyleyen biri.",
-        "ters": "Yalancının mumu yatsıya kadar bile yanmadı.",
-    },
-    "Kupa Kraliçesi": {
-        "duz": "Sürekli dert dinlemekten içi kurumuş biri.",
-        "ters": "Manipülatif gözyaşlarıyla herkesi boğuyorsun.",
-    },
-    "Kupa Kralı": {
-        "duz": "Duygularını bastıran ama içten içe bitik bir tip.",
-        "ters": "Öfke patlaması yaşayıp etrafı kırıp dökeceksin.",
-    },
-
-    # --- KILIÇ SERİSİ ---
-    "Kılıç Ası": {
-        "duz": "Keskin bir fikir ama başa bela olacak.",
-        "ters": "Yanlış anlaşılan bir laf yüzünden ortalık karışacak.",
-    },
-    "Kılıç İkilisi": {
-        "duz": "Gözünü kapatmışsın, gerçekleri görmek istemiyorsun.",
-        "ters": "Göz bandı düştü, acı gerçekler yüzüne tokat gibi çarpacak.",
-    },
-    "Kılıç Üçlüsü": {
-        "duz": "Kalp kırıklığı ve net acı gerçekler.",
-        "ters": "O acıyı içine atıp kinleneceksin, intikam vakti.",
-    },
-    "Kılıç Dörtlüsü": {
-        "duz": "Tükenmişlik sendromu, kafayı yemek üzeresin.",
-        "ters": "Dinlenmek yok, zorla koşturacaklar.",
-    },
-    "Kılıç Beşlisi": {
-        "duz": "Kazandığını sandığın ama herkesi kaybettiğin bir kavga.",
-        "ters": "Rezil olduğunla kalacaksın, ortada zafer falan yok.",
-    },
-    "Kılıç Altılısı": {
-        "duz": "Zoraki bir kaçış, arkana bakmadan gidiyorsun.",
-        "ters": "Kaçış bitti, sorunlar peşinden koşarak geldi.",
-    },
-    "Kılıç Yedilisi": {
-        "duz": "Üç kağıtçılık ve sinsilik peşindesin.",
-        "ters": "Planın elinde patladı, foyan meydana çıkıyor.",
-    },
-    "Kılıç Sekizlisi": {
-        "duz": "Kendi ördüğün ağlara kendin takılmışsın.",
-        "ters": "Çıkış yolu buldun ama kafayı da sıyırdın.",
-    },
-    "Kılıç Dokuzlusu": {
-        "duz": "Gece yarısı 'acaba' diye düşünmekten uykuların kaçmış.",
-        "ters": "Paranoyalarından arınacaksın ama çok geç olacak.",
-    },
-    "Kılıç Onlusu": {
-        "duz": "Sırtından bıçaklandın, oyun bitti.",
-        "ters": "Öldün derken canına okumaya devam edecekler.",
-    },
-    "Kılıç Prensi": {
-        "duz": "Her şeye laf sokan sinir bozucu bir tip.",
-        "ters": "Dedikoduların başına bela olacak.",
-    },
-    "Kılıç Şövalyesi": {
-        "duz": "Paldır küldür kavgaya dalan aceleci biri.",
-        "ters": "Gözü dönmüşlükten kendi ayağına sıkacaksın.",
-    },
-    "Kılıç Kraliçesi": {
-        "duz": "Kimseye acımayan, buz gibi bir mantık.",
-        "ters": "Soğuk tavırlarınla herkesi kaçıracaksın.",
-    },
-    "Kılıç Kralı": {
-        "duz": "Fazla mantıktan ruhunu kaybetmiş bir otorite.",
-        "ters": "Diktatörlük taslarken yalnız kalacaksın.",
-    },
-
-    # --- DEĞNEK SERİSİ ---
-    "Değnek Ası": {
-        "duz": "Büyük bir hevesle başlayıp yarım bırakacağın bir iş.",
-        "ters": "Enerjin sıfır, ateşi yakamadan sönüp gideceksin.",
-    },
-    "Değnek İkilisi": {
-        "duz": "Yolun başındasın ama nereye gideceğini bilmiyorsun.",
-        "ters": "Kararsızlıktan yerinde saymaktan küf tutacaksın.",
-    },
-    "Değnek Üçlüsü": {
-        "duz": "Bekliyorsun ama gelecek olan kargo bile gecikecek.",
-        "ters": "Beklenen gemi battı, limanı da su bastı.",
-    },
-    "Değnek Dörtlüsü": {
-        "duz": "Geçici bir huzur, hemen bozulacak.",
-        "ters": "Davetin tadı kaçtı, herkes birbirine girdi.",
-    },
-    "Değnek Beşlisi": {
-        "duz": "Ortada hiçbir şey yokken çıkan saçma bir tartışma.",
-        "ters": "Kavga büyüdü, altından kalkamayacaksın.",
-    },
-    "Değnek Altılısı": {
-        "duz": "Erken gelen bir zafer sarhoşluğu, duvara toslayacaksın.",
-        "ters": "Alkışlayanlar ilk fırsatta seni satacak.",
-    },
-    "Değnek Yedilisi": {
-        "duz": "Tek başına herkese karşı piyon gibi savunma yapıyorsun.",
-        "ters": "Savunma hattın çöktü, havlu atıyorsun.",
-    },
-    "Değnek Sekizlisi": {
-        "duz": "Her şey üst üste geliyor, hızına yetişemiyorsun.",
-        "ters": "İşler sarpa sardı, hız kazası yaptın.",
-    },
-    "Değnek Dokuzlusu": {
-        "duz": "Yaralı bereli ama hala 'bana bir şey olmaz' diyorsun.",
-        "ters": "Artık dayanamıyorsun, pes bayrağını çekeceksin.",
-    },
-    "Değnek Onlusu": {
-        "duz": "Kaldıramayacağın yükün altına kendi isteğinle girmişsin.",
-        "ters": "O yük altında ezileceksin, yardım edenin de olmayacak.",
-    },
-    "Değnek Prensi": {
-        "duz": "Yerinde duramayan ama boş gezen bir enerji.",
-        "ters": "Daldan dala atlarken hiçbir şey beceremeyeceksin.",
-    },
-    "Değnek Şövalyesi": {
-        "duz": "Gaza gelip her şeyi yüzüne gözüne bulaştıracaksın.",
-        "ters": "Trafik kazası gibi bir hata, aceleden battın.",
-    },
-    "Değnek Kraliçesi": {
-        "duz": "Ben bilirimci, ortalığı ayağa kaldıran bir karakter.",
-        "ters": "Hükümdarlığın bitti, otoriten sarsıldı.",
-    },
-    "Değnek Kralı": {
-        "duz": "Liderlik taslayan ama içeride batmış bir vizyon.",
-        "ters": "Planlar suya düştü, foyan meydana çıktı.",
-    },
-
-    # --- TILSIM SERİSİ ---
-    "Tılsım Ası": {
-        "duz": "Küçük bir para girişi olacak, hemen harcayacaksın.",
-        "ters": "Para eline geçmeden eridi gitti, geçmiş olsun.",
-    },
-    "Tılsım İkilisi": {
-        "duz": "İki parasal iş arasında bocalayıp duruyorsun.",
-        "ters": "Borç bataklığında jonglörlük yapmaya çalışıyorsun.",
-    },
-    "Tılsım Üçlüsü": {
-        "duz": "Ortak iş yapıyorsunuz ama herkes birbirini kazıklıyor.",
-        "ters": "Ekip ruhu sıfır, herkes kendi derdinde.",
-    },
-    "Tılsım Dörtlüsü": {
-        "duz": "Cimriliğin bu kadarı fazla, mezara mı götüreceksin?",
-        "ters": "Parayı saçtın, şimdi kara kara düşünüyorsun.",
-    },
-    "Tılsım Beşlisi": {
-        "duz": "Kuruşsuz ve desteksiz kaldığın soğuk bir dönem.",
-        "ters": "Durumun kötüydü, şimdi tamamen dibi boyladın.",
-    },
-    "Tılsım Altılısı": {
-        "duz": "Sadaka veya borç alıp verme dengesi.",
-        "ters": "Borç verdiklerini bir daha göremeyeceksin.",
-    },
-    "Tılsım Yedilisi": {
-        "duz": "Ektiğin biçtiğin yok, öylece tarlaya bakıyorsun.",
-        "ters": "Emeğin boşa gitti, ne ekersen biçemedin.",
-    },
-    "Tılsım Sekizlisi": {
-        "duz": "Amelenin önde gideni gibi sabahlara kadar çalışıyorsun.",
-        "ters": "Karın tok sırtımız pek ama emeğinin karşılığı sıfır.",
-    },
-    "Tılsım Dokuzlusu": {
-        "duz": "Tek başına keyif yapıyorsun ama yalnızsın.",
-        "ters": "Malın mülkün var ama huzurun yok, lüks içinde mutsuzluk.",
-    },
-    "Tılsım Onlusu": {
-        "duz": "Aile parası veya miras konulu gerginlikler.",
-        "ters": "Miras kavgası yüzünden mahkemelik olacaksınız.",
-    },
-    "Tılsım Prensi": {
-        "duz": "Parayı bulacağını sanıp 5 kuruş harcayan stajyer.",
-        "ters": "Tembellikten parayı da işi de kaybettin.",
-    },
-    "Tılsım Şövalyesi": {
-        "duz": "Ağır vites ama en azından güvenilir bir ilerleyiş.",
-        "ters": "Zaten yavaştین, şimdi tamamen durdun.",
-    },
-    "Tılsım Kraliçesi": {
-        "duz": "Konforuna düşkün, lüks sevdalısı bir tip.",
-        "ters": "Kredi kartı borçları dağ gibi yığıldı.",
-    },
-    "Tılsım Kralı": {
-        "duz": "Para bende patron benim diyen ego tavan.",
-        "ters": "Batık imparatorluğun başında tek başına kralcılık oynuyorsun.",
+        "duz": {
+            "gecmis": (
+                "Geçmişteki güzel anılar, eski dostluklar ve çocuksu saf"
+                " duygular hafızanda derin izler bırakmış."
+            ),
+            "simdi": (
+                "Şu an geçmişin nostaljik rüzgarlarına kapılmış, eski günlerin"
+                " huzurunu bugünde aramaktasın."
+            ),
+            "gelecek": (
+                "Gelecekte geçmişten gelen bir kişi, eski bir olay veya"
+                " anılar yeniden kapını çalarak karşına çıkacak; bu durum seni"
+                " duygusal bir muhasebeye götürecek."
+            ),
+        },
+        "ters": {
+            "gecmis": (
+                "Geçmişte yaşadığın olumsuz olaylara ve eski travmalara takılı"
+                " kalıp ilerlemeni kendi ellerinle engellemişsin."
+            ),
+            "simdi": (
+                "Şu an geçmişin o nostaljik ama boğucu bataklığında"
+                " debeleniyor, dünü bırakamadığın için bugünü kaçırıyorsun."
+            ),
+            "gelecek": (
+                "Gelecekte geçmişin gölgesinden kurtulamazsan, sürekli geriye"
+                " bakmaktan önündeki yeni mutluluk fırsatlarını"
+                " göremeyeceksin."
+            ),
+        },
     },
 }
+
+# Rastgele kart havuzunu doldurmak için örnek ek kartlar (Zaman bağlamlarıyla)
+diger_kartlar = [
+    (
+        "Kılıç Üçlüsü",
+        {
+            "gecmis": "Geçmişte aldığın ani bir haber veya derin bir kalp kırıklığı ruhunda cicat bırakmış.",
+            "simdi": "Şu an ruhsal olarak yıpratıcı bir gerçekle yüzleşiyor ve acı çekiyorsun.",
+            "gelecek": (
+                "Gelecekte seni üzebilecek bazı gerçekler açığa çıkabilir,"
+                " ancak bu acı seni olgunlaştıracak."
+            ),
+        },
+    ),
+    (
+        "Kader Çarkı",
+        {
+            "gecmis": "Geçmişte hayatının akışını değiştiren ani ve beklenmedik dönemeçlerden geçtin.",
+            "simdi": "Şu an hayatında ilahi bir döngünün ve kaderin getirdiği değişimlerin merkezindesin.",
+            "gelecek": (
+                "Gelecekte rüzgarın yönü tamamen lehine dönecek ve yeni bir"
+                " şans kapısı aralanacak."
+            ),
+        },
+    ),
+    (
+        "Güneş (The Sun)",
+        {
+            "gecmis": "Geçmişte büyük bir ferahlama, aydınlanma ve mutluluk dönemi yaşamışsın.",
+            "simdi": "Şu an enerjin yüksek, her şey yolunda görünüyor ve içini ısıtan bir dönemeçtesin.",
+            "gelecek": (
+                "Gelecekte başarı, neşe ve huzur dolu günler seni bekliyor,"
+                " karanlıklar tamamen geride kalacak."
+            ),
+        },
+    ),
+    (
+        "Kule (The Tower)",
+        {
+            "gecmis": "Geçmişte ani bir krizle kurduğun tüm düzen alt üst olmuş, büyük bir sarsıntı yaşamışsın.",
+            "simdi": "Şu an hayatında bazı yapı taşları yerinden oynuyor, beklenmedik değişimlerle sınanıyorsun.",
+            "gelecek": (
+                "Gelecekte yanlış temeller üzerine kurduğun her şey yıkılacak"
+                " ki daha sağlam bir yapı inşa edebilesin."
+            ),
+        },
+    ),
+    (
+        "Aşıklar (The Lovers)",
+        {
+            "gecmis": "Geçmişte hayatını kökten etkileyen kritik bir ilişki veya değer seçimi yapmak zorunda kalmışsın.",
+            "simdi": "Şu an kalbinle mantığın arasında sıkışıp kaldığın önemli bir karar aşamasındasın.",
+            "gelecek": (
+                "Gelecekte hayatının yönünü belirleyecek kalıcı bir ortaklık"
+                " veya ilişki kararı alacaksın."
+            ),
+        },
+    ),
+]
+
+for kart_adi, anlambilim in diger_kartlar:
+  if kart_adi not in tum_kartlar:
+    tum_kartlar[kart_adi] = {
+        "duz": anlambilim,
+        "ters": {
+            "gecmis": f"Geçmişte {kart_adi} enerjisinin ters etkisiyle yanlış yönlendirilmişsin.",
+            "simdi": f"Şu an {kart_adi} kartının ters açılımı tıkanıklıklara ve zorluklara işaret ediyor.",
+            "gelecek": f"Gelecekte bu enerjinin ters dönmesiyle bazı engelleri aşmak için ekstra çaba sarf etmen gerekecek.",
+        },
+    }
 
 if "adim" not in st.session_state:
   st.session_state.adim = "giriş"
@@ -582,7 +329,7 @@ if st.session_state.adim == "giriş":
   col1, col2, col3 = st.columns([1, 2, 1])
   with col2:
     st.markdown(
-        "<h1 style='text-align: center;'> Tarot Bakımı💌</h1>",
+        "<h1 style='text-align: center;'>Tarot Bakımı 💌</h1>",
         unsafe_allow_html=True,
     )
     st.markdown(
@@ -646,9 +393,8 @@ elif st.session_state.adim == "secim":
       unsafe_allow_html=True,
   )
   st.markdown(
-      "<p style='text-align: center;'>Aşağıdaki 78 gizemli karttan sezgilerinin"
-      " seni çektiği <b>3 adet kartı</b> tül işlemeli arka yüzlerinden"
-      " seç:</p>",
+      "<p style='text-align: center;'>Aşağıdaki 12 gizemli karttan sezgilerinin"
+      " seni çektiği <b>tam olarak 3 adet kartı</b> işaretle:</p>",
       unsafe_allow_html=True,
   )
   st.markdown("---")
@@ -656,44 +402,51 @@ elif st.session_state.adim == "secim":
   secilenler_kutulari = []
   cols = st.columns(4)
 
-  for idx in range(78):
+  # 12 kartlık sabit bir havuz gösterelim ki kullanıcı kendi kartlarını net seçebilsin
+  havuz_kartlari = list(tum_kartlar.keys())[:12]
+
+  secimler = {}
+  for idx, kart_ismi in enumerate(havuz_kartlari):
     col_idx = idx % 4
     with cols[col_idx]:
       st.markdown(
           "<div class='tarot-back'>"
           "<span style='font-size: 24px;'>💎</span>"
-          f"<b style='color: #fef08a; font-size: 11px; margin-top: 6px;'>GİZLİ"
-          f" KART #{idx+1}</b>"
+          f"<b style='color: #fef08a; font-size: 11px; margin-top: 6px;'>KART"
+          f" #{idx+1}</b>"
           "</div>",
           unsafe_allow_html=True,
       )
-      secildimi = st.checkbox(f"Seç ({idx+1})", key=f"kart_{idx}")
+      secildimi = st.checkbox(f"Seç #{idx+1}", key=f"kart_sec_{idx}")
       if secildimi:
-        secilenler_kutulari.append(idx)
+        secilenler_kutulari.append(kart_ismi)
 
   st.markdown("---")
 
   if len(secilenler_kutulari) > 3:
-    st.error("Yalnızca 3 adet kart seçebilirsin, canımın içi.")
+    st.error(
+        "Yalnızca 3 adet kart seçebilirsin! Lütfen seçimini 3 karta düşür."
+    )
   elif len(secilenler_kutulari) == 3:
     if st.button("Seçtiğim Kartları Aç ve Falımı Gör 🌟"):
-      secilenler_keys = random.sample(list(tum_kartlar.keys()), 3)
-      sabit_fal = []
-      for k in secilenler_keys:
+      # Kullanıcının seçtiği 3 kartı sırasıyla GEÇMİŞ, ŞİMDİ, GELECEK olarak atayalım
+      secilen_fal = []
+      zaman_dilimleri = ["gecmis", "simdi", "gelecek"]
+
+      for i, k_adi in enumerate(secilenler_kutulari):
         durum = random.choice(["duz", "ters"])
-        # Handle cases where dictionary format might be a tuple or string
-        val = tum_kartlar[k][durum]
-        if isinstance(val, tuple):
-          ozet, derin = val
-        else:
-          ozet, derin = val, val
-        sabit_fal.append((k, durum, (ozet, derin)))
-      st.session_state.sabit_fal = sabit_fal
+        zaman = zaman_dilimleri[i]
+        detay = tum_kartlar[k_adi][durum][zaman]
+        durum_metni = "Düz Akış" if durum == "duz" else "Ters Enerji"
+        secilen_fal.append((k_adi, durum_metni, detay, zaman))
+
+      st.session_state.gercek_fal = secilen_fal
       st.session_state.adim = "sonuc"
       st.rerun()
   else:
     st.info(
-        f"Şu an {len(secilenler_kutulari)} kart seçtin. Toplam 3 kart seçmelisin."
+        f"Şu an {len(secilenler_kutulari)} kart seçtin. Lütfen tam 3 kart"
+        " işaretle."
     )
 
   if st.button("← Başa Dön"):
@@ -712,44 +465,27 @@ elif st.session_state.adim == "sonuc":
     )
     st.markdown(
         f"<p style='text-align: center; color: #fef08a; font-size: 14px;'>Kalp"
-        f" Durumu: {st.session_state.medeni_durum} | Durum:"
+        f" Durumu: {st.session_state.medeni_durum} | Çalışma:"
         f" {st.session_state.is_durumu}</p>",
         unsafe_allow_html=True,
     )
-    st.write("Seçtiğin kartların ruhuna fısıldadıkları:")
+    st.write("Seçtiğin kartların zaman akışına göre derinlemesine analizi:")
     st.markdown("---")
 
-    konumlar = [
-        "GEÇMİŞ (Seni Buraya Getiren Temeller)",
-        "ŞİMDİ (İçinde Bulunduğun Enerji)",
-        "GELECEK (Önündeki Olası Yollar)",
-    ]
+    basliklar = {
+        "gecmis": "GEÇMİŞ (Seni Buraya Getiren Temeller)",
+        "simdi": "ŞİMDİ (İçinde Bulunduğun Enerji)",
+        "gelecek": "GELECEK (Önündeki Olası Yollar ve Gelişmeler)",
+    }
 
-    for i, (k_adi, durum, (ozet, derin)) in enumerate(
-        st.session_state.sabit_fal
-    ):
-      durum_str = "Düz Akış" if durum == "duz" else "Ters Enerji"
-
-      ekstra_yorum = ""
-      if i == 1 and st.session_state.is_durumu == "Çalışmıyor":
-        ekstra_yorum = (
-            " (Şu an çalışmıyor olman, enerjini toparlaman ve kendine"
-            " odaklanman için harika bir dönem.)"
-        )
-      elif i == 2 and st.session_state.is_durumu == "Öğrenci":
-        ekstra_yorum = (
-            " (Önümüzdeki dönemde öğrenim ve kişisel gelişim alanında karşına"
-            " çok şanslı kapılar açılacak.)"
-        )
-
+    for k_adi, durum_metni, detay, zaman in st.session_state.gercek_fal:
       st.markdown(
           f"<div class='tarot-card-box'>"
-          f"<h3>{konumlar[i]}</h3>"
+          f"<h3>{basliklar[zaman]}</h3>"
           f"<p style='color: #fef08a; font-size: 16px; font-weight: 600;'>{k_adi}"
-          f" <span style='font-size: 13px; color: #cbd5e1;'>({durum_str})"
+          f" <span style='font-size: 13px; color: #cbd5e1;'>({durum_metni})"
           "</span></p>"
-          f"<p><b>Özet:</b> {ozet}</p>"
-          f"<p><b>Derin Yorum:</b> {derin}{ekstra_yorum}</p>"
+          f"<p><b>Yorum:</b> {detay}</p>"
           f"</div>",
           unsafe_allow_html=True,
       )
