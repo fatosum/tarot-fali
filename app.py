@@ -384,7 +384,7 @@ if st.session_state.adim == "giriş":
   col1, col2, col3 = st.columns([1, 2, 1])
   with col2:
     st.markdown(
-        "<h1 style='text-align: center;'> 🤍 Tarot bakımı🤍</h1>",
+        "<h1 style='text-align: center;'>  Tarot bakımı🤍</h1>",
         unsafe_allow_html=True,
     )
     st.markdown(
