@@ -3,286 +3,329 @@ import random
 import streamlit as st
 
 st.set_page_config(
-    page_title="Modern Tam Dest Tarot Deneyimi",
+    page_title="Mistik Tarot Deneyimi",
     page_icon="✨",
     layout="centered",
     initial_sidebar_state="collapsed",
 )
 
-# Modern, Şık ve Temiz Tasarım
+# Gönderdiğin görsellere ve mistik konsepte uygun yumuşak, lüks ve modern tasarım
 page_bg_img = """
 <style>
 [data-testid="stAppViewContainer"] > .main {
-background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
-color: #f8fafc;
+background: linear-gradient(135deg, #090d16 0%, #171c28 50%, #0f172a 100%);
+color: #f1f5f9;
 font-family: 'Inter', sans-serif;
 }
 .stButton>button {
 width: 100%;
-background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+background: linear-gradient(135deg, #d4af37 0%, #aa771c 100%);
 color: #ffffff;
-border-radius: 10px;
+border-radius: 12px;
 font-size: 16px;
-height: 48px;
+height: 50px;
 border: none;
 font-weight: 600;
-box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
 transition: all 0.3s ease;
 }
 .stButton>button:hover {
-background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
-box-shadow: 0 6px 16px rgba(99, 102, 241, 0.5);
+background: linear-gradient(135deg, #e6c555 0%, #d4af37 100%);
+box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
 }
 .tarot-card-box {
-background: rgba(30, 27, 75, 0.6);
-border: 1px solid rgba(129, 140, 248, 0.2);
+background: rgba(23, 28, 40, 0.7);
+border: 1px solid rgba(212, 175, 55, 0.3);
 padding: 24px;
 border-radius: 16px;
 margin-bottom: 20px;
-backdrop-filter: blur(10px);
+backdrop-filter: blur(12px);
 box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
+/* Dikey ve Dikdörtgen Tarot Kartı Arkası Tasarımı */
 .tarot-back {
-background: linear-gradient(135deg, #312e81 0%, #1e1b4b 100%);
-border: 2px solid #818cf8;
-border-radius: 12px;
-padding: 15px 10px;
+background: linear-gradient(145deg, #1a2234 0%, #0f172a 100%);
+border: 2px solid #d4af37;
+border-radius: 10px;
+width: 100%;
+height: 110px;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
 text-align: center;
-box-shadow: 0 4px 15px rgba(99, 102, 241, 0.2);
-margin-bottom: 5px;
+box-shadow: 0 4px 15px rgba(212, 175, 55, 0.15);
+margin-bottom: 8px;
+transition: transform 0.2s ease;
 }
-h1, h2, h3 { color: #f1f5f9 !important; font-weight: 700; }
+.tarot-back:hover {
+transform: translateY(-3px);
+border-color: #f3e5ab;
+}
+h1, h2, h3 { color: #fdfbf7 !important; font-weight: 600; }
 p, label, span { color: #cbd5e1 !important; }
 </style>
 """
 st.markdown(page_bg_img, unsafe_allow_html=True)
+
+
+# Doğum tarihine göre otomatik burç hesaplama fonksiyonu
+def burc_hesapla(dogum_tarihi):
+  gun = dogum_tarihi.day
+  ay = dogum_tarihi.month
+
+  if (ay == 3 and gun >= 21) or (ay == 4 and gun <= 20):
+    return "Koç"
+  elif (ay == 4 and gun >= 21) or (ay == 5 and gun <= 20):
+    return "Boğa"
+  elif (ay == 5 and gun >= 21) or (ay == 6 and gun <= 21):
+    return "İkizler"
+  elif (ay == 6 and gun >= 22) or (ay == 7 and gun <= 22):
+    return "Yengeç"
+  elif (ay == 7 and gun >= 23) or (ay == 8 and gun <= 22):
+    return "Aslan"
+  elif (ay == 8 and gun >= 23) or (ay == 9 and gun <= 22):
+    return "Başak"
+  elif (ay == 9 and gun >= 23) or (ay == 10 and gun <= 23):
+    return "Terazi"
+  elif (ay == 10 and gun >= 24) or (ay == 11 and gun <= 21):
+    return "Akrep"
+  elif (ay == 11 and gun >= 22) or (ay == 12 and gun <= 21):
+    return "Yay"
+  elif (ay == 12 and gun >= 22) or (ay == 1 and gun <= 19):
+    return "Oğlak"
+  elif (ay == 1 and gun >= 20) or (ay == 2 and gun <= 18):
+    return "Kova"
+  else:
+    return "Balık"
+
 
 # 78 Kartlık Tam Tarot Destesi Veritabanı
 tum_kartlar = {
     # Majör Arkanalar (22 Kart)
     "Deli (The Fool)": {
         "duz": (
-            "Yeni başlangıçlar, masumiyet ve spontanlık.",
-            "Hayatında yepyeni bir sayfa açılıyor. İç sesini dinle ve korkusuzca adım at.",
+            "Yeni başlangıçlar, saf bir heyecan ve akışa güvenmek.",
+            "Hayatında yepyeni, tertemiz bir sayfa açılıyor. İçindeki coşkuya kulak ver ve cesurca adım at.",
         ),
         "ters": (
-            "Pervasızlık, riskleri görmezden gelme.",
-            "Düşünmeden attığın adımlar başına bela açabilir, biraz daha temkinli olmalısın.",
+            "Pervasızlık veya nereye gittiğini bilememe.",
+            "Küçük bir durup düşünmekte fayda var; acele kararlar seni yorabilir.",
         ),
     },
     "Büyücü (The Magician)": {
         "duz": (
-            "Yetenek, odaklanma ve potansiyeli gerçeğe dönüştürme.",
-            "Elindeki tüm imkanlar lehine çalışıyor. Hedefine ulaşmak için mükemmel bir zaman.",
+            "Yeteneklerini konuşturma, yaratıcılık ve imkanları hayata geçirme.",
+            "Şu an ellerindeki güç ve potansiyel muazzam. İstediğin her şeyi gerçeğe dönüştürebilirsin.",
         ),
         "ters": (
-            "Manipülasyon, potansiyeli harcama.",
-            "Yeteneklerini yanlış yönlendiriyor ya da çevrendeki kişilerden kandırılma riski taşıyorsun.",
+            "Potansiyeli harcama veya odak dağılması.",
+            "Enerjini çok fazla noktaya dağıtıyorsun; odağını tek bir yere toplamak mucizeler yaratacaktır.",
         ),
     },
     "Azize (The High Priestess)": {
         "duz": (
-            "Sezgiler, bilinçaltı ve gizli kalmış sırlar.",
-            "Mantığını bir kenara bırak ve iç sesine kulak ver. Sezgilerin seni yanıltmayacak.",
+            "Derin sezgiler, sırlar ve içsel rehberlik.",
+            "Mantığından ziyade kalbinin ve hislerinin fısıltılarına kulak ver. İç sesin seni asla yanıltmaz.",
         ),
         "ters": (
-            "Sezgileri bastırma, iç sesini duyamama.",
-            "Kendi iç sesini susturduğun için yanlış kararlar alıyorsun, gerçeklere körsün.",
+            "İç sesini bastırma, huzursuzluk.",
+            "Kendi sezgilerini görmezden geldiğin için kararsızlık yaşıyorsun.",
         ),
     },
     "İmparatoriçe (The Empress)": {
         "duz": (
-            "Bereket, yaratıcılık ve doğanın bolluğu.",
-            "Emeklerinin karşılığını fazlasıyla alacağın, üretken ve huzurlu bir döneme giriyorsun.",
+            "Bereket, bolluk, şefkat ve üretkenlik.",
+            "Emeklerinin karşılığını fazlasıyla alacağın, adeta çiçek açacağın huzurlu bir döneme giriyorsun.",
         ),
         "ters": (
-            "Tembellik, üretkenlik tıkanıklığı.",
-            "Konfor alanına fazla kapıldın, bu da gelişimini durduruyor ve seni tembelleştiriyor.",
+            "Üretkenlikte duraksama veya aşırı düşkünlük.",
+            "Kendini biraz ihmal etmiş olabilirsin; önce kendi ruhunu beslemelisin.",
         ),
     },
     "İmparator (The Emperor)": {
         "duz": (
-            "Otorite, disiplin ve liderlik.",
-            "Hayatının kontrolünü eline alma, kuralları koyma ve liderliği üstlenme zamanı.",
+            "Otorite, düzen kurma ve hayatın dizginlerini ele alma.",
+            "Hayatında kuralları yeniden yazma, kendi liderliğini ilan etme ve sağlam temeller atma zamanı.",
         ),
         "ters": (
-            "Aşırı baskı, kontrol kaybı ve despotluk.",
-            "Etrafındakilere karşı fazla kuralcı davranıyorsun ya da hayatın kontrolünü tamamen yitiriyorsun.",
+            "Aşırı kontrolcülük veya esneklik eksikliği.",
+            "Her şeyi kontrol etmeye çalışmak seni yıpratabilir, akışa biraz alan tanımalısın.",
         ),
     },
     "Hierofant (The Hierophant)": {
         "duz": (
-            "Gelenekler, ruhsal rehberlik ve toplumsal değerler.",
-            "Kurallara ve köklü geleneklere bağlı kalmak bu süreçte sana güven verecek.",
+            "Manevi rehberlik, gelenekler ve güven.",
+            "Köklü değerler ve güvendiğin kişilerden alacağın tavsiyeler bu süreçte yolunu aydınlatacak.",
         ),
         "ters": (
-            "İsyankarlık, dogmalara karşı çıkma.",
-            "Toplumsal kalıplara başkaldırıyorsun ancak bu durum seni yalnızlaştırabilir.",
+            "Kalıplara sığmama, isyankar hissetme.",
+            "Sana dayatılan eski kuralları sorguluyor ve kendi yolunu çizmek istiyorsun.",
         ),
     },
     "Aşıklar (The Lovers)": {
         "duz": (
-            "Uyum, bağlar ve kritik bir karar.",
-            "Değerlerinle ilgili önemli bir yol ayrımındasın. Kalbinin sesini dinleyerek seç.",
+            "Kalpten gelen bağlar, uyum ve kritik bir seçim.",
+            "Değerlerinle ilgili kalbinin sesini dinleyeceğin tatlı bir yol ayrımındasın.",
         ),
         "ters": (
-            "Uyumsuzluk ve yanlış tercihler.",
-            "İlişkilerinde veya kararlarında uyum kopmuş durumda; yanlış bir yoldasın.",
+            "Uyumsuzluk veya yanlış anlaşılmalar.",
+            "İlişkilerinde veya kararlarında dengeyi bulmakta zorlanabilirsin, sabırlı ol.",
         ),
     },
     "Savaş Arabası (The Chariot)": {
         "duz": (
-            "Zafer, irade gücü ve kararlılık.",
-            "Karşına çıkan engelleri azmin sayesinde birer birer aşacaksın.",
+            "Zafer, irade gücü ve kararlılıkla ilerleme.",
+            "Karşına çıkan engelleri azmin ve inancın sayesinde birer birer geride bırakıyorsun.",
         ),
         "ters": (
-            "Kontrol kaybı ve yönsüzlük.",
-            "Enerjini yanlış yönlendiriyorsun, kontrol elinden kayıp gitmek üzere.",
+            "Kontrolü kaybetme hissi veya yönsüzlük.",
+            "Aynı anda çok fazla şeye yetişmeye çalışmak enerjini tüketebilir.",
         ),
     },
     "Adalet (Justice)": {
         "duz": (
-            "Adalet, hakkaniyet ve dürüstlük.",
-            "Geçmişte yaptığın her şeyin adil karşılığını alacağın bir dönem.",
+            "Adalet, dürüstlük ve hak ettiğini bulma.",
+            "Geçmişte gösterdiğin her çabanın, ektiğin her tohumun adil karşılığını alıyorsun.",
         ),
         "ters": (
-            "Haksızlık ve önyargı.",
-            "Durumları tarafsız değerlendiremediğin için haksız duruma düşebilirsin.",
+            "Haksızlığa uğramışlık hissi veya önyargı.",
+            "Olaylara karşı biraz daha tarafsız ve esnek bakmaya çalışmalısın.",
         ),
     },
     "Ermiş (The Hermit)": {
         "duz": (
-            "İçsel arayış, yalnızlık ve bilgelik.",
-            "Bir süre kabuğuna çekilip kendi iç dünyanı dinlemen gerekiyor.",
+            "İçsel yolculuk, huzurlu yalnızlık ve bilgelik.",
+            "Bir süre kalabalıklarca uzaklaşıp kendi iç sesini dinlemek ruhuna çok iyi gelecek.",
         ),
         "ters": (
-            "Aşırı izolasyon ve yalnızlık korkusu.",
-            "Dünyadan tamamen soyutlandın, bu durum seni depresif bir ruh haline sokuyor.",
+            "Aşırı kapanma veya dış dünyadan kopma.",
+            "Yalnızlığı abartıp sevdiklerini dışlıyor olabilirsin, dengeyi koru.",
         ),
     },
     "Kader Çarkı (Wheel of Fortune)": {
         "duz": (
-            "Şans, ani değişimler ve fırsatlar.",
-            "Çark senin lehine dönüyor, hayatında sürpriz güzel gelişmeler kapıda.",
+            "Şansın dönmesi, sürpriz gelişmeler ve ilahi akış.",
+            "Kader çarkı senin lehinə dönüyor; hayatında çok keyifli ve şanslı bir rüzgar esmeye başlıyor.",
         ),
         "ters": (
-            "Kötü şans ve değişime direnç.",
-            "Şu aralar işler istendiği gibi gitmeyebilir, sabırlı olmalısın.",
+            "Geçici aksilikler veya değişime direnç.",
+            "Her şeyin anında olmasını istemek yerine, zamanın akışına güvenmelisin.",
         ),
     },
     "Güç (Strength)": {
         "duz": (
-            "İçsel güç, cesaret ve sabır.",
-            "Zorluklar karşısında dışsal kaba kuvvetle değil, içsel gücünle galip geleceksin.",
+            "İçsel cesaret, şefkat ve nazik bir güç.",
+            "Zorlukları kaba kuvvetle değil, kalbindeki asalet ve sabırla kolayca aşacaksın.",
         ),
         "ters": (
-            "Özgüven eksikliği ve zayıflık hissi.",
-            "Kendi gücüne olan inancını yitirmişsin, içindeki potansiyeli küçümsüyorsun.",
+            "Özgüven dalgalanmaları veya içsel yorgunluk.",
+            "Kendi gücünü küçümseme; içindeki ışık eskisinden daha parlak.",
         ),
     },
     "Asılı Adam (The Hanged Man)": {
         "duz": (
-            "Bakış açısını değiştirme, fedakarlık ve duraklama.",
-            "Olaylara farklı bir açıdan bakmayı denemelisin, şu anki duraklama sana iyi gelecek.",
+            "Bakış açısını değiştirme, durup dinlenme ve teslimiyet.",
+            "Olayları kafanda tersine çevirip bambaşka bir gözle göreceğin aydınlatıcı bir mola.",
         ),
         "ters": (
-            "Boşuna fedakarlık ve zaman kaybı.",
-            "Değişmeyecek durumlar için kendini feda ediyorsun, bu sadece seni yıpratır.",
+            "Boşuna kürek çekme hissi veya direniş.",
+            "Değiştiremeyeceğin şeyler için kendini yıpratmayı bırakmalısın.",
         ),
     },
     "Ölüm (Death)": {
         "duz": (
-            "Dönüşüm, bitiş ve yeni bir başlangıç.",
-            "Eski bir dönemin kapısı kapanıyor. Bu değişime direnme, yeniliğe yer aç.",
+            "Kökten dönüşüm, kapanan eski defterler ve taze başlangıçlar.",
+            "Ömrünü tamamlamış bir döneme harika bir veda ediyorsun. Yeniliğe yer aç.",
         ),
         "ters": (
-            "Değişimden korkma ve geçmişe saplanıp kalma.",
-            "Ömrünü tamamlamış şeyleri bırakmamakta inat ediyorsun, bu seni çürütüyor.",
+            "Geçmişe tutunma korkusu.",
+            "Gitmesine izin vermen gereken kişileri veya alışkanlıkları hala tutuyorsun.",
         ),
     },
     "Denge (Temperance)": {
         "duz": (
-            "İtidal, uyum, denge ve şifa.",
-            "Hayatındaki zıtlıkları uyum içinde harmanlayarak huzuru yakalayacaksın.",
+            "Uyum, huzur, şifa ve orta yolu bulma.",
+            "Hayatındaki zıtlıkları kusursuz bir uyumla harmanlayıp içsel huzuru yakalıyorsun.",
         ),
         "ters": (
-            "Dengesizlik ve aşırılıklar.",
-            "İfrat ile tefrit arasında gidip geliyorsun, hayatında denge kalmamış.",
+            "Aşırılıklar ve dengeyi kaybetme.",
+            "Hayatında küçük pürüzler varsa, acele etmeden sakinleşmeyi dene.",
         ),
     },
     "Şeytan (The Devil)": {
         "duz": (
-            "Bağımlılıklar, takıntılar ve kısıtlanma.",
-            "Kendi ellerinle yarattığın toksik alışkanlıkların tutsağı olmuşsun.",
+            "Takıntılar, toksik alışkanlıklar veya kısıtlanmışlık.",
+            "Kendi ellerinle yarattığın kuruntuların veya alışkanlıkların tutsağı olmaktan vazgeç.",
         ),
         "ters": (
-            "Zincirleri kırma ve özgürleşme.",
-            "Seni aşağı çeken toksik bir bağdan nihayet kurtuluyorsun.",
+            "Zincirleri kırma ve özgürlüğe kavuşma.",
+            "Seni aşağı çeken ağır bir yükten veya bağımlılıktan nihayet sıyrılıyorsun.",
         ),
     },
     "Kule (The Tower)": {
         "duz": (
-            "Ani yıkım ve sarsıcı uyandıran gerçekler.",
-            "Sahte temeller üzerine kurduğun yapılar yıkılıyor ama bu özgürleşmen için şart.",
+            "Ani ve sarsıcı farkındalıklar, eski yapıların yıkılışı.",
+            "Beklenmedik ama seni sahte durumlardan kurtaracak özgürleştirici bir değişim.",
         ),
         "ters": (
-            "Felaketten kıl payı kurtulma.",
-            "Büyük bir krizin eşiğinden döndün ancak temeldeki sorunları çözmezsen tekrar yaşanacak.",
+            "Küçük bir krizden kıl payı kurtulma.",
+            "Atlatılan bir badirenin ardından derin bir nefes alacaksın.",
         ),
     },
     "Yıldız (The Star)": {
         "duz": (
-            "Umut, ilham ve şifa.",
-            "Fırtınalı günlerin ardından içini aydınlatacak taze bir umut ve huzur doğuyor.",
+            "Umut, ilham, şifa ve parlak bir gelecek.",
+            "Karanlık günlerin ardından içini ısıtacak taze bir umut ve mucizeler dönemi başlıyor.",
         ),
         "ters": (
-            "Umutsuzluk ve inanç kaybı.",
-            "Geleceğe dair inancını yitirmiş gibisin, karanlık düşüncelerden sıyrılmalısın.",
+            "Geçici umutsuzluk hissi.",
+            "Hayata olan inancını tazelemek için kendine biraz zaman tanımalısın.",
         ),
     },
     "Ay (The Moon)": {
         "duz": (
-            "İllüzyonlar, belirsizlik ve derin korkular.",
-            "Gördüğün her şey gerçeği yansıtmıyor. Zihnindeki kuruntulara karşı dikkatli ol.",
+            "Sezgiler, rüyalar ve sisli, belirsiz durumlar.",
+            "Gördüğün ya da duyduğun her şey ilk başta algıladığın gibi olmayabilir, sezgilerine güven.",
         ),
         "ters": (
-            "Korkuların üstesinden gelme ve sislerin dağılması.",
-            "Zihnindeki bulutlar dağılıyor; olayların aslını net bir şekilde görmeye başlıyorsun.",
+            "Korkuların dağılması ve gerçeklerin ortaya çıkışı.",
+            "Zihnindeki bulutlar yavaş yavaş aralanıyor, her şey netleşiyor.",
         ),
     },
     "Güneş (The Sun)": {
         "duz": (
-            "Neşe, başarı ve canlılık.",
-            "Her şeyin aydınlığa kavuştuğu, enerjinin tavan yaptığı harika bir dönem.",
+            "Neşe, başarı, canlılık ve saf mutluluk.",
+            "Her şeyinyle aydınlığa kavuştuğun, yüzünün güleceği harika bir dönem seni bekliyor.",
         ),
         "ters": (
-            "Geçici bulutlanma ve ego.",
-            "Mutluluk çok yakın ama kendi gururun yüzünden anı kaçırıyorsun.",
+            "Bulutlu ama geçici bir neşesizlik.",
+            "Mutluluk çok yakın, sadece içindeki neşeyi dışarı çıkarmana engel olan şeyleri bırak.",
         ),
     },
     "Mahkeme (Judgement)": {
         "duz": (
-            "Uyanış, hesaplaşma ve ilahi adalet.",
-            "Geçmişin muhasebesini yapıp hayatınla ilgili büyük ve hayati bir karar veriyorsun.",
+            "İçsel uyanış, öz eleştiri ve hayatınla ilgili büyük bir hamle.",
+            "Geçmişin muhasebesini yapıp seni ileri taşıyacak tertemiz bir sayfa seçiyorsun.",
         ),
         "ters": (
-            "Şüphe ve suçluluk duygusu.",
-            "Kendi kendini suçlayıp duruyorsun, geçmişin hatalarından kopamıyorsun.",
+            "Geçmişteki pişmanlıklara takılı kalma.",
+            "Artık kendini suçlamayı bırakıp önстере bakma zamanı.",
         ),
     },
     "Dünya (The World)": {
         "duz": (
-            "Tamamlanma, başarı ve bütünlük.",
-            "Uzun bir döngüyü başarıyla kapattın, şimdi hak ettiğin ödülü alma zamanı.",
+            "Tamamlanma, kutlama, başarı ve bütünlük.",
+            "Uzun soluklu bir dönemi muazzam bir başarıyla taçlandırıyor, yeni bir çembere adım atıyorsun.",
         ),
         "ters": (
-            "Eksik kalan kapanışlar.",
-            "Son adıma kadar geldin ama bir şeyler hala eksik kalmış hissediliyor.",
+            "Son adreste ufak bir gecikme.",
+            "Çok az kaldı, sabrının karşılığını almak üzeresin.",
         ),
     },
 }
 
-# Minör Arkanaları Ekleyin (Güvenli Döngü)
+# Minör Arkanaları Güvenli Ekleme
 minor_seriler = ["Kupa", "Kılıç", "Tılsım", "Asa"]
 minör_kartlar = [
     "Ası",
@@ -306,15 +349,12 @@ for seri in minor_seriler:
     isim_key = f"{seri} {kart}"
     tum_kartlar[isim_key] = {
         "duz": (
-            f"{isim_key} düz enerjisi: Dengeli ilerleme ve dönemsel fırsatlar.",
-            (
-                "Bu kart hayatının bu alanında uyumu yakalayacağına işaret"
-                " ediyor."
-            ),
+            f"{isim_key} düz enerjisi: Akışta huzur ve uyumlu gelişmeler.",
+            "Hayatının bu alanında beklediğin dengeli ve tatlı akış seni buluyor.",
         ),
         "ters": (
-            f"{isim_key} ters enerjisi: Geçici aksilikler ve yanlış anlaşılmalar.",
-            "Detaylara biraz daha dikkat etmen gereken bir süreçtesin.",
+            f"{isim_key} ters enerjisi: Ufak aksaklıklar veya içsel yavaşlama.",
+            "Acele etmek yerine biraz dinlenmek ve akışı izlemek sana iyi gelecektir.",
         ),
     }
 
@@ -325,22 +365,18 @@ if "adim" not in st.session_state:
 # --- 1. GİRİŞ SAYFASI ---
 if st.session_state.adim == "giriş":
   col1, col2, col3 = st.columns([1, 2, 1])
-  with col1:
-    st.image(
-        "https://images.unsplash.com/photo-1514539079130-25950c84af65?q=80&w=300&auto=format&fit=crop",
-        use_container_width=True,
-    )
   with col2:
     st.markdown(
-        "<h1 style='text-align: center;'>Tarot Deneyimi</h1>",
+        "<h1 style='text-align: center;'>✨ Mistik Tarot Deneyimi ✨</h1>",
         unsafe_allow_html=True,
     )
     st.markdown(
-        "<p style='text-align: center;'>Kaderini kendi ellerinle seç</p>",
+        "<p style='text-align: center; color: #d4af37;'>Kaderinin"
+        " fısıltılarını birlikte dinleyelim</p>",
         unsafe_allow_html=True,
     )
 
-    isim = st.text_input("Adın:")
+    isim = st.text_input("İsmin:")
     dogum_tarihi = st.date_input(
         "Doğum Tarihin:",
         min_value=datetime.date(1940, 1, 1),
@@ -348,39 +384,17 @@ if st.session_state.adim == "giriş":
         value=datetime.date(2000, 1, 1),
     )
 
-    burc = st.selectbox(
-        "Burcun:",
-        [
-            "Koç",
-            "Boğa",
-            "İkizler",
-            "Yengeç",
-            "Aslan",
-            "Başak",
-            "Terazi",
-            "Akrep",
-            "Yay",
-            "Oğlak",
-            "Kova",
-            "Balık",
-        ],
-    )
-
     medeni_durum = st.selectbox(
-        "Medeni Durumun:", ["Bekar", "İlişkisi Var", "Evli", "Karmaşık / Diğer"]
+        "Kalp Durumun:",
+        ["Bekar & Özgür", "İlişkisi Var / Kalbi Dolu", "Evli", "Karmaşık / Akışta"],
     )
 
+    # İstediğin net ve kısa iş durumu seçenekleri
     is_durumu = st.selectbox(
-        "İş / Çalışma Durumun:",
-        [
-            "Çalışıyor / Profesyonel",
-            "Öğrenci",
-            "Kendi İşinin Sahibi",
-            "İş Arıyor / Çalışmıyor",
-        ],
+        "Çalışma Durumun:", ["Çalışıyor", "Çalışmıyor", "Öğrenci"]
     )
 
-    if st.button("Kart Seçim Ekranına Geç"):
+    if st.button("Kart Seçim Ekranına Geç ✨"):
       bugun = datetime.date.today()
       yas = (
           bugun.year
@@ -389,35 +403,31 @@ if st.session_state.adim == "giriş":
       )
 
       if isim.strip() == "":
-        st.warning("Lütfen adını gir.")
+        st.warning("Lütfen ismini bizimle paylaş.")
       elif yas < 14:
         st.error(
-            "Üzgünüm, 14 yaşından küçüklerin bu uygulamayı kullanması"
-            " yasaktır."
+            "Sevgili dostum, bu mistik yolculuk için biraz daha büyümeyi"
+            " beklemelisin."
         )
       else:
         st.session_state.isim = isim
-        st.session_state.burc = burc
+        # Burcu doğum tarihinden otomatik hesaplıyoruz
+        st.session_state.burc = burc_hesapla(dogum_tarihi)
         st.session_state.medeni_durum = medeni_durum
         st.session_state.is_durumu = is_durumu
         st.session_state.adim = "secim"
         st.rerun()
-  with col3:
-    st.image(
-        "https://images.unsplash.com/photo-1603217040209-47cad6f9518a?q=80&w=300&auto=format&fit=crop",
-        use_container_width=True,
-    )
 
-# --- 2. KART SEÇİM SAYFASI ---
+# --- 2. KART SEÇİM SAYFASI (Dikdörtgen, Dikey Tarot Kartları) ---
 elif st.session_state.adim == "secim":
   st.markdown(
-      f"<h2>{st.session_state.isim}, 78 Kartlık Tam Desteden 3 Adet Kart"
-      " Seç</h2>",
+      f"<h2>Hoş geldin sevgili {st.session_state.isim} ({st.session_state.burc"
+      " Burcu})</h2>",
       unsafe_allow_html=True,
   )
   st.write(
-      "Aşağıdaki kapalı tarot kartlarından sezgilerine en çok hitap eden 3"
-      " tanesini işaretle:"
+      "Aşağıdaki 78 gizemli karttan sezgilerinin seni çektiği **3 adet"
+      " kartı** dikey olarak seç ve derinlere inelim:"
   )
 
   secilenler_kutulari = []
@@ -426,10 +436,12 @@ elif st.session_state.adim == "secim":
   for idx in range(78):
     col_idx = idx % 4
     with cols[col_idx]:
+      # Dikdörtgen, dikey ve estetik tarot kartı arkası görünümü
       st.markdown(
           "<div class='tarot-back'>"
-          "<span style='font-size: 24px;'>🔮</span><br>"
-          f"<b style='color: #c7d2fe; font-size: 12px;'>Kart #{idx+1}</b>"
+          "<span style='font-size: 20px;'>✨</span>"
+          f"<b style='color: #f3e5ab; font-size: 11px; margin-top: 5px;'>Kart"
+          f" #{idx+1}</b>"
           "</div>",
           unsafe_allow_html=True,
       )
@@ -440,9 +452,9 @@ elif st.session_state.adim == "secim":
   st.markdown("---")
 
   if len(secilenler_kutulari) > 3:
-    st.error("En fazla 3 kart seçebilirsin! Lütfen seçimi 3'e düşür.")
+    st.error("Yalnızca 3 adet kart seçebilirsin, canımın içi.")
   elif len(secilenler_kutulari) == 3:
-    if st.button("Seçtiğim Kartları Aç ve Falımı Gör"):
+    if st.button("Seçtiğim Kartları Aç ve Falımı Gör 🌟"):
       secilenler_keys = random.sample(list(tum_kartlar.keys()), 3)
       sabit_fal = []
       for k in secilenler_keys:
@@ -453,77 +465,70 @@ elif st.session_state.adim == "secim":
       st.rerun()
   else:
     st.info(
-        f"Şu an {len(secilenler_kutulari)} kart seçtin. Lütfen toplam 3 kart"
-        " seç."
+        f"Şu an {len(secilenler_kutulari)} kart seçtin. Toplam 3 kart seçmelisin."
     )
 
-  if st.button("← Ana Sayfaya Dön"):
+  if st.button("← Başa Dön"):
     st.session_state.adim = "giriş"
     st.rerun()
 
 # --- 3. SONUÇ SAYFASI ---
 elif st.session_state.adim == "sonuc":
-  col_sol, col_orta, col_sag = st.columns([1, 4, 1])
-
-  with col_sol:
-    st.image(
-        "https://images.unsplash.com/photo-1635850452968-3d6067db8a99?q=80&w=300&auto=format&fit=crop",
-        use_container_width=True,
-    )
+  col_sol, col_orta, col_sag = st.columns([0.5, 5, 0.5])
 
   with col_orta:
     st.markdown(
-        f"<h2>✨ {st.session_state.isim} ({st.session_state.burc}) İçin Tarot"
-        " Analizi</h2>",
+        f"<h2 style='text-align: center;'>✨ {st.session_state.isim}"
+        f" ({st.session_state.burc}) İçin Tarot Rehberliği ✨</h2>",
         unsafe_allow_html=True,
     )
     st.markdown(
-        f"<p style='font-size:14px; color:#94a3b8;'>Durum: {st.session_state.medeni_durum}"
-        f" | Kariyer: {st.session_state.is_durumu}</p>",
+        f"<p style='text-align: center; color: #d4af37; font-size: 14px;'>Kalp"
+        f" Durumu: {st.session_state.medeni_durum} | Durum:"
+        f" {st.session_state.is_durumu}</p>",
         unsafe_allow_html=True,
     )
-    st.write("Seçtiğin kartların yaşamına yansımaları:")
+    st.write("Seçtiğin kartların ruhuna fısıldadıkları:")
     st.markdown("---")
 
     konumlar = [
-        "GEÇMİŞ (Temeller)",
-        "ŞİMDİ (Mevcut Enerji)",
-        "GELECEK (Olası Yön)",
+        "GEÇMİŞ (Seni Buraya Getiren Temeller)",
+        "ŞİMDİ (İçinde Bulunduğun Enerji)",
+        "GELECEK (Önündeki Olası Yollar)",
     ]
 
     for i, (k_adi, durum, (ozet, derin)) in enumerate(
         st.session_state.sabit_fal
     ):
-      durum_str = "Düz" if durum == "duz" else "Ters"
+      durum_str = "Düz Akış" if durum == "duz" else "Ters Enerji"
 
+      # Yumuşak ve kişiselleştirilmiş dokunuşlar
       ekstra_yorum = ""
-      if i == 1 and st.session_state.medeni_durum == "İlişkisi Var":
+      if i == 1 and st.session_state.is_durumu == "Çalışmıyor":
         ekstra_yorum = (
-            " (Bu enerji ilişkine de doğrudan yansıyor, iletişimine dikkat"
-            " et.)"
+            " (Şu an çalışmıyor olman, enerjini toparlaman ve kendine"
+            " odaklanman için harika bir dönem.)"
         )
       elif i == 2 and st.session_state.is_durumu == "Öğrenci":
         ekstra_yorum = (
-            " (Gelecekteki bu yönelim eğitim ve kariyer planlarını da etkileyecek.)"
+            " (Önümüzdeki dönemde öğrenim ve kişisel gelişim alanında karşına"
+            " çok şanslı kapılar açılacak.)"
         )
 
       st.markdown(
           f"<div class='tarot-card-box'>"
-          f"<h3>{konumlar[i]}: {k_adi} <span style='font-size:14px; color:#818cf8;'>({durum_str})</span></h3>"
+          f"<h3>{konumlar[i]}</h3>"
+          f"<p style='color: #f3e5ab; font-size: 16px; font-weight: 600;'>{k_adi}"
+          f" <span style='font-size: 13px; color: #94a3b8;'>({durum_str})"
+          "</span></p>"
           f"<p><b>Özet:</b> {ozet}</p>"
-          f"<p><b>Detay:</b> {derin}{ekstra_yorum}</p>"
+          f"<p><b>Derin Yorum:</b> {derin}{ekstra_yorum}</p>"
           f"</div>",
           unsafe_allow_html=True,
       )
 
     st.markdown("---")
 
-    if st.button("← Ana Sayfaya Dön"):
+    if st.button("Yeni Bir Fal Bak ✨"):
       st.session_state.adim = "giriş"
       st.rerun()
-
-  with col_sag:
-    st.image(
-        "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?q=80&w=300&auto=format&fit=crop",
-        use_container_width=True,
-    )
