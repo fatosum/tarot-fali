@@ -562,7 +562,7 @@ tum_kartlar = {
     },
     "Tılsım Şövalyesi": {
         "duz": "Ağır vites ama en azından güvenilir bir ilerleyiş.",
-        "ters": "Zaten yavaştın, şimdi tamamen durdun.",
+        "ters": "Zaten yavaştین, şimdi tamamen durdun.",
     },
     "Tılsım Kraliçesi": {
         "duz": "Konforuna düşkün, lüks sevdalısı bir tip.",
@@ -573,22 +573,6 @@ tum_kartlar = {
         "ters": "Batık imparatorluğun başında tek başına kralcılık oynuyorsun.",
     },
 }
-
-
-
-for seri in minor_seriler:
-  for kart in minör_kartlar:
-    isim_key = f"{seri} {kart}"
-    tum_kartlar[isim_key] = {
-        "duz": (
-            f"{isim_key} düz enerjisi: Akışta huzur ve uyumlu gelişmeler.",
-            f"Hayatının bu alanında {isim_key.lower()} enerjisiyle beklediğin dengeli ve tatlı akış seni buluyor.",
-        ),
-        "ters": (
-            f"{isim_key} ters enerjisi: Ufak aksaklıklar veya içsel yavaşlama.",
-            f"{isim_key} kartının ters gelmesi, bu süreçte acele etmek yerine biraz dinlenmen gerektiğini fısıldıyor.",
-        ),
-    }
 
 if "adim" not in st.session_state:
   st.session_state.adim = "giriş"
@@ -697,7 +681,13 @@ elif st.session_state.adim == "secim":
       sabit_fal = []
       for k in secilenler_keys:
         durum = random.choice(["duz", "ters"])
-        sabit_fal.append((k, durum, tum_kartlar[k][durum]))
+        # Handle cases where dictionary format might be a tuple or string
+        val = tum_kartlar[k][durum]
+        if isinstance(val, tuple):
+          ozet, derin = val
+        else:
+          ozet, derin = val, val
+        sabit_fal.append((k, durum, (ozet, derin)))
       st.session_state.sabit_fal = sabit_fal
       st.session_state.adim = "sonuc"
       st.rerun()
