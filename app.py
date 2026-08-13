@@ -3,18 +3,21 @@ import random
 import streamlit as st
 
 st.set_page_config(
-    page_title="tarot falı",
-    page_icon="💎 ",
+    page_title="Mistik Tarot Deneyimi",
+    page_icon="💎",
     layout="centered",
     initial_sidebar_state="collapsed",
 )
 
-# İstediğin o mistik arka plan ve dikey dikdörtgen tarot kartı tasarımı
+# İstediğin o mistik arka plan, zarif dalgalar ve işlemeli dikey lüks tarot kartı tasarımı
 page_bg_img = """
 <style>
-/* Derin modern gece mavisi ve beyaz dalgalanmalar ve gold parıltı ve işlemeler arka plan */
+/* Derin gece mavisi, kadife mor ve zarif gold/beyaz parıltılı dalgalı arka plan */
 [data-testid="stAppViewContainer"] > .main {
-background: radial-gradient(circle at 50% 20%, #1a102f 0%, #0d0614 60%, #05020a 100%);
+background: 
+    radial-gradient(circle at 20% 20%, rgba(212, 175, 55, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.04) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, #1a102f 0%, #0d0614 60%, #05020a 100%);
 color: #f3f4f6;
 font-family: 'Cinzel', 'Inter', serif;
 }
@@ -48,19 +51,19 @@ backdrop-filter: blur(16px);
 box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
 }
 
-/* Gerçekçi dikey ve dikdörtgen tarot kartı arkası görünümü */
+/* Gerçekçi dikey ve dikdörtgen tarot kartı arkası görünümü - Gold işlemeli */
 .tarot-back {
 background: linear-gradient(135deg, #160c24 0%, #2a1b4e 50%, #160c24 100%);
 border: 2px solid #c59b27;
 border-radius: 12px;
 width: 100%;
-height: 150px;
+height: 160px;
 display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
 text-align: center;
-box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6), inset 0 0 15px rgba(197, 155, 39, 0.2);
+box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6), inset 0 0 15px rgba(197, 155, 39, 0.3);
 margin-bottom: 8px;
 transition: all 0.3s ease;
 position: relative;
@@ -69,7 +72,7 @@ position: relative;
 .tarot-back:hover {
 transform: translateY(-5px);
 border-color: #ffd700;
-box-shadow: 0 10px 25px rgba(197, 155, 39, 0.4), inset 0 0 20px rgba(255, 215, 0, 0.3);
+box-shadow: 0 10px 25px rgba(197, 155, 39, 0.5), inset 0 0 20px rgba(255, 215, 0, 0.4);
 }
 
 h1, h2, h3 { color: #fef08a !important; font-family: 'Cinzel', serif; }
@@ -111,7 +114,6 @@ def burc_hesapla(dogum_tarihi):
 
 # 78 Kartlık Tam Destenin Sözlüğü
 tum_kartlar = {
-    # Majör Arkanalar (22 Kart)
     "Deli (The Fool)": {
         "duz": (
             "Yeni başlangıçlar, saf bir heyecan ve akışa güvenmek.",
@@ -334,7 +336,7 @@ tum_kartlar = {
     },
 }
 
-# Minör Arkanalar (Kupa, Kılıç, Tılsım, Asa - 56 Kartın Tamamı)
+# Minör Arkanalar
 minor_seriler = ["Kupa", "Kılıç", "Tılsım", "Asa"]
 minör_kartlar = [
     "Ası",
@@ -394,7 +396,14 @@ if st.session_state.adim == "giriş":
 
     medeni_durum = st.selectbox(
         "Kalp Durumun:",
-        ["Bekar ", "İlişkisi Var ", "Evli", "Flörtleşmekte" , "Yeni ayrılmış", "Boşanmış" ],
+        [
+            "Bekar",
+            "İlişkisi Var",
+            "Evli",
+            "Flörtleşmekte",
+            "Yeni ayrılmış",
+            "Boşanmış",
+        ],
     )
 
     is_durumu = st.selectbox(
@@ -446,8 +455,8 @@ elif st.session_state.adim == "secim":
     with cols[col_idx]:
       st.markdown(
           "<div class='tarot-back'>"
-          "<span style='font-size: 22px;'>🔮</span>"
-          f"<b style='color: #fef08a; font-size: 11px; margin-top: 4px;'>GİZLİ"
+          "<span style='font-size: 24px;'>💎</span>"
+          f"<b style='color: #fef08a; font-size: 11px; margin-top: 6px;'>GİZLİ"
           f" KART #{idx+1}</b>"
           "</div>",
           unsafe_allow_html=True,
