@@ -62,22 +62,21 @@ background:
 border: 2px solid #dfb135;
 border-radius: 14px;
 width: 100%;
-height: 170px;
+height: 140px;
 display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
 text-align: center;
 box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7), inset 0 0 18px rgba(212, 175, 55, 0.3);
-margin-bottom: 8px;
+margin-bottom: 4px;
 transition: all 0.3s ease;
-position: relative;
 }
 
 .tarot-back:hover {
-transform: translateY(-6px);
+transform: translateY(-4px);
 border-color: #ffe875;
-box-shadow: 0 12px 30px rgba(212, 175, 55, 0.5), inset 0 0 25px rgba(255, 232, 117, 0.5);
+box-shadow: 0 10px 25px rgba(212, 175, 55, 0.5);
 }
 </style>
 """
@@ -114,212 +113,268 @@ def burc_hesapla(dogum_tarihi):
     return "Balık"
 
 
-# Zaman bağlamlarına göre zenginleştirilmiş ve doğrulanmış tarot veritabanı
-tum_kartlar = {
+# Her kartın zaman akışına (Geçmiş, Şimdi, Gelecek) tam oturan detaylı veritabanı
+tarot_veritabani = {
     "Deli (The Fool)": {
         "duz": {
             "gecmis": (
-                "Geçmişte mantığını bir kenara bırakıp tamamen sezgilerinle"
-                " ya da fevri bir kararla yepyeni bir yola, bilinmeze doğru"
-                " adım atmışsın."
+                "Geçmişte mantığını bir kenara bırakarak tamamen iç sesinle ve"
+                " saf bir cesaretle bilinmeyene doğru ani bir adım"
+                " atmışsın."
             ),
             "simdi": (
-                "Şu an hayatında büyük bir risk alma eşiğindesin; önünü tam"
-                " olarak göremiyorsun ama içindeki macera isteği baskın"
-                " geliyor."
+                "Şu an hayatında sıfırdan başlamak istediğin, büyük bir risk"
+                " barındıran ancak sana heyecan veren bir dönemeçtesin."
             ),
             "gelecek": (
-                "Gelecekte seni hazırlıksız yakalayacak ani bir değişim ve"
-                " risksiz adım atman gereken yepyeni bir başlangıç bekliyor,"
-                " dikkatli olmalısın."
+                "Gelecekte karşına ani ve yepyeni bir macera çıkacak;"
+                " hazırlıksız yakalanabilirsin ancak bu değişim sana özgürlük"
+                " getirecek."
             ),
         },
         "ters": {
             "gecmis": (
-                "Geçmişteki pervasız ve düşüncesiz hareketlerin başına"
-                " merdiven altı işler ve gereksiz riskler açmış."
+                "Geçmişteki fevri, düşüncesiz ve aşırı riskli hareketlerin yüzünden"
+                " bazı kayıplar yaşamış ve acemilikler çekmişsin."
             ),
             "simdi": (
-                "Şu sıralar ayağını taşa takıp düşmek üzeresin ama hala"
-                " kendini her şeyin yolunda olduğuna dair kandırmaya"
-                " çalışıyorsun."
+                "Şu sıralar pervasızca adımlar atıyor, tehlikeli bir yolda"
+                " uyarıları dikkate almadan ilerlemeye çalışıyorsun."
             ),
             "gelecek": (
-                "Gelecekte aşırı aceleciliğin ve tedbirsizliğin yüzünden"
-                " zarara uğrayabilir, plansızlığın kurbanı olabilirsin."
+                "Gelecekte tedbirsizliğin ve plansızlığın başına bela"
+                " açabilir; ayağını taşa takıp düşmemek için temkinli"
+                " olmalısın."
             ),
         },
     },
     "Büyücü (The Magician)": {
         "duz": {
             "gecmis": (
-                "Geçmişte elindeki tüm imkanları ve becerileri ustalıkla"
-                " kullanarak çevrendeki durumları kendi lehine çevirmeyi"
-                " başarmışsın."
+                "Geçmişte elindeki tüm imkanları, zekanı ve iletişim"
+                " yeteneklerini ustaca kullanarak krizleri kendi lehine"
+                " çevirmeyi başarmışsın."
             ),
             "simdi": (
-                "Şu an elinde güçlü kozlar var, iletişim yeteneğini ve zekanı"
-                " kullanarak krizleri yönetebilecek güçtesin."
+                "Şu an elinde güçlü kozlar var; neyi nasıl ifade edeceğini"
+                " biliyor, iradenle çevrendeki olayları yönlendiriyorsun."
             ),
             "gelecek": (
-                "Gelecekte yaratıcılığın sayesinde önüne çıkacak fırsatları"
-                " en iyi şekilde yönlendirecek ve projelerini gerçeğe"
-                " dönüştüreceksin."
+                "Gelecekte yeteneklerini konuşturacağın büyük fırsatlar"
+                " ellerinde olacak, hayata geçirmek istediğin projeleri"
+                " başarıyla gerçeğe dönüştüreceksin."
             ),
         },
         "ters": {
             "gecmis": (
-                "Geçmişte etrafındaki insanları manipüle etmiş ya da hileli"
-                " yollarla kısa süreli çıkarlar elde etmeye çalışmışsın."
+                "Geçmişte potansiyelini yanlış yönlendirmiş ya da bazı"
+                " manipülatif ve hileli yollara sapmışsın."
             ),
             "simdi": (
                 "Şu an etrafında seni kandırmaya çalışan, sahte vaatlerle"
-                " parmağında oynatmak isteyen manipülatif kişilere karşı"
-                " uyanık olmalısın."
+                " kafanı bulandıran çıkarcı kişilere karşı uyanık olman"
+                " gerekiyor."
             ),
             "gelecek": (
-                "Gelecekte güvenilmez niyetlerle yaklaşan kişilerin kurduğu"
-                " tuzaklara düşmemek için gözünü dört açman gerekecek."
+                "Gelecekte yaşanabilecek dolandırıcılık veya kötü niyetli"
+                " yönlendirmelere karşı gözünü dört açmazsan zarara"
+                " uğrayabilirsin."
             ),
         },
     },
     "Mahkeme (Judgement)": {
         "duz": {
             "gecmis": (
-                "Geçmişte verdiğin kararların ve yaptığın seçimlerin"
-                " sonuçlarıyla yüzleştiğin köklü bir hesaplaşma dönemi"
-                " yaşamışsın."
+                "Geçmişte verdiğin kararların sonuçlarıyla yüzleştiğin, geçmiş"
+                " defterlerin kapandığı köklü bir hesaplaşma dönemi"
+                " atlatmışsın."
             ),
             "simdi": (
-                "Şu an geçmişin faturaları birer birer önüne konuluyor; ne"
-                " ektiysen onu biçtiğin, adaletin yerini bulduğu bir"
-                " dönemdesin."
+                "Şu an geçmişin faturalarının önüne konulduğu, ne ektiysen onu"
+                " biçtiğin ve ilahi adaletin tecelli ettiği bir süreçtesin."
             ),
             "gelecek": (
-                "Gelecekte uzun süredir ardında bıraktığını sandığın eski"
-                " meseleler nihai bir karara bağlanacak ve tertemiz bir"
-                " sayfaya geçeceksin."
+                "Gelecekte uzun süredir seni bağlayan eski bir mesele nihai"
+                " bir sonuca kavuşacak ve karmik olarak tertemiz bir sayfaya"
+                " adım atacaksın."
             ),
         },
         "ters": {
             "gecmis": (
-                "Geçmişte hatalarını kabul etmekten kaçınmış, sorumluluk"
-                " almaktan sürekli kaçarak kaçak oynamışsın."
+                "Geçmişte hatalarını kabul etmekten kaçınmış, sorumluluk almayı"
+                " reddederek gerçeği hep halı altına süpürmüşsün."
             ),
             "simdi": (
-                "Şu an öz eleştiri yapmaktan uzak duruyor, sorumluluğu hep"
-                " başkalarına yıkarak kendi gerçeğini örtbas etmeye"
-                " çalışıyorsun."
+                "Şu an öz eleştiri yapmaktan uzak duruyor, suçu sürekli"
+                " başkalarına atarak gerçeklerle yüzleşmekten kaçıyorsun."
             ),
             "gelecek": (
                 "Gelecekte kaçınılmaz yüzleşmeleri daha fazla erteleyemeyecek"
-                " ve gerçeğin duvarına sert bir şekilde çarpacaksın."
+                " ve yaptığın hataların gerçeğiyle sert bir şekilde"
+                " karşılaşacaksın."
             ),
         },
     },
     "Kupa Altılısı": {
         "duz": {
             "gecmis": (
-                "Geçmişteki güzel anılar, eski dostluklar ve çocuksu saf"
-                " duygular hafızanda derin izler bırakmış."
+                "Geçmişteki tatlı anılar, eski dostluklar ve saf duygular"
+                " hafızanda ve kalbinde derin izler bırakmış."
             ),
             "simdi": (
-                "Şu an geçmişin nostaljik rüzgarlarına kapılmış, eski günlerin"
-                " huzurunu bugünde aramaktasın."
+                "Şu an geçmişin nostaljik rüzgarlarının etkisi altında kalmış,"
+                " eski günlerin sıcaklığını arıyorsun."
             ),
             "gelecek": (
-                "Gelecekte geçmişten gelen bir kişi, eski bir olay veya"
-                " anılar yeniden kapını çalarak karşına çıkacak; bu durum seni"
-                " duygusal bir muhasebeye götürecek."
+                "Gelecekte geçmişten gelen bir kişi, eski bir hatıra veya"
+                " çocuklukla ilgili bir konu yeniden karşına çıkacak ve seni"
+                " duygusal bir yolculuğa çıkaracak."
             ),
         },
         "ters": {
             "gecmis": (
-                "Geçmişte yaşadığın olumsuz olaylara ve eski travmalara takılı"
-                " kalıp ilerlemeni kendi ellerinle engellemişsin."
+                "Geçmişte yaşanan eski travmalara, kapanmamış defterlere ve"
+                " eskide kalmış olaylara aşırı takılıp kalmışsın."
             ),
             "simdi": (
-                "Şu an geçmişin o nostaljik ama boğucu bataklığında"
-                " debeleniyor, dünü bırakamadığın için bugünü kaçırıyorsun."
+                "Şu an geçmişin o nostaljik ama bir o kadar da boğucu"
+                " bataklığında debeleniyor, dünü bırakamadığın için bugünü"
+                " kaçırıyorsun."
             ),
             "gelecek": (
-                "Gelecekte geçmişin gölgesinden kurtulamazsan, sürekli geriye"
-                " bakmaktan önündeki yeni mutluluk fırsatlarını"
+                "Gelecekte geçmişin hayaletlerinden ve eski takıntılarından"
+                " kurtulamazsan, önündeki yeni ve taze mutlulukları asla"
                 " göremeyeceksin."
             ),
         },
     },
-}
-
-# Rastgele kart havuzunu doldurmak için örnek ek kartlar (Zaman bağlamlarıyla)
-diger_kartlar = [
-    (
-        "Kılıç Üçlüsü",
-        {
-            "gecmis": "Geçmişte aldığın ani bir haber veya derin bir kalp kırıklığı ruhunda cicat bırakmış.",
-            "simdi": "Şu an ruhsal olarak yıpratıcı bir gerçekle yüzleşiyor ve acı çekiyorsun.",
+    "Kılıç Üçlüsü": {
+        "duz": {
+            "gecmis": (
+                "Geçmişte kalbini derinden yaralayan ani bir ayrılık, hayal"
+                " kırıklığı veya acı bir gerçekle sınanmışsın."
+            ),
+            "simdi": (
+                "Şu an ruhsal olarak zorlayıcı, hüzünlü ve insanı sorgulatan"
+                " acı bir gerçeğin tam ortasından geçiyorsun."
+            ),
             "gelecek": (
-                "Gelecekte seni üzebilecek bazı gerçekler açığa çıkabilir,"
-                " ancak bu acı seni olgunlaştıracak."
+                "Gelecekte seni duygusal anlamda sarsabilecek bazı gerçekler"
+                " gün yüzüne çıkacak, ancak bu acı zamanla ruhunu"
+                " güçlendirecek."
             ),
         },
-    ),
-    (
-        "Kader Çarkı",
-        {
-            "gecmis": "Geçmişte hayatının akışını değiştiren ani ve beklenmedik dönemeçlerden geçtin.",
-            "simdi": "Şu an hayatında ilahi bir döngünün ve kaderin getirdiği değişimlerin merkezindesin.",
-            "gelecek": (
-                "Gelecekte rüzgarın yönü tamamen lehine dönecek ve yeni bir"
-                " şans kapısı aralanacak."
-            ),
-        },
-    ),
-    (
-        "Güneş (The Sun)",
-        {
-            "gecmis": "Geçmişte büyük bir ferahlama, aydınlanma ve mutluluk dönemi yaşamışsın.",
-            "simdi": "Şu an enerjin yüksek, her şey yolunda görünüyor ve içini ısıtan bir dönemeçtesin.",
-            "gelecek": (
-                "Gelecekte başarı, neşe ve huzur dolu günler seni bekliyor,"
-                " karanlıklar tamamen geride kalacak."
-            ),
-        },
-    ),
-    (
-        "Kule (The Tower)",
-        {
-            "gecmis": "Geçmişte ani bir krizle kurduğun tüm düzen alt üst olmuş, büyük bir sarsıntı yaşamışsın.",
-            "simdi": "Şu an hayatında bazı yapı taşları yerinden oynuyor, beklenmedik değişimlerle sınanıyorsun.",
-            "gelecek": (
-                "Gelecekte yanlış temeller üzerine kurduğun her şey yıkılacak"
-                " ki daha sağlam bir yapı inşa edebilesin."
-            ),
-        },
-    ),
-    (
-        "Aşıklar (The Lovers)",
-        {
-            "gecmis": "Geçmişte hayatını kökten etkileyen kritik bir ilişki veya değer seçimi yapmak zorunda kalmışsın.",
-            "simdi": "Şu an kalbinle mantığın arasında sıkışıp kaldığın önemli bir karar aşamasındasın.",
-            "gelecek": (
-                "Gelecekte hayatının yönünü belirleyecek kalıcı bir ortaklık"
-                " veya ilişki kararı alacaksın."
-            ),
-        },
-    ),
-]
-
-for kart_adi, anlambilim in diger_kartlar:
-  if kart_adi not in tum_kartlar:
-    tum_kartlar[kart_adi] = {
-        "duz": anlambilim,
         "ters": {
-            "gecmis": f"Geçmişte {kart_adi} enerjisinin ters etkisiyle yanlış yönlendirilmişsin.",
-            "simdi": f"Şu an {kart_adi} kartının ters açılımı tıkanıklıklara ve zorluklara işaret ediyor.",
-            "gelecek": f"Gelecekte bu enerjinin ters dönmesiyle bazı engelleri aşmak için ekstra çaba sarf etmen gerekecek.",
+            "gecmis": (
+                "Geçmişte yaşadığın kalp kırıklıklarını içine atıp kinlenmiş,"
+                " acıyı kabullenmek yerine bastırmayı seçmişsin."
+            ),
+            "simdi": (
+                "Şu an içindeki acıyı ve kırgınlığı iyileştirmeye çalışıyor,"
+                " yavaş yavaş toparlanma evresine giriyorsun."
+            ),
+            "gelecek": (
+                "Gelecekte eski yaraların kabuk bağlamaya başlayacak ve uzun"
+                " süredir çektiğin o zihinsel ızdıraptan nihayet"
+                " kurtulacaksın."
+            ),
         },
-    }
+    },
+    "Kader Çarkı": {
+        "duz": {
+            "gecmis": (
+                "Geçmişte hayatının akışını tamamen değiştiren ani fırsatlar ve"
+                " kaderin getirdiği dönemeçler yaşanmış."
+            ),
+            "simdi": (
+                "Şu an hayatında büyük bir döngünün değişim aşamasındasın;"
+                " rüzgarın yönü senin lehine dönmeye başlıyor."
+            ),
+            "gelecek": (
+                "Gelecekte şans kapıları ardına kadar açılacak, işler"
+                " beklemediğin kadar hızlı ve hayırlı bir şekilde lehinize"
+                " ilerleyecek."
+            ),
+        },
+        "ters": {
+            "gecmis": (
+                "Geçmişte üst üste gelen şanssızlıklar ve ters giden olaylar"
+                " yüzünden sürekli aynı kısır döngüye hapsolmuşsun."
+            ),
+            "simdi": (
+                "Şu an işlerin sarp sarıldığı, kaderin adeta sana karşı"
+                " çalıştığını hissettiğin sıkıntılı bir döngüdesin."
+            ),
+            "gelecek": (
+                "Gelecekte işlerin rast gitmesi için biraz daha sabırlı"
+                " olman gerekecek; aksi halde aynı hataları tekrarlayıp"
+                " zorlanabilirsin."
+            ),
+        },
+    },
+    "Güneş (The Sun)": {
+        "duz": {
+            "gecmis": (
+                "Geçmişte hayatının en parlak, en neşeli ve her şeyin tıkırında"
+                " gittiği aydınlık bir dönem yaşamışsın."
+            ),
+            "simdi": (
+                "Şu an enerjinin yüksek olduğu, içini ısıtan, umut dolu ve"
+                " sorunların çözüldüğü bir zaman dilimindesin."
+            ),
+            "gelecek": (
+                "Gelecekte başarı, kutlama, bolluk ve mutluluk dolu günler"
+                " seni bekliyor; tüm bulutlar dağılacak."
+            ),
+        },
+        "ters": {
+            "gecmis": (
+                "Geçmişte mutluluğu yakaladığını sandığın anlarda ufak da"
+                " olsa bazı gölgeler ve hayal kırıklıkları yaşamışsın."
+            ),
+            "simdi": (
+                "Şu an neşen kursağında kalmış gibi hissedebilirsin, işler"
+                " beklediğin kadar parlak ve coşkulu ilerlemiyor."
+            ),
+            "gelecek": (
+                "Gelecekte geçici bazı bulutlanmalar ve nazar durumları"
+                " olabileceği için aşırı iyimserlikten kaçınmanda fayda var."
+            ),
+        },
+    },
+    "Kule (The Tower)": {
+        "duz": {
+            "gecmis": (
+                "Geçmişte ani bir olayla güvenli sandığın tüm kaleler başına"
+                " yıkılmış, büyük ve sarsıcı bir değişim yaşamışsın."
+            ),
+            "simdi": (
+                "Şu an hayatındaki yanlış temellerin çatırtıyla döküldüğü, her"
+                " şeyin bir anda altüst olduğu kaos dolu bir süreçtesin."
+            ),
+            "gelecek": (
+                "Gelecekte sarsıcı ama bir o kadar gerekli bir yıkım yaşanacak"
+                " ki bu sayede sahte olan her şey arınacak ve yerine daha"
+                " sağlamı kurulacak."
+            ),
+        },
+        "ters": {
+            "gecmis": (
+                "Geçmişte büyük bir felaketin kıyısından dönmüş ya da"
+                " yıkımı ertelemek için çok büyük çabalar harcamışsın."
+            ),
+            "simdi": (
+                "Şu an yaklaşan krizleri görmezden gelmeye çalışıyor, çöküşü"
+                " engellemek için pamuk ipliğine tutunuyorsun."
+            ),
+            "gelecek": (
+                "Gelecekte kaçınılmaz olan o değişim sarsıntısı küçük çaplı"
+                " da olsa kapını çalacak, artık eskisi gibi devam edemeyeceğini"
+                " anlayacaksın."
+            ),
+        },
+    },
+}
 
 if "adim" not in st.session_state:
   st.session_state.adim = "giriş"
@@ -388,65 +443,63 @@ if st.session_state.adim == "giriş":
 # --- 2. KART SEÇİM SAYFASI ---
 elif st.session_state.adim == "secim":
   st.markdown(
-      f"<h2 style='text-align: center;'>Hoş geldin sevgili {st.session_state.isim}"
-      f" ({st.session_state.burc} Burcu)</h2>",
+      f"<h2 style='text-align: center;'>Sevgili {st.session_state.isim}"
+      f" ({st.session_state.burc})</h2>",
       unsafe_allow_html=True,
   )
   st.markdown(
-      "<p style='text-align: center;'>Aşağıdaki 12 gizemli karttan sezgilerinin"
-      " seni çektiği <b>tam olarak 3 adet kartı</b> işaretle:</p>",
+      "<p style='text-align: center;'>Aşağıdaki gizemli desteden enerjinin"
+      " çektiği <b>tam olarak 3 adet kartı</b> kutucuklarından işaretle:</p>",
       unsafe_allow_html=True,
   )
   st.markdown("---")
 
-  secilenler_kutulari = []
+  # Destedeki tüm kartları listele
+  tum_kart_isimleri = list(tarot_veritabani.keys())
+
+  secilenler_listesi = []
   cols = st.columns(4)
 
-  # 12 kartlık sabit bir havuz gösterelim ki kullanıcı kendi kartlarını net seçebilsin
-  havuz_kartlari = list(tum_kartlar.keys())[:12]
-
-  secimler = {}
-  for idx, kart_ismi in enumerate(havuz_kartlari):
+  for idx, kart_adi in enumerate(tum_kart_isimleri):
     col_idx = idx % 4
     with cols[col_idx]:
       st.markdown(
           "<div class='tarot-back'>"
-          "<span style='font-size: 24px;'>💎</span>"
-          f"<b style='color: #fef08a; font-size: 11px; margin-top: 6px;'>KART"
-          f" #{idx+1}</b>"
+          "<span style='font-size: 20px;'>💎</span>"
+          f"<b style='color: #fef08a; font-size: 10px; margin-top: 4px;'>GİZLİ"
+          f" KART #{idx+1}</b>"
           "</div>",
           unsafe_allow_html=True,
       )
-      secildimi = st.checkbox(f"Seç #{idx+1}", key=f"kart_sec_{idx}")
+      # Kullanıcının hangi karta tıkladığını ismen yakalıyoruz
+      secildimi = st.checkbox(f"Seç ({idx+1})", key=f"secim_krt_{idx}")
       if secildimi:
-        secilenler_kutulari.append(kart_ismi)
+        secilenler_listesi.append(kart_adi)
 
   st.markdown("---")
 
-  if len(secilenler_kutulari) > 3:
-    st.error(
-        "Yalnızca 3 adet kart seçebilirsin! Lütfen seçimini 3 karta düşür."
-    )
-  elif len(secilenler_kutulari) == 3:
+  if len(secilenler_listesi) > 3:
+    st.error("Yalnızca 3 adet kart seçebilirsin! Lütfen seçimi 3'e düşür.")
+  elif len(secilenler_listesi) == 3:
     if st.button("Seçtiğim Kartları Aç ve Falımı Gör 🌟"):
-      # Kullanıcının seçtiği 3 kartı sırasıyla GEÇMİŞ, ŞİMDİ, GELECEK olarak atayalım
-      secilen_fal = []
-      zaman_dilimleri = ["gecmis", "simdi", "gelecek"]
+      # Sıralama: 1. Seçilen = Geçmiş, 2. Seçilen = Şimdi, 3. Seçilen = Gelecek
+      zamanlar = ["gecmis", "simdi", "gelecek"]
+      final_fal = []
 
-      for i, k_adi in enumerate(secilenler_kutulari):
+      for i, k_adi in enumerate(secilenler_listesi):
         durum = random.choice(["duz", "ters"])
-        zaman = zaman_dilimleri[i]
-        detay = tum_kartlar[k_adi][durum][zaman]
-        durum_metni = "Düz Akış" if durum == "duz" else "Ters Enerji"
-        secilen_fal.append((k_adi, durum_metni, detay, zaman))
+        zaman_anahtari = zamanlar[i]
+        yorum_metni = tarot_veritabani[k_adi][durum][zaman_anahtari]
+        durum_str = "Düz Akış" if durum == "duz" else "Ters Enerji"
+        final_fal.append((k_adi, durum_str, yorum_metni, zaman_anahtari))
 
-      st.session_state.gercek_fal = secilen_fal
+      st.session_state.gercek_fal = final_fal
       st.session_state.adim = "sonuc"
       st.rerun()
   else:
     st.info(
-        f"Şu an {len(secilenler_kutulari)} kart seçtin. Lütfen tam 3 kart"
-        " işaretle."
+        f"Şu an {len(secilenler_listesi)} kart seçtin. Falının bakılması için"
+        " tam 3 kart işaretlemelisin."
     )
 
   if st.button("← Başa Dön"):
@@ -469,7 +522,10 @@ elif st.session_state.adim == "sonuc":
         f" {st.session_state.is_durumu}</p>",
         unsafe_allow_html=True,
     )
-    st.write("Seçtiğin kartların zaman akışına göre derinlemesine analizi:")
+    st.write(
+        "Seçtiğin kartların zaman dilimlerine göre özel olarak hazırlanan"
+        " analizleri:"
+    )
     st.markdown("---")
 
     basliklar = {
@@ -478,14 +534,14 @@ elif st.session_state.adim == "sonuc":
         "gelecek": "GELECEK (Önündeki Olası Yollar ve Gelişmeler)",
     }
 
-    for k_adi, durum_metni, detay, zaman in st.session_state.gercek_fal:
+    for k_adi, durum_str, yorum_metni, zaman_anahtari in st.session_state.gercek_fal:
       st.markdown(
           f"<div class='tarot-card-box'>"
-          f"<h3>{basliklar[zaman]}</h3>"
+          f"<h3>{basliklar[zaman_anahtari]}</h3>"
           f"<p style='color: #fef08a; font-size: 16px; font-weight: 600;'>{k_adi}"
-          f" <span style='font-size: 13px; color: #cbd5e1;'>({durum_metni})"
+          f" <span style='font-size: 13px; color: #cbd5e1;'>({durum_str})"
           "</span></p>"
-          f"<p><b>Yorum:</b> {detay}</p>"
+          f"<p style='line-height: 1.6;'><b>Analiz:</b> {yorum_metni}</p>"
           f"</div>",
           unsafe_allow_html=True,
       )
