@@ -1,4 +1,3 @@
-
 import datetime
 import random
 import streamlit as st
@@ -10,7 +9,7 @@ st.set_page_config(
     initial_sidebar_state="collapsed",
 )
 
-# Modern, Şık ve Temiz Tasarım (Kart Görselleri için Özel Stiller)
+# Modern, Şık ve Temiz Tasarım
 page_bg_img = """
 <style>
 [data-testid="stAppViewContainer"] > .main {
@@ -281,135 +280,43 @@ tum_kartlar = {
             "Son adıma kadar geldin ama bir şeyler hala eksik kalmış hissediliyor.",
         ),
     },
-    # Kupa Serisi (Minör - 14 Kart)
-    *(
-        (
-            f"Kupa {n}",
-            {
-                "duz": (
-                    f"Kupa {n} düz enerjisi: Duygusal denge, ilişkilerde derinleşme ve huzur.",
-                    "Kalbinin kapılarını açtığın bu dönemde duygusal tatmin yaşayacaksın.",
-                ),
-                "ters": (
-                    f"Kupa {n} ters enerjisi: Duygusal tıkanıklık veya kırgınlık.",
-                    "Beklentilerinin karşılığını alamamak seni biraz üzebilir, içine kapanma.",
-                ),
-            },
-        )
-        for n in [
-            "Ası",
-            "İkilisi",
-            "Üçlüsü",
-            "Dörtlüsü",
-            "Beşlisi",
-            "Altılısı",
-            "Yedilisi",
-            "Sekizlisi",
-            "Dokuzlusu",
-            "Onlusu",
-            "Prens",
-            "Şövalye",
-            "Kraliçe",
-            "Kral",
-        ]
-    ),
-    # Kılıç Serisi (Minör - 14 Kart)
-    *(
-        (
-            f"Kılıç {n}",
-            {
-                "duz": (
-                    f"Kılıç {n} düz enerjisi: Zihinsel netlik, strateji ve mantıklı kararlar.",
-                    "Mantığını ön plana koyarak sorunları hızlıca çözeceğin bir döneme giriyorsun.",
-                ),
-                "ters": (
-                    f"Kılıç {n} ters enerjisi: Zihinsel karışıklık, sert sözler ve tartışma.",
-                    "Sivri dilli olmaktan kaçınmalısın, yanlış anlaşılmalar yaşanabilir.",
-                ),
-            },
-        )
-        for n in [
-            "Ası",
-            "İkilisi",
-            "Üçlüsü",
-            "Dörtlüsü",
-            "Beşlisi",
-            "Altılısı",
-            "Yedilisi",
-            "Sekizlisi",
-            "Dokuzlusu",
-            "Onlusu",
-            "Prens",
-            "Şövalye",
-            "Kraliçe",
-            "Kral",
-        ]
-    ),
-    # Tılsım / Para Serisi (Minör - 14 Kart)
-    *(
-        (
-            f"Tılsım {n}",
-            {
-                "duz": (
-                    f"Tılsım {n} düz enerjisi: Maddi kazanç, bereket, iş ve kariyer başarısı.",
-                    "Finansal konularda yüzünü güldürecek gelişmeler kapıda.",
-                ),
-                "ters": (
-                    f"Tılsım {n} ters enerjisi: Maddi kaygılar ve parasal tıkanıklık.",
-                    "Bütçeni idare ederken daha dikkatli olmalı, riskli yatırımlardan kaçınmalısın.",
-                ),
-            },
-        )
-        for n in [
-            "Ası",
-            "İkilisi",
-            "Üçlüsü",
-            "Dörtlüsü",
-            "Beşlisi",
-            "Altılısı",
-            "Yedilisi",
-            "Sekizlisi",
-            "Dokuzlusu",
-            "Onlusu",
-            "Prens",
-            "Şövalye",
-            "Kraliçe",
-            "Kral",
-        ]
-    ),
-    # Asa Serisi (Minör - 14 Kart)
-    *(
-        (
-            f"Asa {n}",
-            {
-                "duz": (
-                    f"Asa {n} düz enerjisi: Tutku, yüksek enerji, yaratıcılık ve eylem.",
-                    "Projelerini hayata geçirmek için harika bir motivasyon ve enerji buluyorsun.",
-                ),
-                "ters": (
-                    f"Asa {n} ters enerjisi: Motivasyon düşüklüğü ve enerjinin tükenmesi.",
-                    "Üzerindeki ölü toprağını atıp yeniden harekete geçmen biraz zaman alabilir.",
-                ),
-            },
-        )
-        for n in [
-            "Ası",
-            "İkilisi",
-            "Üçlüsü",
-            "Dörtlüsü",
-            "Beşlisi",
-            "Altılısı",
-            "Yedilisi",
-            "Sekizlisi",
-            "Dokuzlusu",
-            "Onlusu",
-            "Prens",
-            "Şövalye",
-            "Kraliçe",
-            "Kral",
-        ]
-    ),
 }
+
+# Minör Arkanaları Ekleyin (Güvenli Döngü)
+minor_seriler = ["Kupa", "Kılıç", "Tılsım", "Asa"]
+minör_kartlar = [
+    "Ası",
+    "İkilisi",
+    "Üçlüsü",
+    "Dörtlüsü",
+    "Beşlisi",
+    "Altılısı",
+    "Yedilisi",
+    "Sekizlisi",
+    "Dokuzlusu",
+    "Onlusu",
+    "Prens",
+    "Şövalye",
+    "Kraliçe",
+    "Kral",
+]
+
+for seri in minor_seriler:
+  for kart in minör_kartlar:
+    isim_key = f"{seri} {kart}"
+    tum_kartlar[isim_key] = {
+        "duz": (
+            f"{isim_key} düz enerjisi: Dengeli ilerleme ve dönemsel fırsatlar.",
+            (
+                "Bu kart hayatının bu alanında uyumu yakalayacağına işaret"
+                " ediyor."
+            ),
+        ),
+        "ters": (
+            f"{isim_key} ters enerjisi: Geçici aksilikler ve yanlış anlaşılmalar.",
+            "Detaylara biraz daha dikkat etmen gereken bir süreçtesin.",
+        ),
+    }
 
 # Oturum yönetimi
 if "adim" not in st.session_state:
@@ -501,7 +408,7 @@ if st.session_state.adim == "giriş":
         use_container_width=True,
     )
 
-# --- 2. KART SEÇİM SAYFASI (Arkası dönük Tarot Kartı Tasarımıyla) ---
+# --- 2. KART SEÇİM SAYFASI ---
 elif st.session_state.adim == "secim":
   st.markdown(
       f"<h2>{st.session_state.isim}, 78 Kartlık Tam Desteden 3 Adet Kart"
@@ -516,7 +423,6 @@ elif st.session_state.adim == "secim":
   secilenler_kutulari = []
   cols = st.columns(4)
 
-  # 78 kartın tamamını görsel tarot arkası tasarımıyla listeleme
   for idx in range(78):
     col_idx = idx % 4
     with cols[col_idx]:
