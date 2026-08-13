@@ -112,7 +112,7 @@ def burc_hesapla(dogum_tarihi):
   else:
     return "Balık"
 # Tarot 78 Kart Detaylı Zaman Anlam Sözlüğü
-tarot_sozlugu = {
+tarot_veritabani = {
     1: {
         "isim": "DELİ (THE FOOL)",
         "duz_gecmis": "Geçmişte yeni başlangıçlara, masumiyete ve bilinmeyene doğru özgürce ve korkusuzca attığın saf adımlar seni bu noktaya getirdi.",
