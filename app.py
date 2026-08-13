@@ -384,7 +384,7 @@ if st.session_state.adim == "giriş":
   col1, col2, col3 = st.columns([1, 2, 1])
   with col2:
     st.markdown(
-        "<h1 style='text-align: center;'>✨ Tarot Bakımı ✨</h1>",
+        "<h1 style='text-align: center;'> Tarot Bakımı💌</h1>",
         unsafe_allow_html=True,
     )
     st.markdown(
@@ -417,7 +417,7 @@ if st.session_state.adim == "giriş":
         "Çalışma Durumun:", ["Çalışıyor", "Çalışmıyor", "Öğrenci"]
     )
 
-    if st.button("Kart Seçim Ekranına Geç 💎"):
+    if st.button("Kart Seçim Ekranına Geç 🩵"):
       bugun = datetime.date.today()
       yas = (
           bugun.year
@@ -502,8 +502,8 @@ elif st.session_state.adim == "sonuc":
 
   with col_orta:
     st.markdown(
-        f"<h2 style='text-align: center;'>✨ {st.session_state.isim}"
-        f" ({st.session_state.burc}) İçin Tarot Rehberliği ✨</h2>",
+        f"<h2 style='text-align: center;'>⭐ {st.session_state.isim}"
+        f" ({st.session_state.burc}) İçin Tarot Rehberliği ⭐</h2>",
         unsafe_allow_html=True,
     )
     st.markdown(
