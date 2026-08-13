@@ -3,24 +3,32 @@ import random
 import streamlit as st
 
 st.set_page_config(
-    page_title=" Tarot bakımıi",
+    page_title="Tarot bakımı",
     page_icon="💎",
     layout="centered",
     initial_sidebar_state="collapsed",
 )
 
-# İstediğin o mistik arka plan, zarif dalgalar ve işlemeli dikey lüks tarot kartı tasarımı
+# Gönderdiğin görsellere tam uyumlu: Beyaz/gold tül dalgaları ve yıldız tozlu arka plan estetiği
 page_bg_img = """
 <style>
-/* Derin gece mavisi, kadife mor ve zarif gold/beyaz parıltılı dalgalı arka plan */
+/* Ana uygulama arka planı: Derin gece mavisi, beyaz dalgalı tül hissi ve gold parıltılar */
 [data-testid="stAppViewContainer"] > .main {
 background: 
-    radial-gradient(circle at 20% 20%, rgba(212, 175, 55, 0.08) 0%, transparent 40%),
-    radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.04) 0%, transparent 40%),
-    radial-gradient(circle at 50% 50%, #1a102f 0%, #0d0614 60%, #05020a 100%);
+    radial-gradient(circle at 50% 30%, rgba(255, 255, 255, 0.07) 0%, transparent 60%),
+    linear-gradient(135deg, #0b0714 0%, #161026 50%, #08040d 100%);
 color: #f3f4f6;
 font-family: 'Cinzel', 'Inter', serif;
+background-attachment: fixed;
 }
+
+/* Sayfa başlıkları ve yazı zarifliği */
+h1, h2, h3 { 
+color: #fef08a !important; 
+font-family: 'Cinzel', serif; 
+text-shadow: 0 2px 10px rgba(255, 215, 0, 0.2);
+}
+p, label, span { color: #e2e8f0 !important; }
 
 /* Buton tasarımı */
 .stButton>button {
@@ -40,9 +48,9 @@ background: linear-gradient(135deg, #e5b83b 0%, #c59b27 100%);
 box-shadow: 0 6px 25px rgba(229, 184, 59, 0.6);
 }
 
-/* Tarot kart kutusu */
+/* Tarot kart sonuç kutusu */
 .tarot-card-box {
-background: rgba(26, 16, 47, 0.85);
+background: rgba(22, 14, 38, 0.85);
 border: 1px solid rgba(197, 155, 39, 0.4);
 padding: 24px;
 border-radius: 16px;
@@ -51,32 +59,31 @@ backdrop-filter: blur(16px);
 box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
 }
 
-/* Gerçekçi dikey ve dikdörtgen tarot kartı arkası görünümü - Gold işlemeli */
+/* SEÇİM EKRANI İÇİN KARTLARIN ARKA YÜZÜ: Gönderdiğin tül, gold yıldız ve işlemeli estetik */
 .tarot-back {
-background: linear-gradient(135deg, #160c24 0%, #2a1b4e 50%, #160c24 100%);
-border: 2px solid #c59b27;
-border-radius: 12px;
+background: 
+    radial-gradient(circle at 50% 50%, rgba(255, 215, 0, 0.15) 0%, transparent 70%),
+    linear-gradient(135deg, #12091f 0%, #221438 50%, #12091f 100%);
+border: 2px solid #dfb135;
+border-radius: 14px;
 width: 100%;
-height: 160px;
+height: 170px;
 display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
 text-align: center;
-box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6), inset 0 0 15px rgba(197, 155, 39, 0.3);
+box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7), inset 0 0 18px rgba(212, 175, 55, 0.3);
 margin-bottom: 8px;
 transition: all 0.3s ease;
 position: relative;
 }
 
 .tarot-back:hover {
-transform: translateY(-5px);
-border-color: #ffd700;
-box-shadow: 0 10px 25px rgba(197, 155, 39, 0.5), inset 0 0 20px rgba(255, 215, 0, 0.4);
+transform: translateY(-6px);
+border-color: #ffe875;
+box-shadow: 0 12px 30px rgba(212, 175, 55, 0.5), inset 0 0 25px rgba(255, 232, 117, 0.5);
 }
-
-h1, h2, h3 { color: #fef08a !important; font-family: 'Cinzel', serif; }
-p, label, span { color: #e2e8f0 !important; }
 </style>
 """
 st.markdown(page_bg_img, unsafe_allow_html=True)
@@ -377,7 +384,7 @@ if st.session_state.adim == "giriş":
   col1, col2, col3 = st.columns([1, 2, 1])
   with col2:
     st.markdown(
-        "<h1 style='text-align: center;'>✨ Mistik Tarot Deneyimi ✨</h1>",
+        "<h1 style='text-align: center;'> 🤍 Tarot bakımı🤍</h1>",
         unsafe_allow_html=True,
     )
     st.markdown(
@@ -410,7 +417,7 @@ if st.session_state.adim == "giriş":
         "Çalışma Durumun:", ["Çalışıyor", "Çalışmıyor", "Öğrenci"]
     )
 
-    if st.button("Kart Seçim Ekranına Geç ✨"):
+    if st.button("Kart Seçim Ekranına Geç 💎"):
       bugun = datetime.date.today()
       yas = (
           bugun.year
@@ -442,7 +449,8 @@ elif st.session_state.adim == "secim":
   )
   st.markdown(
       "<p style='text-align: center;'>Aşağıdaki 78 gizemli karttan sezgilerinin"
-      " seni çektiği <b>3 adet kartı</b> dikey olarak seç:</p>",
+      " seni çektiği <b>3 adet kartı</b> tül işlemeli arka yüzlerinden"
+      " seç:</p>",
       unsafe_allow_html=True,
   )
   st.markdown("---")
@@ -544,6 +552,6 @@ elif st.session_state.adim == "sonuc":
 
     st.markdown("---")
 
-    if st.button("Yeni Bir Fal Bak ✨"):
+    if st.button("Yeni Bir Fal Bak 🫧"):
       st.session_state.adim = "giriş"
       st.rerun()
