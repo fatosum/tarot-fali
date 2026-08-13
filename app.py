@@ -3,66 +3,77 @@ import random
 import streamlit as st
 
 st.set_page_config(
-    page_title="Mistik Tarot Deneyimi",
-    page_icon="✨",
+    page_title="tarot falı",
+    page_icon="💎 ",
     layout="centered",
     initial_sidebar_state="collapsed",
 )
 
-# Mistik ve şık tasarım entegrasyonu
+# İstediğin o mistik arka plan ve dikey dikdörtgen tarot kartı tasarımı
 page_bg_img = """
 <style>
+/* Derin modern gece mavisi ve beyaz dalgalanmalar ve gold parıltı ve işlemeler arka plan */
 [data-testid="stAppViewContainer"] > .main {
-background: linear-gradient(135deg, #090d16 0%, #171c28 50%, #0f172a 100%);
-color: #f1f5f9;
-font-family: 'Inter', sans-serif;
+background: radial-gradient(circle at 50% 20%, #1a102f 0%, #0d0614 60%, #05020a 100%);
+color: #f3f4f6;
+font-family: 'Cinzel', 'Inter', serif;
 }
+
+/* Buton tasarımı */
 .stButton>button {
 width: 100%;
-background: linear-gradient(135deg, #d4af37 0%, #aa771c 100%);
+background: linear-gradient(135deg, #c59b27 0%, #8a6414 100%);
 color: #ffffff;
 border-radius: 12px;
 font-size: 16px;
 height: 50px;
-border: none;
+border: 1px solid #ffd700;
 font-weight: 600;
-box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+box-shadow: 0 4px 20px rgba(197, 155, 39, 0.4);
 transition: all 0.3s ease;
 }
 .stButton>button:hover {
-background: linear-gradient(135deg, #e6c555 0%, #d4af37 100%);
-box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+background: linear-gradient(135deg, #e5b83b 0%, #c59b27 100%);
+box-shadow: 0 6px 25px rgba(229, 184, 59, 0.6);
 }
+
+/* Tarot kart kutusu */
 .tarot-card-box {
-background: rgba(23, 28, 40, 0.7);
-border: 1px solid rgba(212, 175, 55, 0.3);
+background: rgba(26, 16, 47, 0.85);
+border: 1px solid rgba(197, 155, 39, 0.4);
 padding: 24px;
 border-radius: 16px;
 margin-bottom: 20px;
-backdrop-filter: blur(12px);
-box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+backdrop-filter: blur(16px);
+box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
 }
+
+/* Gerçekçi dikey ve dikdörtgen tarot kartı arkası görünümü */
 .tarot-back {
-background: linear-gradient(145deg, #1a2234 0%, #0f172a 100%);
-border: 2px solid #d4af37;
-border-radius: 10px;
+background: linear-gradient(135deg, #160c24 0%, #2a1b4e 50%, #160c24 100%);
+border: 2px solid #c59b27;
+border-radius: 12px;
 width: 100%;
-height: 110px;
+height: 150px;
 display: flex;
 flex-direction: column;
 align-items: center;
 justify-content: center;
 text-align: center;
-box-shadow: 0 4px 15px rgba(212, 175, 55, 0.15);
+box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6), inset 0 0 15px rgba(197, 155, 39, 0.2);
 margin-bottom: 8px;
-transition: transform 0.2s ease;
+transition: all 0.3s ease;
+position: relative;
 }
+
 .tarot-back:hover {
-transform: translateY(-3px);
-border-color: #f3e5ab;
+transform: translateY(-5px);
+border-color: #ffd700;
+box-shadow: 0 10px 25px rgba(197, 155, 39, 0.4), inset 0 0 20px rgba(255, 215, 0, 0.3);
 }
-h1, h2, h3 { color: #fdfbf7 !important; font-weight: 600; }
-p, label, span { color: #cbd5e1 !important; }
+
+h1, h2, h3 { color: #fef08a !important; font-family: 'Cinzel', serif; }
+p, label, span { color: #e2e8f0 !important; }
 </style>
 """
 st.markdown(page_bg_img, unsafe_allow_html=True)
@@ -368,7 +379,7 @@ if st.session_state.adim == "giriş":
         unsafe_allow_html=True,
     )
     st.markdown(
-        "<p style='text-align: center; color: #d4af37;'>Kaderinin"
+        "<p style='text-align: center; color: #fef08a;'>Kaderinin"
         " fısıltılarını birlikte dinleyelim</p>",
         unsafe_allow_html=True,
     )
@@ -383,7 +394,7 @@ if st.session_state.adim == "giriş":
 
     medeni_durum = st.selectbox(
         "Kalp Durumun:",
-        ["Bekar & Özgür", "İlişkisi Var / Kalbi Dolu", "Evli", "Karmaşık / Akışta"],
+        ["Bekar ", "İlişkisi Var ", "Evli", "Flörtleşmekte" , "Yeni ayrılmış", "Boşanmış" ],
     )
 
     is_durumu = st.selectbox(
@@ -416,14 +427,16 @@ if st.session_state.adim == "giriş":
 # --- 2. KART SEÇİM SAYFASI ---
 elif st.session_state.adim == "secim":
   st.markdown(
-      f"<h2>Hoş geldin sevgili {st.session_state.isim} ({st.session_state.burc}"
-      " Burcu)</h2>",
+      f"<h2 style='text-align: center;'>Hoş geldin sevgili {st.session_state.isim}"
+      f" ({st.session_state.burc} Burcu)</h2>",
       unsafe_allow_html=True,
   )
-  st.write(
-      "Aşağıdaki 78 gizemli karttan sezgilerinin seni çektiği **3 adet"
-      " kartı** dikey olarak seç ve derinlere inelim:"
+  st.markdown(
+      "<p style='text-align: center;'>Aşağıdaki 78 gizemli karttan sezgilerinin"
+      " seni çektiği <b>3 adet kartı</b> dikey olarak seç:</p>",
+      unsafe_allow_html=True,
   )
+  st.markdown("---")
 
   secilenler_kutulari = []
   cols = st.columns(4)
@@ -433,9 +446,9 @@ elif st.session_state.adim == "secim":
     with cols[col_idx]:
       st.markdown(
           "<div class='tarot-back'>"
-          "<span style='font-size: 20px;'>✨</span>"
-          f"<b style='color: #f3e5ab; font-size: 11px; margin-top: 5px;'>Kart"
-          f" #{idx+1}</b>"
+          "<span style='font-size: 22px;'>🔮</span>"
+          f"<b style='color: #fef08a; font-size: 11px; margin-top: 4px;'>GİZLİ"
+          f" KART #{idx+1}</b>"
           "</div>",
           unsafe_allow_html=True,
       )
@@ -477,7 +490,7 @@ elif st.session_state.adim == "sonuc":
         unsafe_allow_html=True,
     )
     st.markdown(
-        f"<p style='text-align: center; color: #d4af37; font-size: 14px;'>Kalp"
+        f"<p style='text-align: center; color: #fef08a; font-size: 14px;'>Kalp"
         f" Durumu: {st.session_state.medeni_durum} | Durum:"
         f" {st.session_state.is_durumu}</p>",
         unsafe_allow_html=True,
@@ -511,8 +524,8 @@ elif st.session_state.adim == "sonuc":
       st.markdown(
           f"<div class='tarot-card-box'>"
           f"<h3>{konumlar[i]}</h3>"
-          f"<p style='color: #f3e5ab; font-size: 16px; font-weight: 600;'>{k_adi}"
-          f" <span style='font-size: 13px; color: #94a3b8;'>({durum_str})"
+          f"<p style='color: #fef08a; font-size: 16px; font-weight: 600;'>{k_adi}"
+          f" <span style='font-size: 13px; color: #cbd5e1;'>({durum_str})"
           "</span></p>"
           f"<p><b>Özet:</b> {ozet}</p>"
           f"<p><b>Derin Yorum:</b> {derin}{ekstra_yorum}</p>"
