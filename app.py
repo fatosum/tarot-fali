@@ -512,7 +512,7 @@ tarot_veritabani = {
     45: {
         "isim": "KUPA DOKUZLUSU (NINE OF CUPS)",
         "duz_gecmis": "Geçmişte dileklerin kabul olmuş, keyfin, huzurun ve kişisel tatminin doruklarında bir dönem yaşamışsın.",
-        "duz_simdi": "Şu an isteklerinin gerçekleştiği, "dilek kartı" denilen, son derece mutlu ve tatmin dolu bir andasın.",
+        "duz_simdi": "Şu an isteklerinin gerçekleştiği, 'dilek kartı' denilen, son derece mutlu ve tatmin dolu bir andasın.",
         "duz_gelecek": "Gelecekte yüzünü güldürecek, kalbini tatmin edecek harika dileklerin gerçeğe dönüştüğünü göreceksin.",
         "ters_gecmis": "Geçmişte doyumsuzluk yaşamış, elde ettiklerinin kıymetini bilemeyerek mutsuzluk üretmişsin.",
         "ters_simdi": "Şu sıralar içsel bir tatminsizlik var; her şeyim var ama sanki eksik bir şeyler var diyorsun.",
