@@ -111,709 +111,641 @@ def burc_hesapla(dogum_tarihi):
     return "Kova"
   else:
     return "Balık"
-# Tarot 78 Kart Detaylı Zaman Anlam Sözlüğü
 tarot_veritabani = {
-    1: {
-        "isim": "DELİ (THE FOOL)",
-        "duz_gecmis": "Geçmişte yeni başlangıçlara, masumiyete ve bilinmeyene doğru özgürce ve korkusuzca attığın saf adımlar seni bu noktaya getirdi.",
-        "duz_simdi": "Şu an hayatında sıfırdan bir yola çıkma, iç sesine uyarak büyük bir risk alma ve spontan yaşama enerjisindesin.",
-        "duz_gelecek": "Gelecekte karşına yepyeni bir macera ve saf inançla atılacağın tertemiz bir sayfa açılacak.",
-        "ters_gecmis": "Geçmişteki pervasız, düşüncesiz ve riskleri hesapsızca alan hareketlerin başına bazı talihsizlikler açmış.",
-        "ters_simdi": "Şu sıralar ayağını taşa takıp düşmek üzeresin; körü körüne aldığın riskler seni tehlikeli bir yola sokuyor.",
-        "ters_gelecek": "Gelecekte aşırı aceleciliğin ve tedbirsizliğin yüzünden aptalca hatalar yapma riskin var, dikkatli olmalısın."
+    # --- BÜYÜK ARKANA (0 - 21) ---
+    "0 - DİVANE / APTAL (THE FOOL)": {
+        "duz_gecmis": "Geçmişte büyük riskler almış, hiçbir şeyin seni durdurmasına izin vermeden saf bir cesaretle yola çıkmışsın.",
+        "duz_simdi": "Şu an hayatında yepyeni bir sayfa açılıyor; içindeki saf merakla bilinmeyene adım atıyorsun.",
+        "duz_gelecek": "Gelecekte karşına taptaze fırsatlar çıkacak, sıfırdan başlayacağın maceralar seni bekliyor.",
+        "ters_gecmis": "Geçmişte düşüncesizce atılan adımlar ve hesapsız riskler başına bazı işler açmış.",
+        "ters_simdi": "Şu an bir adım atmaktan korkuyor, korkaklık ile saflık arasında sıkışıp kalmış durumdasın.",
+        "ters_gelecek": "Gelecekte potansiyel fırsatları kaçırmamak için aşırı temkinli yapından biraz sıyrılman gerekecek."
     },
-    2: {
-        "isim": "BÜYÜCÜ (THE MAGICIAN)",
-        "duz_gecmis": "Geçmişte elindeki tüm imkanları, iradeyi ve becerileri ustalıkla kullanarak çevreni ve şartları kendi lehine dönüştürmüşsün.",
-        "duz_simdi": "Şu an elinde çok güçlü kozlar var; yaratıcılığın ve zekanla her türlü zorluğun üstesinden gelebilecek güçtesin.",
-        "duz_gelecek": "Gelecekte becerilerin sayesinde niyet ettiğin tüm projeleri gerçeğe dönüştürecek ve hedeflerini tezahür ettireceksin.",
-        "ters_gecmis": "Geçmişte yeteneklerini yanlış yönlendirmiş, hileli yollara sapmış ya da manipülasyonlarla kısa vadeli çıkarlar aramışsın.",
-        "ters_simdi": "Şu an çevrende seni sahte vaatlerle kandırmaya çalışan, parmağında oynatmak isteyen manipülatif enerjiler ve insanlar var.",
-        "ters_gelecek": "Gelecekte kötü niyetli kişilerin kurabileceği tuzaklara ve potansiyelini harcama tehlikesine karşı uyanık olmalısın."
+    "1 - BÜYÜCÜ (THE MAGICIAN)": {
+        "duz_gecmis": "Geçmişte elindeki tüm yetenekleri ve araçları ustalıkla bir araya getirerek somut başarılar elde etmişsin.",
+        "duz_simdi": "Şu an kaderini kendi ellerinle yazma gücüne ve iradesine sahipsin; ne dilesen gerçeğe dönüştürebilirsin.",
+        "duz_gelecek": "Gelecekte projelerini hayata geçirmek için harika bir döneme girecek, etrafını büyüleyeceksin.",
+        "ters_gecmis": "Geçmişte yeteneklerini yanlış yönlendirmiş ya da potansiyelini manipülasyon için harcamış olabilirsin.",
+        "ters_simdi": "Şu an elindeki imkanları kullanamıyor, enerjini dağınık harcıyor ve kendine güvensizlik duyuyorsun.",
+        "ters_gelecek": "Gelecekte aldatıcı durumlara ve potansiyelini harcamaya karşı dikkatli olmalısın."
     },
-    3: {
-        "isim": "AZİZE (THE HIGH PRIESTESS)",
-        "duz_gecmis": "Geçmişte iç sesine kulak verdiğin, sırları sezdiğin ve dış dünyadan uzaklaşıp tamamen kendi iç bilgeliğine sığındığın bir dönem geçirdin.",
-        "duz_simdi": "Şu an mantığından ziyade içgüdülerinin ve sezgilerinin rehberliğine ihtiyacın var; olayların arkasındaki gizli gerçekler saklı duruyor.",
-        "duz_gelecek": "Gelecekte bugüne kadar saklı kalmış bazı sırlar ve hakikatler önüne serilecek, sezgilerin seni asla yanıltmayacak.",
-        "ters_gecmis": "Geçmişte sezgilerini görmezden gelip tamamen dış etkenlerle hareket ettiğin için yanılgılara ve güvensizliklere sürüklenmişsin.",
-        "ters_simdi": "Şu sıralar iç sesine kulak tıkayıp yüzeysel kararlar alıyor, etrafındaki dedikodulardan ve asılsız kuruntulardan etkileniyorsun.",
-        "ters_gelecek": "Gelecekte sezgisel kopukluklar ve sinsi planlar yüzünden yanlış anlamalar ve güven sarsılmaları yaşayabilirsin."
+    "2 - AZİZE (THE HIGH PRIESTESS)": {
+        "duz_gecmis": "Geçmişte mantığından ziyade iç sesine ve sezgilerine kulak vererek doğru kararlar almışsın.",
+        "duz_simdi": "Şu an dış dünyadan uzaklaşıp kendi iç sesini dinlemen, sırları ve görünmeyen gerçeği fark etmen gerekiyor.",
+        "duz_gelecek": "Gelecekte sezgilerinin seni asla yanıltmadığını görecek, manevi olarak derinleşeceksin.",
+        "ters_gecmis": "Geçmişte iç sesini bastırmış, sezgilerini görmezden gelerek hatalı yollara sapmışsın.",
+        "ters_simdi": "Şu an içsel sesinle olan bağın zayıflamış durumda; bazı sırlar ya da saklanan gerçekler kafanı karıştırıyor.",
+        "ters_gelecek": "Gelecekte dedikodulara ve sezgilerini yanlış yorumlamaya karşı uyanık olmalısın."
     },
-    4: {
-        "isim": "İMPARATORİÇE (THE EMPRESS)",
-        "duz_gecmis": "Geçmişte bolluk, bereket, anaç şefkat ve doğanın iyileştirici enerjisiyle beslenerek ruhsal ve maddesel olarak büyümüşsün.",
-        "duz_simdi": "Şu an hayatında üretkenliğin, yaratıcılığın ve huzurlu bir yuva ortamının tadını çıkardığın bereketli bir dönemdesin.",
-        "duz_gelecek": "Gelecekte emeklerinin karşılığını fazlasıyla alacağın, maddi ve manevi bolluk dolu, huzurlu günler seni bekliyor.",
-        "ters_gecmis": "Geçmişte kıtlık bilinci, yaratıcı tıkanıklıklar veya aşırı boğucu, baskıcı ilişkiler yüzünden enerjin tüketilmiş.",
-        "ters_simdi": "Şu an kendine ve etrafındakilere yeterince özen göstermiyor, tembellik veya aşırı sahiplenici tavırlar yüzünden tıkanmalar yaşıyorsun.",
-        "ters_gelecek": "Gelecekte verimsizlik, maddi/manevi kıtlık hissi ve bakımsızlıktan kaynaklanan sorunlarla yüzleşmen gerekebilir."
+    "3 - İMPARATORİÇE (THE EMPRESS)": {
+        "duz_gecmis": "Geçmişte bolluk, bereket, yaratıcılık ve sevgi dolu bir besleme dönemi geride kalmış.",
+        "duz_simdi": "Şu an üretkenliğin zirvesindesin; doğayla uyum içinde, hayatın tadını çıkaran bir enerjiye sahipsin.",
+        "duz_gelecek": "Gelecekte maddi ve manevi anlamda büyük bir bolluk, büyüme ve huzur seni bekliyor.",
+        "ters_gecmis": "Geçmişte aşırı düşkünlük ya da tükenmişlik hissi yaratıcılığını tıkamış.",
+        "ters_simdi": "Şu an kendini ihmal etmiş hissedebilir, üretkenlikte düşüş ve şefkat eksikliği yaşayabilirsin.",
+        "ters_gelecek": "Gelecekte öz bakımına ve kişisel sınırlarına daha çok dikkat etmen gerekebilir."
     },
-    5: {
-        "isim": "İMPARATOR (THE EMPEROR)",
-        "duz_gecmis": "Geçmişte hayatına sağlam bir düzen kurmuş, disiplinli ve koruyucu bir otorite figürü olarak kararlar almışsın.",
-        "duz_simdi": "Şu an otoriteni kurma, kuralları belirleme ve hayatını tamamen mantıksal bir disiplin altına alma zorunluluğundasın.",
-        "duz_gelecek": "Gelecekte işlerini tamamen rayına oturtacağın, güçlü pozisyonlar elde edeceğin ve sağlam temeller kuracağın bir dönem geliyor.",
-        "ters_gecmis": "Geçmişte aşırı baskıcı, zorba veya kontrolcü tutumların çevrendeki insanlarla çatışmalara yol açmış.",
-        "ters_simdi": "Şu an ya hayatındaki otorite figürlerinin baskısıyla eziliyor ya da kendi diktatörce tavırlarınla çevreni boğuyorsun.",
-        "ters_gelecek": "Gelecekte kuralların yıkılması, disiplinsizlik ve gücü kötüye kullanmaktan doğan büyük krizlerle karşılaşabilirsin."
+    "4 - İMPARATOR (THE EMPEROR)": {
+        "duz_gecmis": "Geçmişte hayatına çeki düzen vermiş, güçlü bir disiplin ve otorite kurarak sağlam temeller atmışsın.",
+        "duz_simdi": "Şu an hayatında kontrolü eline alma, kuralları koyma ve liderlik etme zamanındasın.",
+        "duz_gelecek": "Gelecekte iş ve kariyer hayatında sağlam bir konuma gelecek, düzeni kuracaksın.",
+        "ters_gecmis": "Geçmişte aşırı baskıcı ya da katı tutumların çevrendekilerle çatışma yaratmış.",
+        "ters_simdi": "Şu an otorite figürleriyle sorunlar yaşıyor ya da hayatındaki kontrolü tamamen kaybetmiş hissediyorsun.",
+        "ters_gelecek": "Gelecekte katı kurallardan esneklik kazanmaya doğru evrilmen gerekecek."
     },
-    6: {
-        "isim": "HİEROFANT (THE HIEROPHANT)",
-        "duz_gecmis": "Geçmişte geleneksel değerlere bağlı kalmış, ruhsal rehberlerden feyz almış ve toplumsal kurallara uyum sağlamışsın.",
-        "duz_simdi": "Şu an doğru bildiğin inanç sistemine, toplumsal normlara ve kurallara bağlı kalman gereken bir süreçtesin.",
-        "duz_gelecek": "Gelecekte resmi bir anlaşma, evlilik veya topluluk içinde saygınlık kazandıracak kurumsal bir yapıya adım atacaksın.",
-        "ters_gecmis": "Geçmişte körü körüne dayatılan kurallara isyan etmiş ya da yanlış dogmalardan dolayı zarar görmüşsün.",
-        "ters_simdi": "Şu sıralar gelenekleri yıkma, toplumsal baskılara karşı çıkma veya yanlış bir inanç sisteminin kurbanı olma eğilimindesin.",
-        "ters_gelecek": "Gelecekte dogmatik düşünceler yüzünden çevrenle ters düşebilir, yanlış yönlendirilmiş kurallarla kısıtlanabilirsin."
+    "5 - HİEROFANT / AZİZ (THE HIEROPHANT)": {
+        "duz_gecmis": "Geçmişte geleneksel değerlere bağlı kalmış, kurallara uyarak güvenli yollardan yürümüşsün.",
+        "duz_simdi": "Şu an bir mentorun rehberliğine ihtiyaç duyabilir ya da toplumsal kurallara uyum sağlayabilirsin.",
+        "duz_gelecek": "Gelecekte resmi anlaşmalar, evlilik veya toplumsal kabul gören kalıcı adımlar atabilirsin.",
+        "ters_gecmis": "Geçmişte kalıplaşmış kurallara başkaldırmış, gelenekleri yıkmışsın.",
+        "ters_simdi": "Şu an dogmalardan sıkılmış, kendi inanç sistemini kurmak istiyor ancak arada kalmış hissediyorsun.",
+        "ters_gelecek": "Gelecekte gelenek dışı seçimler yaparken yakın çevrenin tepkileriyle karşılaşabilirsin."
     },
-    7: {
-        "isim": "AŞIKLAR (THE LOVERS)",
-        "duz_gecmis": "Geçmişte hayatını kökten değiştiren önemli bir ilişki ya da değerler arasında kritik bir seçim yapmışsın.",
-        "duz_simdi": "Şu an kalbinle mantığın arasında kaldığın bir karar aşamasındasın veya hayatında derin bir uyum/bağlantı var.",
-        "duz_gelecek": "Gelecekte hayatının yönünü belirleyecek kalıcı bir ortaklık, aşk veya ruhsal bir bütünleşme seni bekliyor.",
-        "ters_gecmis": "Geçmişte yanlış bir seçim yapmış, kalbini kırmış ya da ilişkilerde uyumsuzluklar ve değer çatışmaları yaşamışsın.",
-        "ters_simdi": "Şu an kararsızlıklar, yanlış ilişkiler veya içsel değerlerinle çelişen bir seçim yapma baskısı altındasın.",
-        "ters_gelecek": "Gelecekte yanlış ortaklıklar, güvensizlikler veya yanlış tercihlerden ötürü pişmanlıklar kapını çalabilir."
+    "6 - AŞIKLAR (THE LOVERS)": {
+        "duz_gecmis": "Geçmişte hayatını kökten değiştiren büyük bir değerler veya ilişki seçimi yapmışsın.",
+        "duz_simdi": "Şu an kalbinle mantığın arasında kaldığın kritik bir dönemeçtesin; uyum ve bağ arıyorsun.",
+        "duz_gelecek": "Gelecekte hayatını birleştireceğin ortaklıklar ya da ruhuna hitap eden harika bir birliktelik kapıda.",
+        "ters_gecmis": "Geçmişte yanlış bir ilişki ya da hatalı bir ortaklık seçiminden dolayı pişmanlıklar yaşamışsın.",
+        "ters_simdi": "Şu an değerler çatışması yaşıyor, kararsızlıklar içinde bocalıyorsun.",
+        "ters_gelecek": "Gelecekte ilişkilerde yaşanan uyumsuzlukları çözmek için dürüst yüzleşmeler yapman gerekecek."
     },
-    8: {
-        "isim": "SAVAŞ ARABASI (THE CHARIOT)",
-        "duz_gecmis": "Geçmişte büyük bir irade ve kararlılık göstererek tüm engelleri aşmış, hedefine zaferle ulaşmışsın.",
-        "duz_simdi": "Şu an hayatının dizginlerini eline alma, odaklanma ve rakiplerine karşı kararlı bir zafer kazanma zamanındasın.",
-        "duz_gelecek": "Gelecekte seyahatler, büyük başarılar ve hayatının kontrolünü tamamen ele alacağın parlak bir dönem seni bekliyor.",
-        "ters_gecmis": "Geçmişte kontrolü kaybetmiş, yönsüz kalmış ya da aceleci hırslar yüzünden yolda kalmışsın.",
-        "ters_simdi": "Şu sıralar olaylar kontrolden çıkıyor; acelecilik ve yönsüzlük yüzünden nereye koştuğunu bilemez haldesin.",
-        "ters_gelecek": "Gelecekte yön bilmezlik, disiplinsizlik ve kontrolsüz güç kullanımı büyük kazalara veya başarısızlıklara yol açabilir."
+    "7 - SAVAŞ ARABASI (THE CHARIOT)": {
+        "duz_gecmis": "Geçmişte büyük engelleri iradenle aşmış, kararlılıkla hedefine kilitlenip zafer kazanmışsın.",
+        "duz_simdi": "Şu an tüm zıt enerjileri kontrolün altında tutarak hızla ilerliyor, zafer için direksiyonu sıkı tutuyorsun.",
+        "duz_gelecek": "Gelecekte rakiplerini geride bırakacak ve uzun süredir istediğin başarıya ulaşacaksın.",
+        "ters_gecmis": "Geçmişte kontrolü kaybettiğin için projelerin yarım kalmış veya yön duygusu kaybolmuş.",
+        "ters_simdi": "Şu an iki farklı yöne çekiliyormuş gibi hissediyor, iradeni toplamakta zorlanıyorsun.",
+        "ters_gelecek": "Gelecekte aceleci kararların kazalara veya başarısızlıklara yol açmaması için yavaşlamalısın."
     },
-    9: {
-        "isim": "GÜÇ (STRENGTH)",
-        "duz_gecmis": "Geçmişte içsel cesaretin, sabırlı tavrın ve şefkatinle en zorlu tutkuları ve korkuları bile sakinleştirmeyi başarmışsın.",
-        "duz_simdi": "Şu an kaba kuvvetle değil, tamamen özgüven, sabır ve tatlı dille üstesinden gelebileceğin bir sınavdasın.",
-        "duz_gelecek": "Gelecekte içsel gücünü tam anlamıyla keşfedecek, her türlü zorluğu zarif ve dirençli duruşunla alt edeceksin.",
-        "ters_gecmis": "Geçmişte özgüven eksikliği yaşamış, içindeki öfkeyi bastıramamış ya da zayıflık hissine yenik düşmüşsün.",
-        "ters_simdi": "Şu an enerjinin tükendiğini hissediyor, sabırsızlık ve içsel korkular yüzünden kendine olan inancını yitiriyorsun.",
-        "ters_gelecek": "Gelecekte sabırsızlık, özgüven kaybı ve dürtüleri kontrol edememekten kaynaklanan pişmanlıklar yaşayabilirsin."
+    "8 - GÜÇ (STRENGTH)": {
+        "duz_gecmis": "Geçmişte kaba kuvvetle değil, sabır, şefkat ve içsel cesaretle büyük bir zorluğun üstesinden gelmişsin.",
+        "duz_simdi": "Şu an kendi içsel gücünü keşfediyor, en vahşi dürtülerini bile zarafetle dizginliyorsun.",
+        "duz_gelecek": "Gelecekte özgüvenin sayesinde en sert sorunları bile tatlılıkla ve başarıyla çözeceksin.",
+        "ters_gecmis": "Geçmişte özgüven eksikliği yaşamış, içsel gücünü başkalarına kaptırmışsın.",
+        "ters_simdi": "Şu an sabrın tükeniyor gibi hissedebilir, öfke kontrolü konusunda zorlanabilirsin.",
+        "ters_gelecek": "Gelecekte kendine olan inancını yeniden tazeleyerek içsel korkularını yeneceksin."
     },
-    10: {
-        "isim": "ERMİŞ (THE HERMIT)",
-        "duz_gecmis": "Geçmişte kalabalıklardan uzaklaşıp kendi içine dönmüş, ruhsal bir arayışa girerek derin bir bilgelik kazanmışsın.",
-        "duz_simdi": "Şu an dış dünyayı sessize alıp kendi iç sesine kulak vermen, yalnızlaşarak hayatını ve yolunu sorgulaman gereken bir dönemdesin.",
-        "duz_gelecek": "Gelecekte aradığın aydınlanmaya ulaşacak, kendi iç ışığınla başkalarına da yol gösterecek bir olgunluğa erişeceksin.",
-        "ters_gecmis": "Geçmişte aşırı izolasyon yaşamış, dünyadan kopmuş ya da yalnızlık korkusuyla yanlış ortamlara sığınmışsın.",
-        "ters_simdi": "Şu sıralar çevrenden tamamen kopuk, depresif bir yalnızlık içinde kaybolmuş veya iç sesini duyamaz haldesin.",
-        "ters_gelecek": "Gelecekte aşırı yalnızlık, paranoya veya insanlardan tamamen kopmaktan ötürü yaşanacak yabancılaşma tehlikesi var."
+    "9 - ERMİŞ (THE HERMIT)": {
+        "duz_gecmis": "Geçmişte kalabalıklardan uzaklaşıp kendi içine dönmüş, ruhsal bir arayış ve bilgelik dönemi geçirmişsin.",
+        "duz_simdi": "Şu an dünyevi gürültüden uzaklaşıp kendi iç ışığını bulma, mola verme ve aydınlanma zamanındasın.",
+        "duz_gelecek": "Gelecekte aradığın derin cevapları kendi iç dünyanda bulacak, başkalarına da ışık olacaksın.",
+        "ters_gecmis": "Geçmişte aşırı yalnızlık çekmiş, dünyadan koparak depresif bir izolasyon yaşamışsın.",
+        "ters_simdi": "Şu an insanlardan kaçıyor ama bunu yalnızlaşmak için değil adeta kaybolmak için yapıyorsun.",
+        "ters_gelecek": "Gelecekte tekrar topluma karışacak, kabuğundan dışarı çıkmaya başlayacaksın."
     },
-    11: {
-        "isim": "KADER ÇARKI (WHEEL OF FORTUNE)",
-        "duz_gecmis": "Geçmişte hayatında ani ve dönüştürücü döngüler yaşamış, kaderin sana sunduğu sürpriz fırsatları yakalamışsın.",
-        "duz_simdi": "Şu an çarkın senin lehine döndüğü, şansın ve ilahi zamanlamanın hayatında aktif rol oynadığı bir dönüm noktasındasın.",
-        "duz_gelecek": "Gelecekte hayatında yepyeni bir döngü başlayacak; şans kapını çalacak ve işler lehine hızla değişecek.",
-        "ters_gecmis": "Geçmişte talihsizlikler silsilesi yaşamış, kötü bir zamanlamanın kurbanı olmuş ve kontrol dışı olaylarla sarsılmışsın.",
-        "ters_simdi": "Şu sıralar işlerin ters gittiğini, şansın senden yana olmadığını hissediyor ve döngüyü kırmakta zorlanıyorsun.",
-        "ters_gelecek": "Gelecekte kötü alışkanlıkları devam ettirdiğin sürece aynı kısır döngüleri tekrar yaşama riskin yüksek."
+    "10 - KADER ÇARKI (WHEEL OF FORTUNE)": {
+        "duz_gecmis": "Geçmişte kaderin akışını değiştiren ani ve beklenmedik dönüm noktaları yaşamışsın.",
+        "duz_simdi": "Şu an çark senin lehine dönüyor; şansın ve fırsatların kapını çaldığı ilahi bir akıştasın.",
+        "duz_gelecek": "Gelecekte hayatında köklü ve olumlu döngüsel değişimler seni bekliyor.",
+        "ters_gecmis": "Geçmişte şanssızlıklar silsilesi ve ardı arkası kesilmeyen aksilikler seni yormuş.",
+        "ters_simdi": "Şu an işlerin ters gittiğini hissedebilir, kötü giden bir döngünün içinde sıkışmış gibi hissedebilirsin.",
+        "ters_gelecek": "Gelecekte bu kötü şans döngüsü kırılacak, sabırlı olman gereken bir döneme giriyorsun."
     },
-    12: {
-        "isim": "ADALET (JUSTICE)",
-        "duz_gecmis": "Geçmişte verdiğin tüm kararlarda dürüstlüğü, hakkaniyeti ve sorumluluk bilincini ön planda tutmuşsun.",
-        "duz_simdi": "Şu an hayatında dengeyi kurma, adil olma ve geçmişteki eylemlerinin sonuçlarıyla yüzleşme zamanındasın.",
-        "duz_gelecek": "Gelecekte hukuki veya resmi konularda hak ettiğin adaleti bulacak, temiz ve dengeli bir sayfa açacaksın.",
-        "ters_gecmis": "Geçmişte adaletsizliğe uğramış ya da haksız kararlar alarak başkalarının hakkına girmişsin.",
-        "ters_simdi": "Şu sıralar hayatında büyük bir dengesizlik var; adaletsiz durumlarla karşılaşıyor ve sorumluluklardan kaçıyorsun.",
-        "ters_gelecek": "Gelecekte dürüstlükten uzaklaşmanın bedelini ödeyebilir, mahkemelik veya adaletsiz krizlerle boğuşabilirsin."
+    "11 - ADALET (JUSTICE)": {
+        "duz_gecmis": "Geçmişte tamamen mantık, hakkaniyet ve dürüstlük çerçevesinde kararlar alıp ektiklerini biçmişsin.",
+        "duz_simdi": "Şu an attığın adımların sonuçlarıyla yüzleşiyor, hak ettiğin dengeli kararı bekliyorsun.",
+        "duz_gelecek": "Gelecekte hukuki veya resmi konularda adalet yerini bulacak, haklılığın tescillenecek.",
+        "ters_gecmis": "Geçmişte haksızlığa uğramış ya da adil olmayan yargılarda bulunmuş olabilirsin.",
+        "ters_simdi": "Şu an hayatında bir dengesizlik var; sorumluluklardan kaçma eğilimin artmış.",
+        "ters_gelecek": "Gelecekte dürüstlükten şaşmamak ve tarafsız kalmak geleceğini kurtaracak."
     },
-    13: {
-        "isim": "ASILMIŞ ADAM (THE HANGED MAN)",
-        "duz_gecmis": "Geçmişte olaylara bakış açını tamamen değiştirmek için fedakarlıkta bulunmuş ve bir duraklama dönemi yaşamışsın.",
-        "duz_simdi": "Şu an elinin kolunun bağlı olduğunu düşündüğün, olayları akışına bırakıp teslim olman gereken bir askıda kalma sürecindesin.",
-        "duz_gelecek": "Gelecekte yaşadığın bu fedakarlıklar ve bakış açısı değişimi sayesinde olayları çok daha farklı ve aydınlanmış göreceksin.",
-        "ters_gecmis": "Geçmişte gereksiz kurbanlar vermiş, kendini boşuna feda etmiş ve çıkmaz sokaklarda vakit kaybetmişsin.",
-        "ters_simdi": "Şu sıralar direndiğin için acı çekiyorsun; kurban psikolojisinden çıkamıyor ve olaylara körü körüne diretiyorsun.",
-        "ters_gelecek": "Gelecekte zaman kaybı, boşuna yapılmış fedakarlıklar ve inatçılık yüzünden hayal kırıklığı yaşayabilirsin."
+    "12 - ASILAN ADAM (THE HANGED MAN)": {
+        "duz_gecmis": "Geçmişte olayların akışına teslim olmuş, fedakarlık yaparak bakış açını tamamen değiştirmişsin.",
+        "duz_simdi": "Şu an her şey askıda gibi görünse de bu duraklama sana olaylara dışarıdan bakma fırsatı veriyor.",
+        "duz_gelecek": "Gelecekte yaşadığın bu duraksama dönemi sana bambaşka bir vizyon ve aydınlanma getirecek.",
+        "ters_gecmis": "Geçmişte gereksiz fedakarlıklar yapmış, kendini boşuna kurban etmişsin.",
+        "ters_simdi": "Şu an direndiğin için işler sarpa sarıyor; bırakılması gereken şeyleri tutmakta ısrarcısın.",
+        "ters_gelecek": "Gelecekte boşuna kürek çekmeyi bırakıp olayları akışına bıraktığında rahatlayacaksın."
     },
-    14: {
-        "isim": "ÖLÜM (DEATH)",
-        "duz_gecmis": "Geçmişte senin için artık işlevini yitirmiş eski bir dönemi, alışkanlığı ya da ilişkiyi geride bırakıp kökten bir dönüşüm yaşamışsın.",
-        "duz_simdi": "Şu an eski olanın bitmesi ve yerini yepyeni bir şeye bırakması için acı ama gerekli bir bitiş/kabulleniş sürecindesin.",
-        "duz_gelecek": "Gelecekte küllerinden yeniden doğacağın, seni özgürleştirecek devrim niteliğinde bir değişim ve yenilenme kapıda.",
-        "ters_gecmis": "Geçmişte bitmesi gereken şeylere sıkıca tutunmuş, değişime direnerek süreci kendi adına kabusa çevirmişsin.",
-        "ters_simdi": "Şu sıralar değişimden korkuyor, geçmişin hayaletlerini ve ölmüş ilişkileri canlandırmaya çalışarak direniyorsun.",
-        "ters_gelecek": "Gelecekte değişime direnmenin getirdiği ağır durgunluk ve tıkanıklıklar hayatını zorlaştırmaya devam edebilir."
+    "13 - ÖLÜM (DEATH)": {
+        "duz_gecmis": "Geçmişte mijozunu, eski bir alışkanlığını veya bir dönemi tamamen bitirip geride bırakmışsın.",
+        "duz_simdi": "Şu an köklü bir dönüşüm sürecindesin; eski olan ölüyor ki yerine yepyeni ve güçlü bir şey gelebilsin.",
+        "duz_gelecek": "Gelecekte hayatında taşları yerinden oynatacak muazzam bir yenilenme ve yeniden doğuş var.",
+        "ters_gecmis": "Geçmişte bitmesi gereken şeyleri uzatmış, değişime direnerek acı çekmişsin.",
+        "ters_simdi": "Şu an değişimden korkuyor, geçmişe sıkı sıkıya tutunarak kaçınılmaz sonu geciktiriyorsun.",
+        "ters_gelecek": "Gelecekte direnç göstermeyi bıraktığında bu dönüşümün ne kadar özgürleştirici olduğunu göreceksin."
     },
-    15: {
-        "isim": "DENGE (TEMPERANCE)",
-        "duz_gecmis": "Geçmişte zıtlıkları uyum içinde harmanlamış, sabırlı ve ılımlı adımlarla içsel huzuru yakalamışsın.",
-        "duz_simdi": "Şu an hayatında şifa bulma, aşırılıklardan kaçınma ve her şeyi dengeleme safhasındasın.",
-        "duz_gelecek": "Gelecekte sabrının ve uyumlu tavrının meyvesini alacak, huzurlu ve dengeli bir döneme kavuşacaksın.",
-        "ters_gecmis": "Geçmişte aşırılıklara kaçmış, sabırsız davranmış ve hayatındaki dengeyi tamamen altüst etmişsin.",
-        "ters_simdi": "Şu sıralar içsel huzurun bozulmuş durumda; uçlarda yaşıyor, sabırsızlık ve uyumsuzlukla mücadele ediyorsun.",
-        "ters_gelecek": "Gelecekte aşırılıklar, dengesiz ilişkiler ve sabırsızlık yüzünden büyük iç çatışmalar yaşayabilirsin."
+    "14 - DENGE / ÖLÇÜLÜLÜK (TEMPERANCE)": {
+        "duz_gecmis": "Geçmişte zıtlıkları uyumla harmanlamış, sabırlı ve ılımlı tutumunla huzuru bulmuşsun.",
+        "duz_simdi": "Şu an hayatında şifa, denge ve içsel huzur arayışı hakim; her şeyi kararınca yaşıyorsun.",
+        "duz_gelecek": "Gelecekte taşlar yerine oturacak, sabrının meyvesini huzurlu bir dengeyle alacaksın.",
+        "ters_gecmis": "Geçmişte aşırılıklar, sabırsızlıklar ve dengesiz ilişkiler seni yıpratmış.",
+        "ters_simdi": "Şu an hayatın şirazesi kaymış durumda; aşırılıklardan kaçınmalı, orta yolu bulmalısın.",
+        "ters_gelecek": "Gelecekte iç dengeni yeniden sağlamak için sakinleştirici ve dinlendirici adımlar atacaksın."
     },
-    16: {
-        "isim": "ŞEYTAN (THE DEVIL)",
-        "duz_gecmis": "Geçmişte toksik bağımlılıklara, maddiyata veya seni esir alan sağlıksız tutkulara kapılmış, bunlarla sınanmışsın.",
-        "duz_simdi": "Şu an seni kısıtlayan, kendi ellerinle yarattığın zincirleri ve toksik bağları fark etmen gereken bir yüzleşme anındasın.",
-        "duz_gelecek": "Gelecekte bu karanlık bağımlılıklardan tamamen özgürleşecek ve kendi gücünü eline alacaksın.",
-        "ters_gecmis": "Geçmişte zincirlerini kırmayı başarmış, toksik bir durumdan veya manipülatif bir kişiden kurtulmuşsun.",
-        "ters_simdi": "Şu sıralar zincirlerini koparmak üzere büyük bir farkındalık yaşıyor ya da bağımlılıklarınla mücadele ediyorsun.",
-        "ters_gelecek": "Gelecekte yanlış arzulara tekrar kapılma tehlikesi var; kendi içindeki karanlıkla yüzleşmen şart."
+    "15 - ŞEYTAN (THE DEVIL)": {
+        "duz_gecmis": "Geçmişte toksik bağlar, maddiyata aşırı düşkünlük veya kötü alışkanlıklarca esir alınmışsın.",
+        "duz_simdi": "Şu an seni aşağı çeken tutkuların, korkuların veya bağımlılıklarınla yüzleşiyorsun.",
+        "duz_gelecek": "Gelecekte o görünmez zincirlerin aslında senin zihninde olduğunu fark edip özgürleşme şansı bulacaksın.",
+        "ters_gecmis": "Geçmişte büyük bir bağımlılıktan veya toksik bir ilişkiden kurtulmayı başarmışsın.",
+        "ters_simdi": "Şu an zincirlerini kırmaya başladığın, farkındalık kazandığın bir uyanış anındasın.",
+        "ters_gelecek": "Gelecekte zihinsel tuzaklara bir daha düşmemek için güçlü sınırlar çizeceksin."
     },
-    17: {
-        "isim": "YIKILAN KULE (THE TOWER)",
-        "duz_gecmis": "Geçmişte yalan temeller üzerine kurulu her şeyin ani bir darbeyle yıkıldığı büyük bir şok ve kriz dönemi atlatmışsın.",
-        "duz_simdi": "Şu an hayatında taş üstünde taş bırakmayan ani bir sarsıntı, gerçeklerin ortaya dökülmesiyle yaşanan büyük bir uyanıştasın.",
-        "duz_gelecek": "Gelecekte çürümüş yapılar tamamen yıkılacak ve yerini çok daha sağlam, gerçekçi bir düzene bırakacak.",
-        "ters_gecmis": "Geçmişte felaketin eşiğinden kıl payı dönmüş ya da büyük bir yıkımı ertelemek için çaba sarf etmişsin.",
-        "ters_simdi": "Şu sıralar yaklaşan bir fırtınanın korkusunu yaşıyor ya da kaçınılmaz bir yıkımı engellemeye çalışıyorsun.",
-        "ters_gelecek": "Gelecekte ertelediğin o büyük patlama veya kriz kaçınılmaz olarak kapını çalabilir, hazırlıklı olmalısın."
+    "16 - YIKIK KULE (THE TOWER)": {
+        "duz_gecmis": "Geçmişte üzerine kurulu olduğu temeller çürük olan her şey ani ve sarsıcı bir şekilde yıkılmış.",
+        "duz_simdi": "Şu an hayatında büyük bir şok veya ani bir gerçekle yüzleşme dönemi; kaos hâkim.",
+        "duz_gelecek": "Gelecekte bu yıkım sayesinde yalanlar temizlenecek ve üzerine çok daha sağlam bir dünya kuracaksın.",
+        "ters_gecmis": "Geçmişte büyük bir krizden kıl payı kurtulmuş ya da felaketi ertelemişsin.",
+        "ters_simdi": "Şu an içten içe yıkımın farkındasın ama bunu bastırmaya, felaketi önlemeye çalışıyorsun.",
+        "ters_gelecek": "Gelecekte kaçınılmaz olan o değişim gerçekleşecek ve sonunda rahat bir nefes alacaksın."
     },
-    18: {
-        "isim": "YILDIZ (THE STAR)",
-        "duz_gecmis": "Geçmişte yaşadığın onca karanlık ve fırtınanın ardından derin bir şifa bulmuş, umutla yeniden dolmuşsun.",
-        "duz_simdi": "Şu an geleceğe dair inancının tazelendiği, ilahi bir koruma altında olduğun ve ilham dolu bir huzur dönemindesin.",
-        "duz_gelecek": "Gelecekte hayallerinin gerçeğe dönüştüğü, parlak, şanslı ve ruhsal olarak tatmin edici günler seni bekliyor.",
-        "ters_gecmis": "Geçmişte umutsuzluğa kapılmış, inancını yitirmiş ve geleceğe dair karanlık senaryolar kurmuşsun.",
-        "ters_simdi": "Şu sıralar motivasyonun düşük; kendine olan inancını yitiriyor ve hayallerinin gerçekleşmeyeceğine inanıyorsun.",
-        "ters_gelecek": "Gelecekte karamsarlık ve fırsatları görememek yüzünden elindeki güzel şansları tepebilirsin."
+    "17 - YILDIZ (THE STAR)": {
+        "duz_gecmis": "Geçmişte fırtınalar kopmuş ama ardından içini ısıtan ilahi bir umut ve şifa doğmuş.",
+        "duz_simdi": "Şu an geleceğe dair inancın taze, ilhamla dolusun ve evrenin seni koruduğunu hissediyorsun.",
+        "duz_gelecek": "Gelecekte hayallerinin gerçeğe dönüştüğü, parlak, huzurlu ve şanslı bir dönem seni bekliyor.",
+        "ters_gecmis": "Geçmişte umutsuzluğa kapılmış, inancını tamamen yitirmişsin.",
+        "ters_simdi": "Şu an motivasyonun düşük, geleceğe dair şüpheler duyuyor ve kendini ışıksız hissediyorsun.",
+        "ters_gelecek": "Gelecekte içindeki o sönen umut kıvılcımını yeniden parlatacak güzel haberler alacaksın."
     },
-    19: {
-        "isim": "AY (THE MOON)",
-        "duz_gecmis": "Geçmişte korkularla, kuruntularla ve arkandan dönen sinsi işlerle, belirsizliklerle dolu kaygılı bir dönem geçirmişsin.",
-        "duz_simdi": "Şu an ortalığın sisli olduğu, hiçbir şeyin göründüğü gibi çıkmayabileceği, sezgilerine güvenmen gereken bir illüzyon sürecindesin.",
-        "duz_gelecek": "Gelecekte tüm sırlar açığa çıkacak, sis perdesi aralanacak ve korkularının aslında sadece birer kuruntu olduğunu göreceksin.",
-        "ters_gecmis": "Geçmişte korkularının üzerine gitmiş, kuruntuları yenmiş ve karanlık bir sis perdesini arkanda bırakmışsın.",
-        "ters_simdi": "Şu sıralar zihnindeki kaygılar ve paranoyalar azalmaya başlıyor, gerçeklerle yüzleşmeye başlıyorsun.",
-        "ters_gelecek": "Gelecekte zihinsel karmaşa ve gizli düşmanlıkların etkisi tamamen dağılacak, aydınlığa çıkacaksın."
+    "18 - AY (THE MOON)": {
+        "duz_gecmis": "Geçmişte belirsizlikler, gizli düşmanlıklar ve kuruntu dolu korkular zihnini bulandırmış.",
+        "duz_simdi": "Şu an suların bulanık olduğu, hiçbir şeyin göründüğü gibi olmadığı gizemli ve kuşkulu bir zamandasın.",
+        "duz_gelecek": "Gelecekte sisler dağılacak, gerçeğin ne olduğunu net bir şekilde göreceksin.",
+        "ters_gecmis": "Geçmişte kuruntuların ve paranoyaların yersiz olduğunu sonradan fark etmişsin.",
+        "ters_simdi": "Şu an korkularının üzerine gitmeye başladığın, sis perdesini aralamaya çalıştığın bir an.",
+        "ters_gelecek": "Gelecekte aldanmalara ve yanılsamalara karşı uyanık kalmayı öğreneceksin."
     },
-    20: {
-        "isim": "GÜNEŞ (THE SUN)",
-        "duz_gecmis": "Geçmişte neşe, başarı, canlılık ve her türlü engeli aşarak büyük bir mutluluk yakaladığın harika bir dönem yaşamışsın.",
-        "duz_simdi": "Şu an hayatında her şeyin yolunda gittiği, enerjinin, neşenin ve başarıların dorukta olduğu muazzam bir aydınlıktasın.",
-        "duz_gelecek": "Gelecekte seni adeta güneş gibi parlatacak, tüm üzüntüleri unutturacak büyük başarılar ve mutluluklar var.",
-        "ters_gecmis": "Geçmişte geçici mutsuzluklar, neşenin sönmesi veya başarıların gölgelenmesi gibi durumlar yaşamışsın.",
-        "ters_simdi": "Şu an içindeki neşe biraz sönük kalmış olabilir; olayların olumsuz yönlerine odaklanarak ışığını kapatıyorsun.",
-        "ters_gelecek": "Gelecekte geçici engeller neşeni biraz gölgeleyebilir ancak bu durum uzun sürmeyecek, sabırlı olmalısın."
+    "19 - GÜNEŞ (THE SUN)": {
+        "duz_gecmis": "Geçmişte büyük bir neşe, başarı, takdir görme ve mutluluk dönemi yaşamışsın.",
+        "duz_simdi": "Şu an enerjin tavan yapmış durumda; her şey yolunda gidiyor, etrafa neşe saçıyorsun.",
+        "duz_gelecek": "Gelecekte hayatın her alanında aydınlık, başarı ve tatmin dolu günler seni bekliyor.",
+        "ters_gecmis": "Geçmişte mutluluğuna gölge düşmüş, hak ettiğin değeri görememişsin.",
+        "ters_simdi": "Şu an içindeki neşe biraz sönmüş gibi görünse de ufak bir kıvılcımla yeniden parlayabilirsin.",
+        "ters_gelecek": "Gelecekte bulutlar dağılacak ve güneş senin için yeniden tüm ihtişamıyla doğacak."
     },
-    21: {
-        "isim": "MAHKEME (JUDGEMENT)",
-        "duz_gecmis": "Geçmişte hayatınla ilgili büyük bir muhasebe yapmış, eski hatalardan ders çıkarıp adeta yeniden doğmuşsun.",
-        "duz_simdi": "Şu an hayatının çağrısına kulak verme, geçmişin hesaplarını kapatma ve ilahi bir uyanış yaşama zamanındasın.",
-        "duz_gelecek": "Gelecekte hak ettiğin ödülü alacağın, hayatında yepyeni ve tertemiz bir kulvara geçeceğin ilahi bir karar anı seni bekliyor.",
-        "ters_gecmis": "Geçmişte hatalarını kabul etmekten kaçınmış, suçluluk duygularına takılıp kalmış ve kararları ertelemişsin.",
-        "ters_simdi": "Şu sıralar öz eleştiri yapmaktan kaçınıyor, geçmişin pişmanlıklarıyla kendini hırpalıyor ve kararsızlık yaşıyorsun.",
-        "ters_gelecek": "Gelecekte kaçındığın yüzleşmeler ve bitmeyen pişmanlıklar karşına tekrar çıkabilir, hesaplaşma zamanı."
+    "20 - MAHKEME (JUDGEMENT)": {
+        "duz_gecmis": "Geçmişte geçmişin muhasebesini yapmış, eski hatalardan arınarak uyanış yaşamışsın.",
+        "duz_simdi": "Şu an hayatında bir dönüm noktasındasın; ilahi bir çağrı alıyor, büyük kararlar veriyorsun.",
+        "duz_gelecek": "Gelecekte geçmişinle barışacak, yaptıklarının ödülünü alarak özgürleşeceksin.",
+        "ters_gecmis": "Geçmişte sürekli kendini suçlamış, pişmanlıklarınla kendini kahretmişsin.",
+        "ters_simdi": "Şu an sorumluluklardan kaçıyor, yapman gereken o büyük yüzleşmeyi erteliyorsun.",
+        "ters_gelecek": "Gelecekte vicdan muhasebesini tamamlayıp nihayet huzurlu bir karara varacaksın."
     },
-    22: {
-        "isim": "DÜNYA (THE WORLD)",
-        "duz_gecmis": "Geçmişte uzun soluklu bir yolculuğu, projeyi veya hayat evresini büyük bir başarı ve bütünlükle tamamlamışsın.",
-        "duz_simdi": "Şu an büyük bir çemberin tamamlandığı, huzurun, tatminin ve adeta zirvede hissetmenin tadını çıkardığın muhteşem bir andasın.",
-        "duz_gelecek": "Gelecekte tüm hedeflerine ulaşacak, hayatının en büyük başarılarından birini kutlayarak taçlandırılacaksın.",
-        "ters_gecmis": "Geçmişte bir şeyleri yarım bırakmış, tam hedefe ulaşacakken son anda engellerle karşılaşmışsın.",
-        "ters_simdi": "Şu sıralar bir şeyleri bitirmekte zorlanıyor, son adımı atamadığın için bir tıkanıklık hissi yaşıyorsun.",
-        "ters_gelecek": "Gelecekte eksik kalan işler tamamlanana kadar küçük gecikmeler yaşayabilirsin, pes etmemelisin."
+    "21 - DÜNYA (THE WORLD)": {
+        "duz_gecmis": "Geçmişte uzun soluklu bir döngüyü başarıyla tamamlamış, büyük bir hedefe ulaşmışsın.",
+        "duz_simdi": "Şu an bir devrin kapandığı, bütünleşme, mutluluk ve tamlanma hissinin doruğundaysın.",
+        "duz_gelecek": "Gelecekte hayatında muazzam bir başarı, mezuniyet veya taçlanma dönemi seni bekliyor.",
+        "ters_gecmis": "Geçmişte bir türlü kapatamadığın yarım kalan hikayeler seni yormuş.",
+        "ters_simdi": "Şu an sona yaklaşmış olmana rağmen son adımı atmakta veya projeyi bitirmekte zorlanıyorsun.",
+        "ters_gelecek": "Gelecekte o son engeli de aşarak hak ettiğin büyük kutlamayı yapacaksın."
     },
-    23: {
-        "isim": "ASA ASI (ACE OF WANDS)",
-        "duz_gecmis": "Geçmişte içini kıpır kıpır eden harika bir ilham, yaratıcı kıvılcım ve yeni bir tutku dalgası yakalamışsın.",
-        "duz_simdi": "Şu an elinde müthiş bir yaratıcı enerji ve eyleme geçme isteği var; fırsatları değerlendirmek için harika bir gündesin.",
-        "duz_gelecek": "Gelecekte hayatında büyük bir heyecan yaratacak yepyeni bir girişim veya tutkulu bir proje kapını çalacak.",
-        "ters_gecmis": "Geçmişte enerjin düşükmüş, yaratıcı tıkanıklıklar yaşamış ve hevesin kursağında kalmış.",
-        "ters_simdi": "Şu sıralar motivasyon eksikliği ve yanlış adımlar yüzünden içindeki o coşkulu ateşi yakmakta zorlanıyorsun.",
-        "ters_gelecek": "Gelecekte ertelenen projeler ve sönen hevesler yüzünden hayal kırıklığı yaşama riskin var."
+
+    # --- KÜÇÜK ARKANA: ASALAR (WANDS) ---
+    "ASALARIN ASI (ACE OF WANDS)": {
+        "duz_gecmis": "Geçmişte aniden alevlenen harika bir fikir veya tutkulu bir girişim başlatmışsın.",
+        "duz_simdi": "Şu an içindeki yaratıcı ateş coşkuyla yanıyor; yeni bir projeye başlamak için mükemmel bir enerjidesin.",
+        "duz_gelecek": "Gelecekte önünü açacak çok heyecan verici ve enerjik fırsatlar kapını çalacak.",
+        "ters_gecmis": "Geçmişte heyecanla başlayan projeler motivasyon eksikliğinden sönüp gitmiş.",
+        "ters_simdi": "Şu an enerjinin düşük olduğunu ve projelerinde erteleme eğilimi gösterdiğini hissedebilirsin.",
+        "ters_gelecek": "Gelecekte fırsatları kaçırmamak için içindeki ateşi yeniden körüklemen gerekecek."
     },
-    24: {
-        "isim": "ASA İKİLİSİ (TWO OF WANDS)",
-        "duz_gecmis": "Geçmişte geleceğe dair stratejik planlar yapmış, atacağın büyük adımlar için dünyayı ve seçenekleri masaya yatırmışsın.",
-        "duz_simdi": "Şu an konfor alanından çıkıp çıkmama kararı aldığın, geleceğini şekillendirecek stratejik bir yol ayrımındasın.",
-        "duz_gelecek": "Gelecekte ortaklıklar kurarak ya da yeni ufuklara yelken açarak uzun vadeli planlarını hayata geçireceksin.",
-        "ters_gecmis": "Geçmişte yanlış planlamalar yapmış, kararsızlıklar yüzünden elindeki fırsatları ertelemişsin.",
-        "ters_simdi": "Şu sıralar geleceğe dair belirsizlikler seni korkutuyor, risk almaktan çekindiğin için yerinde sayıyorsun.",
-        "ters_gelecek": "Gelecekte cesaretsizlik ve yanlış stratejiler yüzünden atıl kalma ve pişmanlık yaşama ihtimalin var."
+    "ASALARIN İKİLİSİ (TWO OF WANDS)": {
+        "duz_gecmis": "Geçmişte geleceğe yönelik büyük planlar yapmış, yeni ufuklar için strateji belirlemişsin.",
+        "duz_simdi": "Şu an elinde seçenekler var; ya mevcut konumunda kalacaksın ya da dünyaya açılacaksın.",
+        "duz_gelecek": "Gelecekte ortaklı büyük planların hayata geçeceği seyahatler veya girişimler olacak.",
+        "ters_gecmis": "Geçmişte yanlış planlamalar ve korkak kararlar yüzünden fırsatlar kaçmış.",
+        "ters_simdi": "Şu an gelecekten korkuyor, adım atmak ile mevcut alanda kalmak arasında kararsız kalıyorsun.",
+        "ters_gelecek": "Gelecekte vizyonunu genişleterek bu kararsızlık döngüsünden çıkacaksın."
     },
-    25: {
-        "isim": "ASA ÜÇLÜSÜ (THREE OF WANDS)",
-        "duz_gecmis": "Geçmişte attığın tohumların ilk meyvelerini toplamış, ufka umutla bakarak beklediğin adımların sonuçlarını almışsın.",
-        "duz_simdi": "Şu an yaptıklarının sonuçlarını beklediğin, vizyonunu genişleterek yeni seyahatler veya girişimler planladığın bir dönemdesin.",
-        "duz_gelecek": "Gelecekte işlerinin büyüyeceği, ticari veya kişisel anlamda yeni ufuklara açılacağın çok verimli günler seni bekliyor.",
-        "ters_gecmis": "Geçmişte beklentilerin boşa çıkmış, yatırımlarından veya projelerinden umduğun geri dönüşü alamamışsın.",
-        "ters_simdi": "Şu sıralar sabırsızlık ve geciken haberler yüzünden hayal kırıklığı yaşıyor, işlerin yavaşlığından yakınıyorsun.",
-        "ters_gelecek": "Gelecekte yanlış yönlendirilmiş yatırımlar veya planlardaki aksamalar canını sıkabilir."
+    "ASALARIN ÜÇLÜSÜ (THREE OF WANDS)": {
+        "duz_gecmis": "Geçmişte attığın adımların ilk meyvelerini toplamış, ufku genişletmişsin.",
+        "duz_simdi": "Şu an beklediğin gemilerin limana yanaşmasını izliyor, gelecek için umutla dolusun.",
+        "duz_gelecek": "Gelecekte ticari veya kişisel genişleme, yurtdışı bağlantılı işler seni bekliyor.",
+        "ters_gecmis": "Geçmişte beklentiler boşa çıkmış, yatırımlar gecikmiş.",
+        "ters_simdi": "Şu an işlerin yavaş gitmesinden ve planların gecikmesinden dolayı sabırsızlanıyorsun.",
+        "ters_gelecek": "Gelecekte sabırlı bekleyişin karşılığını alacak ve doğru stratejiyi kuracaksın."
     },
-    26: {
-        "isim": "ASA DÖRTLÜSÜ (FOUR OF WANDS)",
-        "duz_gecmis": "Geçmişte evlilik, nişan, kutlama veya huzurlu bir yuva kurma gibi çok mutlu ve coşkulu bir etkinlik yaşamışsın.",
-        "duz_simdi": "Şu an sevdiklerinle birlikte kutlama yaptığın, huzurlu, güvenli ve mutlu bir yuva ortamının tadını çıkarıyorsun.",
-        "duz_gelecek": "Gelecekte seni ve sevdiklerini bir araya getirecek mutlu bir yuva, düğün veya büyük bir kutlama var.",
-        "ters_gecmis": "Geçmişte aile içinde huzursuzluklar, iptal edilen kutlamalar veya yuva kurma yolunda engeller çıkmış.",
-        "ters_simdi": "Şu sıralar ev veya aile ortamında geçici gerginlikler yaşanıyor, uyumu yakalamakta zorlanıyorsun.",
-        "ters_gelecek": "Gelecekte ailevi anlaşmazlıklar veya kutlamalarda çıkabilecek pürüzler neşeni biraz gölgeleyebilir."
+    "ASALARIN DÖRDÜLSÜ (FOUR OF WANDS)": {
+        "duz_gecmis": "Geçmişte aileyle, dostlarla kutlanan mutlu bir yuva veya düğün/kutlama dönemi olmuş.",
+        "duz_simdi": "Şu an huzurun, güvenin ve kutlamanın tadını çıkarıyor, aidiyet hissediyorsun.",
+        "duz_gelecek": "Gelecekte evlilik, yeni bir eve taşınma veya kalıcı huzur kutlamaları kapıda.",
+        "ters_gecmis": "Geçmişte aile içi huzursuzluklar veya yarım kalmış kutlamalar yaşanmış.",
+        "ters_simdi": "Şu an ev ortamında ya da ilişkilerde geçici bir gerginlik ve uyumsuzluk hissedebilirsin.",
+        "ters_gelecek": "Gelecekte aradığın aile sıcaklığını ve güvenli limanı yeniden inşa edeceksin."
     },
-    27: {
-        "isim": "ASA BEŞLİSİ (FIVE OF WANDS)",
-        "duz_gecmis": "Geçmişte fikir ayrılıkları, rekabet ortamı ve kimin haklı olduğunu kanıtlamaya çalıştığın çekişmeli bir mücadele vermişsin.",
-        "duz_simdi": "Şu an etrafındaki insanlarla çıkar çatışmaları, fikir uyuşmazlıkları ve yoğun bir rekabet ortamı içindesin.",
-        "duz_gelecek": "Gelecekte seni zorlayacak tartışmalar ve güç savaşlarıyla karşılaşabilirsin, sabırlı olmalısın.",
-        "ters_gecmis": "Geçmişte gereksiz kavgalardan kaçınmış, tartışmaları ustalıkla bastırıp uzlaşma sağlamışsın.",
-        "ters_simdi": "Şu sıralar çatışmaları yatıştırmaya çalışıyor, kaosu bitirmek için ortak bir yol bulmaya çabalıyorsun.",
-        "ters_gelecek": "Gelecekte inatlaşmaları bir kenara bırakıp uzlaşmayı seçtiğin sürece krizleri rahatça atlatacaksın."
+    "ASALARIN BEŞLİSİ (FIVE OF WANDS)": {
+        "duz_gecmis": "Geçmişte rekabet dolu, fikir çatışmalarının ve ego savaşlarının olduğu bir ortamdan geçmişsin.",
+        "duz_simdi": "Şu an çevrendeki insanlarla fikir ayrılıkları yaşıyor, sesini duyurmaya çalışıyorsun.",
+        "duz_gelecek": "Gelecekte bu rekabet ortamı seni daha güçlü kılacak ancak sabırlı olman gerekecek.",
+        "ters_gecmis": "Geçmişte gereksiz tartışmalardan ve kavgacı ortamlardan kaçınmayı seçmişsin.",
+        "ters_simdi": "Şu an çatışmalardan uzak durmaya çalışıyor, içsel bir sükunet arıyorsun.",
+        "ters_gelecek": "Gelecekte anlaşmazlıkları uzlaşmacı bir dille geride bırakacaksın."
     },
-    28: {
-        "isim": "ASA ALTILISI (SIX OF WANDS)",
-        "duz_gecmis": "Geçmişte büyük bir başarı elde etmiş, rakiplerini geride bırakarak zafer çelengini gururla taşımışsın.",
-        "duz_simdi": "Şu an emeklerinin takdir edildiği, başarılarının kutlandığı ve haklı bir gurur yaşadığın parlak bir dönemdesin.",
-        "duz_gelecek": "Gelecekte adını duyuracağın büyük bir başarı, terfi veya toplumsal bir zafer seni bekliyor.",
-        "ters_gecmis": "Geçmişte başarıya çok yaklaşmışken destek görmemiş, zaferin elinden kayıp gittiğini görmüşsün.",
-        "ters_simdi": "Şu sıralar hak ettiğin değeri görmediğini düşünüyor, takdir edilmemekten dolayı bir özgüven sarsıntısı yaşıyorsun.",
-        "ters_gelecek": "Gelecekte kibirli tavırlar veya yanlış adımlar yüzünden kazanılmış zaferleri kaybetme riski doğabilir."
+    "ASALARIN ALTILISI (SIX OF WANDS)": {
+        "duz_gecmis": "Geçmişte büyük bir başarı elde etmiş, herkesin takdirini toplayarak zafer kazanmışsın.",
+        "duz_simdi": "Şu an emeklerinin karşılığını alıyor, haklı bir gurur ve özgüven yaşıyorsun.",
+        "duz_gelecek": "Gelecekte topluluk önünde övgü alacağın, adından söz ettireceğin gelişmeler var.",
+        "ters_gecmis": "Geçmişte başarıya çok yaklaşmışken son anda takdir görmemişsin.",
+        "ters_simdi": "Şu an özgüvenin biraz zedelenmiş olabilir, hak ettiğin değeri göremediğini düşünüyorsun.",
+        "ters_gelecek": "Gelecekte bu geçici gölge kalkacak ve yeniden parlayacaksın."
     },
-    29: {
-        "isim": "ASA YEDİLİSİ (SEVEN OF WANDS)",
-        "duz_gecmis": "Geçmişte haklarını, pozisyonunu ve sevdiklerini korumak için tek başına büyük bir direniş göstermişsin.",
-        "duz_simdi": "Şu an etrafından gelen eleştirilere ve baskılara karşı kendi alanını ve doğrularını savunma mücadelesindesin.",
-        "duz_gelecek": "Gelecekte rakiplerine karşı dik durmaya devam edecek ve zorluklar karşısında pozisyonunu korumayı başaracaksın.",
-        "ters_gecmis": "Geçmişte baskılara boyun eğmiş, savunmasız kalmış ve haklarını yeterince koruyamamışsın.",
-        "ters_simdi": "Şu sıralar tükenmiş hissediyorsun; herkes sana yükleniyor gibi geliyor ve savunma yapmakta zorlanıyorsun.",
-        "ters_gelecek": "Gelecekte aşırı baskı altında ezilmemek için sınırlarını daha net çizmeyi öğrenmen gerekecek."
+    "ASALARIN YEDİLİSİ (SEVEN OF WANDS)": {
+        "duz_gecmis": "Geçmişte kendi haklarını, pozisyonunu ve fikirlerini sonuna kadar savunmuşsun.",
+        "duz_simdi": "Şu an birilerine veya eleştirilere karşı kendi mevziini savunmak zorunda olduğun bir zamandasın.",
+        "duz_gelecek": "Gelecekte direncini koruduğun sürece karşına çıkan baskılara galip geleceksin.",
+        "ters_gecmis": "Geçmişte baskılara boyun eğmiş ya da mücadeleden vazgeçmişsin.",
+        "ters_simdi": "Şu an kendini tükenmiş hissediyor, artık insanlarla mücadele etmek istemiyorsun.",
+        "ters_gelecek": "Gelecekte gereksiz savaşları bırakıp kendi huzurunu önceliklendireceksin."
     },
-    30: {
-        "isim": "ASA SEKİZLİSİ (EIGHT OF WANDS)",
-        "duz_gecmis": "Geçmişte hayatında her şeyin çok hızlı geliştiği, sürpriz haberler aldığın ve seyahatlerle dolu bir dönem yaşamışsın.",
-        "duz_simdi": "Şu an olayların inanılmaz bir hız kazandığı, ardı ardına haberler aldığın ve kararların hızla alındığı bir süreçtesin.",
-        "duz_gelecek": "Gelecekte beklenmedik gelişmeler, ani seyahatler ve müjdeli haberler kapını hızla çalacak.",
-        "ters_gecmis": "Geçmişte işler sarpa sarmış, beklediğin haberler gecikmiş ve planların askıya alınmış.",
-        "ters_simdi": "Şu sıralar iletişimde kopukluklar, yanlış anlamalar ve işlerin yavaşlamasından duyulan bir sabırsızlık var.",
-        "ters_gelecek": "Gelecekte acelecilik yüzünden yapılan hatalar ve yanlış zamanlanmış hamleler projelerini aksatabilir."
+    "ASALARIN SEKİZLİSİ (EIGHT OF WANDS)": {
+        "duz_gecmis": "Geçmişte her şey inanılmaz bir hızla gelişmiş, olaylar ardı ardına akmış.",
+        "duz_simdi": "Şu an haberler çok hızlı geliyor; seyahatler, ani kararlar ve baş döndürücü bir tempo içindesin.",
+        "duz_gelecek": "Gelecekte işlerin mucizevi bir hızla çözüleceği ve hareketli bir döneme gireceksin.",
+        "ters_gecmis": "Geçmişte yaşanan ani gelişmeler planları altüst etmiş, gecikmeler yaşanmış.",
+        "ters_simdi": "Şu an işlerin yavaşlamasından ya da yanlış anlaşılmalardan ötürü bir kaos hissediyorsun.",
+        "ters_gelecek": "Gelecekte hızı kontrol altına alarak yanlış anlamaları düzelteceksin."
     },
-    31: {
-        "isim": "ASA DOKUZLUSU (NINE OF WANDS)",
-        "duz_gecmis": "Geçmişte yaşadığın onca zorluk ve mücadele seni yormuş ama aynı zamanda son derece tetikte ve dayanıklı yapmış.",
-        "duz_simdi": "Şu an son bir engelin kaldığı, artık yorulduğun ama siper alarak sonuna kadar direnmen gereken bir noktadasın.",
-        "duz_gelecek": "Gelecekte son bir kez daha dişini sıkman gerekecek ancak bu direniş seni kalıcı bir zafere götürecek.",
-        "ters_gecmis": "Geçmişte paranoyaklaşmış, sürekli saldırı beklemekten dolayı tükenmişlik sendromu yaşamışsın.",
-        "ters_simdi": "Şu sıralar aşırı savunmacı ve kuşkucu tavırlar sergiliyor, insanlara karşı güven duvarları örüyorsun.",
-        "ters_gelecek": "Gelecekte yersiz korkular ve tükenmişlik yüzünden zaferin eşiğinden dönebilirsin, biraz rahatla."
+    "ASALARIN DOKUZLUSU (NINE OF WANDS)": {
+        "duz_gecmis": "Geçmişte çok yorulmuş ama pes etmeyerek sonuna kadar direnmeyi bilmişsin.",
+        "duz_simdi": "Şu an diken üstündesin; daha önce yaşadığın yaralardan dolayı kendini koruma halindesin.",
+        "duz_gelecek": "Gelecekte son bir engelin kaldı, biraz daha direnirsen zafer senin olacak.",
+        "ters_gecmis": "Geçmişte paranoyalar ve tükenmişlik yüzünden erken havlu atmışsın.",
+        "ters_simdi": "Şu an savunma duvarların çok yüksek, kimsenin yaklaşmasına izin vermiyorsun.",
+        "ters_gelecek": "Gelecekte bu savunmacı zırhı yavaş yavaş üzerindne çıkaracaksın."
     },
-    32: {
-        "isim": "ASA ONLUSU (TEN OF WANDS)",
-        "duz_gecmis": "Geçmişte her şeyi tek başına sırtlanmış, aşırı sorumluluklar ve yükler altında ezilmişsin.",
-        "duz_simdi": "Şu an omuzlarında dünyanın yükünü taşıyormuş gibi hissediyorsun; artık bazı sorumlulukları bırakma vakti.",
-        "duz_gelecek": "Gelecekte bu ağır yüklerin sonuna gelecek, nihayet hafifleyerek ferah bir nefes alacaksın.",
-        "ters_gecmis": "Geçmişte bazı yükleri devretmeyi öğrenmiş, sorumlulukları paylaşarak rahatlamışsın.",
-        "ters_simdi": "Şu sıralar başkalarının yüklerini de taşıyor ve tükenme noktasına geliyorsun; hayır demeyi öğrenmelisin.",
-        "ters_gelecek": "Gelecekte aşırı yüklenmekten kaynaklanan fiziksel ve mental yorgunluklarla yüzleşebilirsin."
+    "ASALARIN ONLUSU (TEN OF WANDS)": {
+        "duz_gecmis": "Geçmişte her sorumluluğu tek başına sırtlanmış, aşırı yük altında ezilmişsin.",
+        "duz_simdi": "Şu an omuzlarında dünyanın yükü var; işler çok ağır geliyor ve yorulmuşsun.",
+        "duz_gelecek": "Gelecekte bu ağır yükleri başkalarıyla paylaşacak ya da bazılarını çöpe atıp rahatlayacaksın.",
+        "ters_gecmis": "Geçmişte yükleri zamanında bırakamadığın için tükenmişlik sendromu yaşamışsın.",
+        "ters_simdi": "Şu an sorumlulukların altında eziliyorsun ama yardım istemekte inat ediyorsun.",
+        "ters_gelecek": "Gelecekte yüklerinden kurtulup hafiflemenin ve özgürleşmenin tadını çıkaracaksın."
     },
-    33: {
-        "isim": "ASA PRENSİ (PAGE OF WANDS)",
-        "duz_gecmis": "Geçmişte yeni fikirlerin peşinden koşan, maceraperest, öğrenmeye aç ve hevesli bir haberci rolü üstlenmişsin.",
-        "duz_simdi": "Şu an içindeki coşkuyu ortaya koyacak yeni bir haber, yaratıcı bir fikir veya heyecan verici bir teklif almaktasın.",
-        "duz_gelecek": "Gelecekte hayatına renk katacak genç enerjili biri veya yepyeni bir macera teklifi seni bekliyor.",
-        "ters_gecmis": "Geçmişte hevesleri çabuk sönen, tutarsız kararlar alan ve odaklanmakta zorlanan biri olmuşsun.",
-        "ters_simdi": "Şu sıralar aldığın haberler asılsız çıkabilir veya motivasyonun anlık olarak düşebilir.",
-        "ters_gelecek": "Gelecekte aceleci ve tutarsız yaklaşımlar yüzünden başlanan işlerin yarım kalma riski var."
+    "ASALARIN VALESİ (PAGE OF WANDS)": {
+        "duz_gecmis": "Geçmişte yeni bir maceraya atılma arzusuyla dolu, hevesli adımlar atmışsın.",
+        "duz_simdi": "Şu an öğrenmeye açık, enerjik, heyecan verici haberler getiren bir ruh halindesin.",
+        "duz_gelecek": "Gelecekte sürpriz bir seyahat veya yaratıcı bir teklif kapını çalacak.",
+        "ters_gecmis": "Geçmişte hevesin kursağında kalmış, sorumsuzca hareketler yapılmış.",
+        "ters_simdi": "Şu an odaklanma sorunu yaşıyor, başladığın işleri yarıda bırakıyorsun.",
+        "ters_gelecek": "Gelecekte dağınık enerjini toparlayarak daha istikrarlı adımlar atacaksın."
     },
-    34: {
-        "isim": "ASA ŞÖVALYESİ (KNIGHT OF WANDS)",
-        "duz_gecmis": "Geçmişte korkusuzca atıldığın maceralar, seyahatler ve tutkuyla peşinden koştuğun hedefler olmuş.",
-        "duz_simdi": "Şu an adeta bir ateş topu gibisin; hızla hareket ediyor, tutkularının peşinden gözü kara koşuyorsun.",
-        "duz_gelecek": "Gelecekte ani bir seyahat, tutkulu bir aşk veya macera dolu sürpriz gelişmeler kapını çalacak.",
-        "ters_gecmis": "Geçmişte acelecilik ve düşünmeden atılan adımlar yüzünden büyük kazalar ve hayal kırıklıkları yaşamışsın.",
-        "ters_simdi": "Şu sıralar sabırsızlığın tavan yapmış durumda; öfkeyle kalkıp zararla oturma riskin çok yüksek.",
-        "ters_gelecek": "Gelecekte pervasız ve yıkıcı bir hız yüzünden elindeki fırsatları ziyan edebilirsin."
+    "ASALARIN ŞÖVALYESİ (KNIGHT OF WANDS)": {
+        "duz_gecmis": "Geçmişte fevri, tutkulu ve macera peşinde koşan cesur hamleler yapmışsın.",
+        "duz_simdi": "Şu an yerinde duramıyor, hızla hareket etmek ve büyük riskler almak istiyorsun.",
+        "duz_gelecek": "Gelecekte hayatına hareket katacak tutkulu bir seyahat veya ani bir olay yaşanacak.",
+        "ters_gecmis": "Geçmişte aceleci ve düşüncesiz kararlar başına dert açmış.",
+        "ters_simdi": "Şu an sabırsızlığın ve öfken yüzünden ilişkilerde gerginlikler yaşayabilirsin.",
+        "ters_gelecek": "Gelecekte fevri davranışların kontrolünü ele alarak daha dengeli olacaksın."
     },
-    35: {
-        "isim": "ASA KRALİÇESİ (QUEEN OF WANDS)",
-        "duz_gecmis": "Geçmişte karizman, özgüvenin, sıcakkanlılığın ve lider ruhunla çevrene ilham saçmışsın.",
-        "duz_simdi": "Şu an son derece çekici, üretken, kendine güvenen ve ne istediğini çok iyi bilen bir duruş sergiliyorsun.",
-        "duz_gelecek": "Gelecekte karizman ve liderliğinle projelerin aranan ismi olacak, çevrene ışık saçacaksın.",
-        "ters_gecmis": "Geçmişte kıskançlıklar, baskıcı tavırlar veya özgüven problemleri ilişkilerini zedelemiş.",
-        "ters_simdi": "Şu sıralar enerjin biraz düşük; manipülatif veya bencil hissedebilir, hırsına yenik düşebilirsin.",
-        "ters_gelecek": "Gelecekte otoriteyi yanlış kullanmak ve aşırı ben merkezci olmak çevrendeki insanları uzaklaştırabilir."
+    "ASALARIN KRALİÇESİ (QUEEN OF WANDS)": {
+        "duz_gecmis": "Geçmişte özgüvenli, karizmatik, sıcakkanlı ve yönlendirici bir duruş sergilemişsin.",
+        "duz_simdi": "Şu an etrafına ışık saçıyor, bağımsızlığınla ve cazibenle herkesi etkiliyorsun.",
+        "duz_gelecek": "Gelecekte sosyal hayatında ve kariyerinde parlayacağın otoriter ama sevecen bir dönem var.",
+        "ters_gecmis": "Geçmişte kıskançlık, ego çatışmaları veya özgüven kırılması yaşanmış.",
+        "ters_simdi": "Şu an enerjinin düştüğünü hissedebilir, manipülatif ortamlara maruz kalabilirsin.",
+        "ters_gelecek": "Gelecekte içindeki o güçlü karizmatik kadını/enerjiyi yeniden ayağa kaldıracaksın."
     },
-    36: {
-        "isim": "ASA KRALI (KING OF WANDS)",
-        "duz_gecmis": "Geçmişte büyük vizyonlar ortaya koymuş, ilham verici projelere liderlik etmiş ve kararlı bir vizyoner olmuşsun.",
-        "duz_simdi": "Şu an işleri yöneten, vizyoner kararlar alan, otoriter ama yapıcı bir lider konumundasın.",
-        "duz_gelecek": "Gelecekte büyük bir imparatorluk kuracak güçte projelere liderlik edecek, büyük başarılar elde edeceksin.",
-        "ters_gecmis": "Geçmişte zorba, sabırsız ve bencil bir liderlik anlayışı sergileyerek çatışmalara sebep olmuşsun.",
-        "ters_simdi": "Şu sıralar çevrendekileri baskı altında tutuyor, kendi bildiğin dışında hiçbir fikre tahammül edemiyorsun.",
-        "ters_gelecek": "Gelecekte fevri kararlar ve diktatörce yaklaşımlar kurduğun yapının sarsılmasına neden olabilir."
+    "ASALARIN KRALI (KING OF WANDS)": {
+        "duz_gecmis": "Geçmişte vizyoner liderlik yapmış, büyük projeleri başarıyla yönetmişsin.",
+        "duz_simdi": "Şu an ilham veren, kararlı, büyük resmi gören ve vizyon sahibi bir lider konumundasın.",
+        "duz_gelecek": "Gelecekte büyük bir işin başına geçecek veya otoritenle kitleleri yönlendireceksin.",
+        "ters_gecmis": "Geçmişte baskıcı, buyurgan ve aceleci bir liderlik tarzı tepki çekmiş.",
+        "ters_simdi": "Şu an sabırsız ve otoriter tavırlarınla çevrendekileri zor durumda bırakabilirsin.",
+        "ters_gelecek": "Gelecekte vizyonunu daha yapıcı ve esnek bir dille insanlara aktaracaksın."
     },
-    37: {
-        "isim": "KUPA ASI (ACE OF CUPS)",
-        "duz_gecmis": "Geçmişte kalbini açan muazzam bir aşk, ilahi bir sevgi veya duygusal bir taşma dönemi yaşamışsın.",
-        "duz_simdi": "Şu an kalbinin pır pır attığı, sevgiye, şefkate ve yeni duygusal başlangıçlara sonuna kadar açık bir dönemdesin.",
-        "duz_gelecek": "Gelecekte hayatını güzelleştirecek derin bir aşk, ruhsal tatmin veya mutlu bir haber kapını çalacak.",
-        "ters_gecmis": "Geçmişte duygusal tıkanıklıklar yaşamış, kalbini kapatmış ve sevgiyi göstermekte zorlanmışsın.",
-        "ters_simdi": "Şu sıralar içsel bir boşluk hissediyor, duygularını bastırıyor veya karşılıksız sevgilerden yoruluyorsun.",
-        "ters_gelecek": "Gelecekte duygusal hayal kırıklıkları ve sevgisizlik hissi kalbini bir süre yorabilir."
+
+    # --- KÜÇÜK ARKANA: KUPALAR (CUPS) ---
+    "KUPALARIN ASI (ACE OF CUPS)": {
+        "duz_gecmis": "Geçmişte kalbini açan muazzam bir aşk, ilahi bir sevgi veya duygusal yenilenme yaşamışsın.",
+        "duz_simdi": "Şu an kalbin sevgiyle tağşiş olmuş durumda; yeni bir ilişki veya büyük bir huzur kapında.",
+        "duz_gelecek": "Gelecekte duygusal olarak seni tatmin edecek, ruhunu doyuran muazzam bağlar kuracaksın.",
+        "ters_gecmis": "Geçmişte kırık bir kalple ya da bastırılmış duygularla baş etmeye çalışmışsın.",
+        "ters_simdi": "Şu an duygusal olarak tıkanmış, sevgini göstermekte zorlanan bir yapısın.",
+        "ters_gelecek": "Gelecekte kalbindeki o buzlar eriyecek ve yeniden sevgiye kapı açacaksın."
     },
-    38: {
-        "isim": "KUPA İKİLİSİ (TWO OF CUPS)",
-        "duz_gecmis": "Geçmişte hayatını değiştiren özel bir ortaklık, uyumlu bir ilişki veya ruh eşi bağı kurmuşsun.",
-        "duz_simdi": "Şu an biriyle aranızda harika bir uyum, karşılıklı çekim ve kalpten bir anlaşma söz konusu.",
-        "duz_gelecek": "Gelecekte uzun soluklu, sevgi dolu bir ilişki veya çok güçlü bir iş ortaklığı seni bekliyor.",
-        "ters_gecmis": "Geçmişte ilişkilerde uyumsuzluk, kopukluklar ve karşılıklı yanlış anlamalar yaşanmış.",
-        "ters_simdi": "Şu sıralar partnerinle aranızdaki bağda kopukluklar var; dengeyi ve uyumu yeniden kurmanız gerekiyor.",
-        "ters_gelecek": "Gelecekte yanlış ortaklıklar veya ilişkilerde bitişler yaşanma ihtimaline karşı dikkatli olmalısın."
+    "KUPALARIN İKİLİSİ (TWO OF CUPS)": {
+        "duz_gecmis": "Geçmişte ruh eşi seviyesinde uyumlu bir ortaklık veya aşk ilişkisi kurulmuş.",
+        "duz_simdi": "Şu an karşılıklı anlaşma, uyum, sevgi ve iki kalbin birleştiği özel bir bağın içindesin.",
+        "duz_gelecek": "Gelecekte hayatını birleştireceğin çok özel bir ortaklık ya da evlilik teklifi gelebilir.",
+        "ters_gecmis": "Geçmişte ilişkilerde kopukluklar, yanlış anlamalar ve uyumsuzluklar yaşanmış.",
+        "ters_simdi": "Şu an sevdiğin kişiyle aranızda iletişim kopukluğu veya dengesizlik hissedebilirsin.",
+        "ters_gelecek": "Gelecekte taraflar arasındaki buzları eriterek yeniden uyumu yakalayacaksınız."
     },
-    39: {
-        "isim": "KUPA ÜÇLÜSÜ (THREE OF CUPS)",
-        "duz_gecmis": "Geçmişte dostlarınla bir araya geldiğin, başarıları kutladığın neşeli ve keyifli partiler yaşamışsın.",
-        "duz_simdi": "Şu an arkadaşlarınla sosyalleştiğin, kutlamalar yaptığın ve keyifli vakit geçirdiğin neşeli bir dönemdesin.",
-        "duz_gelecek": "Gelecekte kutlamalar, düğünler veya dostlarla bir araya gelerek neşe depolayacağın anlar var.",
-        "ters_gecmis": "Geçmişte dedikodular, dost kazıkları veya aşırı sosyalleşmekten tükenme durumları yaşanmış.",
-        "ters_simdi": "Şu sıralar sosyal çevrende bazı anlaşmazlıklar veya dışlanma hissi gibi durumlar canını sıkabilir.",
-        "ters_gelecek": "Gelecekte yanlış dostluklar ve dedikodular huzurunu kaçırabilir, çevrene dikkat etmelisin."
+    "KUPALARIN ÜÇLÜSÜ (THREE OF CUPS)": {
+        "duz_gecmis": "Geçmişte dostlarla birlikte kutlanan, neşeli ve keyifli bir sosyal dönem geçirilmiş.",
+        "duz_simdi": "Şu an arkadaşlarınla bir arada olmak, kutlama yapmak ve keyifli anlar paylaşmak için harika bir an.",
+        "duz_gelecek": "Gelecekte düğün, parti veya mutlu toplu buluşmalarla enerjini yükselteceksin.",
+        "ters_gecmis": "Geçmişte dedikodular, fesatlıklar veya sosyal çevreden uzaklaşma yaşanmış.",
+        "ters_simdi": "Şu an sosyal hayatta aşırılığa kaçma ya da arkandan çevrilen dedikodularla karşılaşabilirsin.",
+        "ters_gelecek": "Gelecekte sahte dostlukları eleyip gerçek dostlarınla daha samimi bağlar kuracaksın."
     },
-    40: {
-        "isim": "KUPA DÖRTLÜSÜ (FOUR OF CUPS)",
-        "duz_gecmis": "Geçmişte önüne sunulan fırsatları beğenmemiş, tatminsizlik ve içe kapanıklıkla vakit geçirmişsin.",
-        "duz_simdi": "Şu an her şeyim var ama mutsuzum ruh halindesin; önündeki fırsatları görmezden gelerek küskün duruyorsun.",
-        "duz_gelecek": "Gelecekte bu apatiden sıyrılacak ve göz ardı ettiğin yeni bir fırsatı nihayet fark edeceksin.",
-        "ters_gecmis": "Geçmişte içine kapanık dönemi geride bırakmış, hayata yeniden motive olmayı başarmışsın.",
-        "ters_simdi": "Şu sıralar kabuğundan çıkmaya başlıyor, ilgisizliğin yerini yavaş yavaş merak duygusuna bırakıyor.",
-        "ters_gelecek": "Gelecekte fırsatları kaçırmamak için biraz daha uyanık olmalı ve hayata küsmemelisin."
+    "KUPALARIN DÖRDÜLSÜ (FOUR OF CUPS)": {
+        "duz_gecmis": "Geçmişte sunulan fırsatları görmezden gelmiş, bıkkınlık ve tatminsizlik yaşamışsın.",
+        "duz_simdi": "Şu an mevcuttan sıkılmış, içine kapanmış ve etrafındaki güzellikleri fark edemez haldesin.",
+        "duz_gelecek": "Gelecekte bu apatiden sıyrılarak önüne çıkan yeni fırsatları fark edeceksin.",
+        "ters_gecmis": "Geçmişte depresif halden çıkarak yeniden hayata tutunmaya başlamışsın.",
+        "ters_simdi": "Şu an kabuğundan çıkmaya başladığın, uyanışa geçtiğin bir döneme giriyorsun.",
+        "ters_gelecek": "Gelecekte hayata küsmek yerine yeni heyecanların peşinden gideceksin."
     },
-    41: {
-        "isim": "KUPA BEŞLİSİ (FIVE OF CUPS)",
-        "duz_gecmis": "Geçmişte dökülen sütlere ağlamış, kaybettiklerinin yasını tutarak kalbini bir süre üzüntüye teslim etmişsin.",
-        "duz_simdi": "Şu an geçmişte kalan hayal kırıklıklarına odaklanmış, elinde kalanları görmezden gelerek hüzün yaşayorsun.",
-        "duz_gelecek": "Gelecekte yas döneminin sonuna gelecek ve arkana değil, arkada kalanların dışındaki dolu bardaklara bakacaksın.",
-        "ters_gecmis": "Geçmişte yas sürecini tamamlamış, affetmiş ve hayata yeniden umutla bakmaya başlamışsın.",
-        "ters_simdi": "Şu sıralar yavaş yavaş üzüntüden sıyrılıyor, geçmişin yükünü hafifleterek kabullenmeye geçiyorsun.",
-        "ters_gelecek": "Gelecekte eski defterleri tamamen kapatıp geçmişin acılarından arınarak özgürleşeceksin."
+    "KUPALARIN BEŞLİSİ (FIVE OF CUPS)": {
+        "duz_gecmis": "Geçmişte dökülen sütlere üzülmüş, kayıplar ve hayal kırıklıkları yüzünden yas tutmuşsun.",
+        "duz_simdi": "Şu an geçmişteki bir pişmanlığa takılıp kalmış, kalan güzellikleri göremiyorsun.",
+        "duz_gelecek": "Gelecekte yas dönemi bitecek ve arkada kalan sağlam bağları fark edip teselli bulacaksın.",
+        "ters_gecmis": "Geçmişteki acıları affetmiş, kalbini iyileştirmeye başlamışsın.",
+        "ters_simdi": "Şu an yavaş yavaş affetme ve geçmişin yükünden arınma sürecindesin.",
+        "ters_gelecek": "Gelecekte kayıplarını birer ders olarak kabul edip umutla ileriye bakacaksın."
     },
-    42: {
-        "isim": "KUPA ALTILISI (SIX OF CUPS)",
-        "duz_gecmis": "Geçmişte çocukluk anıları, eski dostlar veya nostaljik güzellikler hayatında çok önemli bir yer tutmuş.",
-        "duz_simdi": "Şu an geçmişten gelen güzel hatıralar, eski bir tanıdık veya saf bir nostalji rüzgarı esiyor.",
-        "duz_gelecek": "Gelecekte geçmişten biriyle yeniden karşılaşabilir ya da hayatına çocuksu bir neşe ve masumiyet dönebilir.",
-        "ters_gecmis": "Geçmişe çok fazla takılıp kalmış, bugünü yaşayamayarak nostaljinin esiri olmuşsun.",
-        "ters_simdi": "Şu sıralar geçmişteki anılara takılıp kalmaktan anı kaçırıyor veya eski travmaları bugüne taşıyorsun.",
-        "ters_gelecek": "Gelecekte geçmişin hayaletlerinden kurtulup geleceğe odaklanman gereken durumlar oluşacak."
+    "KUPALARIN ALTILISI (SIX OF CUPS)": {
+        "duz_gecmis": "Geçmişin tatlı anıları, çocukluk dostları veya nostalji dolu günler zihnini sarmış.",
+        "duz_simdi": "Şu an geçmişten gelen biriyle karşılaşabilir veya saf, masum sevgi enerjisi hissedebilirsin.",
+        "duz_gelecek": "Gelecekte eski güzel günlerin huzurunu ve saf sevgiyi yeniden bulacaksın.",
+        "ters_gecmis": "Geçmişe aşırı takılıp kalmak şimdiki zamanı kaçırmana neden olmuş.",
+        "ters_simdi": "Şu an nostaljide takılı kalmış, büyümekten kaçan bir çocuk psikolojisi sergiliyor olabilirsin.",
+        "ters_gelecek": "Gelecekte geçmişin gölgesinden çıkıp şimdiki zamanın gerçekleriyle yüzleşeceksin."
     },
-    43: {
-        "isim": "KUPA YEDİLİSİ (SEVEN OF CUPS)",
-        "duz_gecmis": "Geçmişte hayal aleminde yaşamış, gerçekçi olmayan seçenekler ve illüzyonlar arasında kaybolmuşsun.",
-        "duz_simdi": "Şu an önünde pek çok seçenek var ama hangisinin gerçek hangisinin hayal olduğunu seçmekte zorlanıyorsun.",
-        "duz_gelecek": "Gelecekte hayaller ile gerçekler arasında bir seçim yapacak ve ayakların yere basmaya başlayacak.",
-        "ters_gecmis": "Geçmişte hayallerden uyanmış, net ve gerçekçi kararlar alarak odağını bulmuşsun.",
-        "ters_simdi": "Şu sıralar illüzyonlar dağılıyor; artık hayalperestlikten çıkıp gerçeklerle yüzleşiyorsun.",
-        "ters_gelecek": "Gelecekte yanlış hayallerin peşinden koşarak vakit kaybetmeme bilincine erişeceksin."
+    "KUPALARIN YEDİLİSİ (SEVEN OF CUPS)": {
+        "duz_gecmis": "Geçmişte hayalperest dünyalar kurmuş, gerçekçi olmayan seçenekler arasında kafan karılmış.",
+        "duz_simdi": "Şu an seçenekler çok fazla ama bunların hangisi gerçek hangisi illüzyon ayırt etmekte zorlanıyorsun.",
+        "duz_gelecek": "Gelecekte hayal ile gerçeği ayırt edecek ve doğru seçimi netçe yapacaksın.",
+        "ters_gecmis": "Geçmişteki yanılgılardan uyanmış, gerçekçi adımlar atmaya başlamışsın.",
+        "ters_simdi": "Şu an sisler dağılıyor ve hayallerinden sıyrılarak ayakların yere basmaya başlıyor.",
+        "ters_gelecek": "Gelecekte net bir vizyonla hedefine odaklanacaksın."
     },
-    44: {
-        "isim": "KUPA SEKİZLİSİ (EIGHT OF CUPS)",
-        "duz_gecmis": "Geçmişte artık sana ruhsal olarak yetmeyen bir durumu, ilişkiyi veya ortamı arkanda bırakıp yola çıkmışsın.",
-        "duz_simdi": "Şu an seni tatmin etmeyen şeyleri terk ediyor, daha yüksek bir anlam aramak için yola koyuluyorsun.",
-        "duz_gelecek": "Gelecekte ruhsal olarak seni beslemeyen her şeyi geride bırakıp yeni bir arayışa ve yolculuğa çıkacaksın.",
-        "ters_gecmis": "Geçmişte gitmen gereken yerden ayrılamamış, korku yüzünden mutsuz bir düzende kalmışsın.",
-        "ters_simdi": "Şu sıralar gitmekle kalmak arasında sıkışıp kalmışsın; cesaretini toplamakta zorlanıyorsun.",
-        "ters_gelecek": "Gelecekte korkuları yenip nihayet sana zarar veren o yapıyı arkanda bırakmayı başaracaksın."
+    "KUPALARIN SEKİZLİSİ (EIGHT OF CUPS)": {
+        "duz_gecmis": "Geçmişte sana artık duygusal olarak yetmeyen bir durumu veya yeri arkanda bırakıp gitmişsin.",
+        "duz_simdi": "Şu an ruhsal olarak olgunlaşmak için bazı şeyleri terk etme, arayışa çıkma zamanındasın.",
+        "duz_gelecek": "Gelecekte daha anlamlı bir yaşam arayışıyla yeni ve manevi yollara yürüyeceksin.",
+        "ters_gecmis": "Geçmişte gitmekten korkmuş, mutsuz olduğun bir durumda kalmaya devam etmişsin.",
+        "ters_simdi": "Şu an gitme korkusu ile kalma acısı arasında sıkışıp kalmış durumdasın.",
+        "ters_gelecek": "Gelecekte nihayet gereken cesareti toplayıp seni tüketen yerden uzaklaşacaksın."
     },
-    45: {
-        "isim": "KUPA DOKUZLUSU (NINE OF CUPS)",
-        "duz_gecmis": "Geçmişte dileklerin kabul olmuş, keyfin, huzurun ve kişisel tatminin doruklarında bir dönem yaşamışsın.",
-        "duz_simdi": "Şu an isteklerinin gerçekleştiği, 'dilek kartı' denilen, son derece mutlu ve tatmin dolu bir andasın.",
-        "duz_gelecek": "Gelecekte yüzünü güldürecek, kalbini tatmin edecek harika dileklerin gerçeğe dönüştüğünü göreceksin.",
-        "ters_gecmis": "Geçmişte doyumsuzluk yaşamış, elde ettiklerinin kıymetini bilemeyerek mutsuzluk üretmişsin.",
-        "ters_simdi": "Şu sıralar içsel bir tatminsizlik var; her şeyim var ama sanki eksik bir şeyler var diyorsun.",
-        "ters_gelecek": "Gelecekte açgözlülükten kaçındığın sürece sahip olduğun mutluluğun kıymetini daha iyi anlayacaksın."
+    "KUPALARIN DOKUZLUSU (NINE OF CUPS)": {
+        "duz_gecmis": "Geçmişte dileklerin kabul olmuş, keyif, konfor ve tatmin dolu harika anlar yaşamışsın.",
+        "duz_simdi": "Şu an 'Dilek Kartı' olarak bilinir; keyfin yerinde, oldukça mutlu ve tatmin hissediyorsun.",
+        "duz_gelecek": "Gelecekte tüm isteklerinin gerçekleşeceği tatmin dolu günler seni bekliyor.",
+        "ters_gecmis": "Geçmişte açgözlülük veya tatminsizlik yüzünden elindekilerin kıymeti bilinmemiş.",
+        "ters_simdi": "Şu an dıştan her şey mükemmel görünse de içten bir tatminsizlik yaşıyorsun.",
+        "ters_gelecek": "Gelecekte gerçek mutluluğun maddiyatta değil iç huzurda olduğunu fark edeceksin."
     },
-    46: {
-        "isim": "KUPA ONLUSU (TEN OF CUPS)",
-        "duz_gecmis": "Geçmişte huzurlu aile ortamı, mutlu bir evlilik ve ruhsal olarak tam bir tatmin bulduğun limana ulaşmışsın.",
-        "duz_simdi": "Şu an hayatında her şeyin uyum içinde olduğu, sevdiklerinle birlikte tam anlamıyla cenneti yaşadığın bir dönemdesin.",
-        "duz_gelecek": "Gelecekte ömür boyu sürecek mutlu bir aile hayatı, huzur ve kalıcı bir mutluluk seni bekliyor.",
-        "ters_gecmis": "Geçmişte aile içi huzursuzluklar, dağılmış yuvalar veya sahte mutluluklar tecrübe edilmiş.",
-        "ters_simdi": "Şu sıralar aile veya yakın çevre ilişkilerinde geçici soğukluklar ve uyumsuzluklar yaşanabilir.",
-        "ters_gelecek": "Gelecekte evdeki huzuru yeniden tesis etmek için biraz fedakarlık yapman gerekebilir."
+    "KUPALARIN ONLUSU (TEN OF CUPS)": {
+        "duz_gecmis": "Geçmişte mutlu aile tablosu, huzurlu yuva ve ilahi sevgi tam anlamıyla yaşanmış.",
+        "duz_simdi": "Şu an hayatında huzurun, aile bağlarının ve duygusal mutluluğun zirvesindesin.",
+        "duz_gelecek": "Gelecekte uzun ömürlü, huzurlu, mutlu bir aile ve yuva kurma olasılığın çok yüksek.",
+        "ters_gecmis": "Geçmişte aile içi çatışmalar veya idealize edilen mutluluğun yıkılması yaşanmış.",
+        "ters_simdi": "Şu an ev içinde veya yakın ilişkilerde geçici bir uyumsuzluk ve mutsuzluk hissedebilirsin.",
+        "ters_gelecek": "Gelecekte aradaki kırgınlıkları onararak o mutlu tabloyu yeniden kuracaksınız."
     },
-    47: {
-        "isim": "KUPA PRENSİ (PAGE OF CUPS)",
-        "duz_gecmis": "Geçmişte romantik teklifler alan, sanatsal ilhamlarla dolu, hassas ve tatlı dilli biriyle karşılaşmışsın.",
-        "duz_simdi": "Şu an kalbini ısıtacak sürpriz bir haber, romantik bir mesaj veya saf bir teklif kapında.",
-        "duz_gelecek": "Gelecekte sevindirici sürprizler, duygusal teklifler ve yaratıcı sürpriz gelişmeler seni bekliyor.",
-        "ters_gecmis": "Geçmişte aşırı alınganlıklar, duygusal çocukluklar ve hayal kırıklığı yaratan haberler alınmış.",
-        "ters_simdi": "Şu sıralar duygusal olarak çok hassassın; en küçük şeylere kırılabilir, gerçekçi olmayan hayaller kurabilirsin.",
-        "ters_gelecek": "Gelecekte çocuksu kaprisler ve duygusal taşkınlıklar ilişkilerini kısa süreliğine zedeleyebilir."
+    "KUPALARIN VALESİ (PAGE OF CUPS)": {
+        "duz_gecmis": "Geçmişte romantik bir teklif, sürpriz bir mesaj veya saf bir duygusal haber alınmış.",
+        "duz_simdi": "Şu an kalbin kıpır kıpır; yaratıcı sezgiler ve sürpriz duygusal teklifler kapında.",
+        "duz_gelecek": "Gelecekte seni çok mutlu edecek tatlı sürprizler ve saf ilişkiler gelişecek.",
+        "ters_gecmis": "Geçmişte duygusal hayal kırıklıkları veya çocukça tripler yaşanmış.",
+        "ters_simdi": "Şu an duygusal olarak aşırı alıngan veya gerçekçi olmayan beklentiler içindesin.",
+        "ters_gelecek": "Gelecekte duygularını daha olgun bir şekilde ifade etmeyi öğreneceksin."
     },
-    48: {
-        "isim": "KUPA ŞÖVALYESİ (KNIGHT OF CUPS)",
-        "duz_gecmis": "Geçmişte romantik adımlar atan, kalbini sunan, aşkın peşinden koşan zarif bir aşık profili çizmişsin.",
-        "duz_simdi": "Şu an hayatına romantizmin hakim olduğu, tekliflerin ve sevgi gösterilerinin yoğun olduğu bir süreçtesin.",
-        "duz_gelecek": "Gelecekte beyaz atlı prens/prensas edasıyla hayatına girecek çok özel bir teklif veya aşık gelebilir.",
-        "ters_gecmis": "Geçmişte sahte vaatler veren, duygularıyla oynayan veya gerçeklerden kopuk romantik hayalcilerle karşılaşmışsın.",
-        "ters_simdi": "Şu sıralar duygusal konularda hayal kırıklığı yaşama riskin var; vaatlerin altı boş çıkabilir.",
-        "ters_gelecek": "Gelecekte güven sarsıcı romantik manipülasyonlara karşı uyanık olman gerekebilir."
+    "KUPALARIN ŞÖVALYESİ (KNIGHT OF CUPS)": {
+        "duz_gecmis": "Geçmişte romantik, nazik, teklifkar ve aşık bir şövalye hayatına girmiş.",
+        "duz_simdi": "Şu an romantizmin, tekliflerin ve kalbinin sesini dinlemenin en yoğun olduğu zamandasın.",
+        "duz_gelecek": "Gelecekte kalbini çalacak çok özel bir teklif ya da romantik bir gelişme yaşanacak.",
+        "ters_gecmis": "Geçmişte hayal kırıklığı yaratan, tutarsız veya aldatıcı romantik yaklaşımlar olmuş.",
+        "ters_simdi": "Şu an duygusal dalgalanmalar yaşıyor, ne istediğini bilmez bir haldesindir.",
+        "ters_gelecek": "Gelecekte hayalî aşklardan arınarak gerçekçi ve dürüst bağlar kuracaksın."
     },
-    49: {
-        "isim": "KUPA KRALİÇESİ (QUEEN OF CUPS)",
-        "duz_gecmis": "Geçmişte şefkatli, sezgisel, empati yeteneği yüksek ve etrafındakileri iyileştiren bir anaç sevgi sunmuşsun.",
-        "duz_simdi": "Şu an iç sesine tamamen güvenen, son derece şefkatli, merhametli ve duygusal olarak olgun bir duruştasın.",
-        "duz_gelecek": "Gelecekte hayatında sana şefkat gösterecek, dertlerini dinleyecek çok güvenilir bir kadın figürü var.",
-        "ters_gecmis": "Geçmişte duygusal istismara uğramış, aşırı alınganlıklar ve kurban psikolojisiyle tükenmişsin.",
-        "ters_simdi": "Şu sıralar duygusal olarak boğulmuş hissedebilir, kendi kuruntularının kurbanı olabilirsiniz.",
-        "ters_gelecek": "Gelecekte aşırı duygusallık ve manipüle edilmeye açık olma durumlarına karşı dikkatli olmalısın."
+    "KUPALARIN KRALİÇESİ (QUEEN OF CUPS)": {
+        "duz_gecmis": "Geçmişte şefkatli, sezgisel, empati yeteneği yüksek ve koruyucu bir kadın figürü hayatında olmuş.",
+        "duz_simdi": "Şu an kalbinin sesini dinleyen, empatik, etrafına şifa ve sevgi dağıtan bir konumdasın.",
+        "duz_gelecek": "Gelecekte duygusal zekân sayesinde ilişkilerde krizleri ustalıkla çözeceksin.",
+        _ters_gecmis: "Geçmişte aşırı duygusallık, alınganlık ve kendini kurban psikolojisine sokma durumu olmuş.",
+        "ters_simdi": "Şu an duygusal olarak tükenmiş, kendi sınırlarını koruyamaz halde hissedebilirsin.",
+        "ters_gelecek": "Gelecekte içsel şefkati başkalarından önce kendine göstermeyi öğreneceksin."
     },
-    50: {
-        "isim": "KUPA KRALI (KING OF CUPS)",
-        "duz_gecmis": "Geçmişte duygularını mantığıyla dengeleyebilen, bilge, adil ve kriz anlarında sakin kalabilen bir rehber olmuşsun.",
-        "duz_simdi": "Şu an duygusal zekanla hareket eden, etrafındakilere huzur ve güven veren bir otorite konumundasın.",
-        "duz_gelecek": "Gelecekte sana hem duygusal hem de mantıksal anlamda destek olacak çok olgun bir erkek figürü hayatına girecek.",
-        "ters_gecmis": "Geçmişte duygularını bastırmış, içten pazarlıklı veya manipülatif duygusal oyunlar oynamışsın.",
-        "ters_simdi": "Şu sıralar duygularını kontrol etmekte zorlanıyor, içsel bir öfke veya soğukluk dalgası yaşıyorsun.",
-        "ters_gelecek": "Gelecekte duygusal patlamalar veya sinsi tavırlar sergileyen kişilere karşı temkinli olmalısın."
+    "KUPALARIN KRALI (KING OF CUPS)": {
+        "duz_gecmis": "Geçmişte duygularını kontrol edebilen, bilge, anlayışlı ve merhametli bir rehberle karşılaşmışsın.",
+        "duz_simdi": "Şu an duygularınla mantığını muazzam bir dengede tutuyor, sakin ve şefkatli bir duruş sergiliyorsun.",
+        "duz_gelecek": "Gelecekte kriz anlarında bile soğukkanlılığın ve merhametinle örnek gösterileceksin.",
+        "ters_gecmis": "Geçmişte duygularını bastıran, manipülatif veya soğuk kalpli bir yaklaşım görülmüş.",
+        "ters_simdi": "Şu an duygusal patlamalar yaşayabilir ya da hislerini tamamen kapatmış olablirsin.",
+        "ters_gelecek": "Gelecekte duygusal dengeni yeniden bularak etrafına güven vereceksin."
     },
-    51: {
-        "isim": "KILIÇ ASI (ACE OF SWORDS)",
-        "duz_gecmis": "Geçmişte kafandaki tüm sis perdesini dağıtan, hakikati haykıran ve keskin bir zihinsel uyanış yaşayan adımlar atmışsın.",
-        "duz_simdi": "Şu an zihninin berrak olduğu, en doğru kararları vereceğin ve hakikati net bir şekilde göreceğin bir anındasın.",
-        "duz_gelecek": "Gelecekte büyük bir zafer, hukuki bir başarı veya zihinsel olarak çığır açacak parlak bir fikir seninle olacak.",
-        "ters_gecmis": "Geçmişte yanlış anlaşılmalar, adaletsiz kararlar ve zihinsel bulanıklıklar yüzünden hata yapmışsın.",
-        "ters_simdi": "Şu sıralar zihnin çok karışık; keskin kararlar almak yerine yanlış anlamalara açık bir dönemdesin.",
-        "ters_gelecek": "Gelecekte yanlış ifade edilen sözler ve keskin dilli eleştiriler ilişkilerini zedeleyebilir."
+
+    # --- KÜÇÜK ARKANA: KILIÇLAR (SWORDS) ---
+    "KILIÇLARIN ASI (ACE OF SWORDS)": {
+        "duz_gecmis": "Geçmişte zihinsel bir aydınlanma, netleşme ve keskin bir karar alma anı yaşanmış.",
+        "duz_simdi": "Şu an zihnin pırıl pırıl; gerçeği tüm çıplaklığıyla görüyor ve hakikati savunuyorsun.",
+        "duz_gelecek": "Gelecekte adalet, netlik ve zihinsel başarı getirecek büyük kararlar alacaksın.",
+        "ters_gecmis": "Geçmişte yanlış anlamalar, zihinsel bulanıklıklar ve yanlış kararlar alınmış.",
+        "ters_simdi": "Şu an düşüncelerinde dağınıklık var ve gerçeği görmekte zorlanıyorsun.",
+        "ters_gelecek": "Gelecekte zihinsel sisler kalkacak ve doğru kararları netlikle vereceksin."
     },
-    52: {
-        "isim": "KILIÇ İKİLİSİ (TWO OF SWORDS)",
-        "duz_gecmis": "Geçmişte iki seçenek arasında kalıp gözlerini gerçeğe kapatarak taraf seçmeyi reddettiğin bir çıkmaz yaşamışsın.",
-        "duz_simdi": "Şu an gerçeklerle yüzleşmekten kaçındığın, zor bir kararı ertelediğin zihinsel bir çıkmazdasın.",
-        "duz_gelecek": "Gelecekte o gözlerindeki bağ nihayet çözülecek ve ne kadar kaçarsan kaç o kararı vermek zorunda kalacaksın.",
-        "ters_gecmis": "Geçmişte kararsızlığı sonlandırmış, göz bağını çıkarıp zor da olsa bir seçim yapmışsın.",
-        "ters_simdi": "Şu sıralar gerçekler yüzüne tokat gibi çarpıyor; daha fazla kaçamayacağın bir karar anına yaklaşıyorsun.",
-        "ters_gelecek": "Gelecekte ertelenen yüzleşmeler ve kararlar zihnini bir süre daha meşgul etmeye devam edecek."
+    "KILIÇLARIN İKİLİSİ (TWO OF SWORDS)": {
+        "duz_gecmis": "Geçmişte iki seçenek arasında kalmış, karar vermemek için gözlerini gerçeğe kapatmışsın.",
+        "duz_simdi": "Şu an zor bir karar vermemek için direniyor, taraflar arasında denge kurmaya çalışıyorsun.",
+        "duz_gelecek": "Gelecekte daha fazla kaçamayacağın o yüzleşmeyi yaşayıp karar vereceksin.",
+        "ters_gecmis": "Geçmişte gözlerindeki bağ çözülmüş ve zor da olsa bir karar alınmış.",
+        "ters_simdi": "Şu an gerçeklerle yüzleşme vakti geldi; kararsızlık artık sana zarar veriyor.",
+        "ters_gelecek": "Gelecekte o zorlu seçimi yaparak rahat bir nefes alacaksın."
     },
-    53: {
-        "isim": "KILIÇ ÜÇLÜSÜ (THREE OF SWORDS)",
-        "duz_gecmis": "Geçmişte kalbini kıran, ihanet, ayrılık veya acı bir gerçekle yüzleşerek derin bir hüzün yaşamışsın.",
-        "duz_simdi": "Şu an kalp kırıklığı, yas ve acı veren bir yüzleşmeyle sınandığın kederli bir süreçtesin.",
-        "duz_gelecek": "Gelecekte bu acı zamanla hafifleyecek ve o yara yerini derin bir zihinsel olgunluğa bırakacak.",
-        "ters_gecmis": "Geçmişteki kalp kırıklıklarını iyileştirmeye başlamış, affetme ve yaraları sarma yoluna girmişsin.",
-        "ters_simdi": "Şu sıralar acıyı atlatmaya çalışıyor, içindeki o kırgınlığı geride bırakmak için çaba sarf ediyorsun.",
-        "ters_gelecek": "Gelecekte eski acıların tamamen kabuk bağlayacağı ve huzuru bulacağın günler çok yakın."
+    "KILIÇLARIN ÜÇLÜSÜ (THREE OF SWORDS)": {
+        "duz_gecmis": "Geçmişte büyük bir kalp kırıklığı, ihanet veya acı bir ayrılık yaşanmış.",
+        "duz_simdi": "Şu an ruhsal bir acı, hüzün veya kalbi yaralayan bir gerçekle yüzleşiyorsun.",
+        "duz_gelecek": "Gelecekte bu acı zamanla hafifleyecek ve yaralarını sarma fırsatı bulacaksın.",
+        "ters_gecmis": "Geçmişteki acılar yavaş yavaş sarılmış, affetme süreci başlamış.",
+        "ters_simdi": "Şu an eski yaraları kaşıyor, acıyı taze tutmaktan vazgeçmiyorsun.",
+        "ters_gelecek": "Gelecekte kalp kırıklıklarını geride bırakıp şifaya kavuşacaksın."
     },
-    54: {
-        "isim": "KILIÇ DÖRTLÜSÜ (FOUR OF SWORDS)",
-        "duz_gecmis": "Geçmişte yoğun stres ve koşturmacanın ardından hastaneye çekilir gibi derin bir dinlenme ve zihinsel mola almışsın.",
-        "duz_simdi": "Şu an her şeyden elini ayağını çekip kafanı dinlemen, şifa bulman ve zihnini sessize alman gereken bir şarj sürecindesin.",
-        "duz_gelecek": "Gelecekte bu dinlenme sayesinde çok daha dinç, zinde ve güçlü bir şekilde sahalara geri döneceksin.",
-        "ters_gecmis": "Geçmişte dinlenmeyi reddetmiş, tükenmiş bir zihinle çalışmaya devam ederek sağlığını zorlamışsın.",
-        "ters_simdi": "Şu sıralar zihinsel yorgunluk hat safhada ama hala durmayı reddediyorsun; biraz yavaşlamalısın.",
-        "ters_gelecek": "Gelecekte zorunlu bir mola (hastalık vb.) almamak için şimdiden dinlenmeye özen göstermelisin."
+    "KILIÇLARIN DÖRDÜLSÜ (FOUR OF SWORDS)": {
+        "duz_gecmis": "Geçmişte derin bir yorgunluk sonrası zihinsel dinlenme ve hastane/şifa molası verilmiş.",
+        "duz_simdi": "Şu an dünyadan el etek çekme, zihnini dinlendirme ve kabuğuna çekilip şifa bulma zamanı.",
+        "duz_gelecek": "Gelecekte bu dinlenme sana çok iyi gelecek ve yenilenmiş olarak döneceksin.",
+        "ters_gecmis": "Geçmişte dinlenmeye vakit bulamadan aşırı stres altında çalışmışsın.",
+        "ters_simdi": "Şu an tükenmek üzeresin ama hâlâ dinlenmeyi reddediyorsun.",
+        "ters_gelecek": "Gelecekte zorunlu bir mola alarak pilini yeniden dolduracaksın."
     },
-    55: {
-        "isim": "KILIÇ BEŞLİSİ (FIVE OF SWORDS)",
-        "duz_gecmis": "Geçmişte her ne pahasına olursa olsun kazandığını sandığın ama aslında herkesi kaybettiğin toksik bir kavga yaşamışsın.",
-        "duz_simdi": "Şu an çevrende hileli durumların, ego savaşlarının ve kimin haklı olduğunun önemsizleştiği bir kriz var.",
-        "duz_gelecek": "Gelecekte bu tarz ucuz zaferlerin ve sinsi çekişmelerin sana hiçbir şey kazandırmadığını fark edeceksin.",
-        "ters_gecmis": "Geçmişte haksız bir kavgadan uzaklaşmış, gururlu bir duruşla orayı terk etmeyi seçmişsin.",
-        "ters_simdi": "Şu sıralar gerginlikleri bitirme, barış sağlama veya geçmişteki haksızlıkları telafi etme çabasındasın.",
-        "ters_gelecek": "Gelecekte ego savaşlarına son vererek daha olgun bir iletişim tarzı benimsemeye başlayacaksın."
+    "KILIÇLARIN BEŞLİSİ (FIVE OF SWORDS)": {
+        "duz_gecmis": "Geçmişte kazanılan ama kimseyi mutlu etmeyen zehirli bir zafer veya tartışma yaşanmış.",
+        "duz_simdi": "Şu an çıkarcı ilişkiler, arkadan iş çevirmeler ve ego savaşlarıyla dolu bir ortamdasın.",
+        "duz_gelecek": "Gelecekte bu tür toksik insanlardan uzak durman gerektiğinin farkına varacaksın.",
+        "ters_gecmis": "Geçmişte yaşanan haksızlıklar tatlıya bağlanmaya çalışılmış veya barışılmış.",
+        "ters_simdi": "Şu an pişmanlık duyduğun bazı tartışmaların ve kırıcı sözlerin etkisindesin.",
+        "ters_gelecek": "Gelecekte bu tatsız olayları geride bırakıp yeni bir sayfa açacaksın."
     },
-    56: {
-        "isim": "KILIÇ ALTILISI (SIX OF SWORDS)",
-        "duz_gecmis": "Geçmişte arkanda fırtınalar bırakarak daha sakin, huzurlu sulara doğru zorunlu bir yolculuğa çıkmışsın.",
-        "duz_simdi": "Şu an sorunlu bir dönemi arkada bırakıp daha sakin, güvenli bir geleceğe doğru ilerleme sürecindesin.",
-        "duz_gelecek": "Gelecekte fırtınalar dinecek, sular durulacak ve hayatında çok daha huzurlu bir limana varacaksın.",
-        "ters_gecmis": "Geçmişte sorunlardan kaçmaya çalışmış ama sıkıntılı dönemi bir türlü arkanda bırakamamışsın.",
-        "ters_simdi": "Şu sıralar geçiş sürecinde pürüzler yaşıyor, sorunları çözmeden kaçmaya çalışmanın bedelini ödüyorsun.",
-        "ters_gelecek": "Gelecekte çözülmemiş meseleler tekrar önüne çıkabilir, önce onları temizlemen gerekecek."
+    "KILIÇLARIN ALTILISI (SIX OF SWORDS)": {
+        "duz_gecmis": "Geçmişte sorunlu bir yeri arkada bırakıp daha sakin ve güvenli sulara doğru yol almışsın.",
+        "duz_simdi": "Şu an zorlukları geride bırakıyor, yavaş yavaş huzura ve sakinliğe doğru ilerliyorsun.",
+        "duz_gelecek": "Gelecekte sıkıntılı dönemi tamamen atlatıp mental olarak huzura ereceksin.",
+        "ters_gecmis": "Geçmişte sorunlardan kaçmaya çalışmış ama problemleri de beraberinde götürmüşsün.",
+        "ters_simdi": "Şu an sıkıntılı süreç uzuyor; gitmek istiyorsun ama geriye dönük engeller var.",
+        "ters_gelecek": "Gelecekte o zorlu geçiş sürecini başarıyla tamamlayacaksın."
     },
-    57: {
-        "isim": "KILIÇ YEDİLİSİ (SEVEN OF SWORDS)",
-        "duz_gecmis": "Geçmişte gizli saklı işler çevirmiş, kurnazlık yapmış ya da bir şeylerden sinsice kaçmak zorunda kalmışsın.",
-        "duz_simdi": "Şu an etrafında gizli planlar dönüyor olabilir veya sen sorumluluklardan kaçmak için kurnazca yollar arıyorsun.",
-        "duz_gelecek": "Gelecekte arkadan iş çeviren insanlara veya gizli saklı yürütülen projelere karşı uyanık olmalısın.",
-        "ters_gecmis": "Geçmişte dürüstlüğü seçmiş, yalanların ve kurnazlıkların ortaya dökülmesiyle dersini almışsın.",
-        "ters_simdi": "Şu sıralar vicdan muhasebesi yapıyor, gizlediğin şeylerin yükünden kurtulmak istiyorsun.",
-        "ters_gelecek": "Gelecekte dürüst olmayan tutumların başına iş açabileceği için açık oynamakta fayda var."
+    "KILIÇLARIN YEDİLİSİ (SEVEN OF SWORDS)": {
+        "duz_gecmis": "Geçmişte gizli saklı işler, stratejik hamleler veya kurnazlıklar yapılmış.",
+        "duz_simdi": "Şu an etrafında güven sarsıcı durumlar olabilir; kurnazlığa veya stratejiye dikkat etmelisin.",
+        "duz_gelecek": "Gelecekte gizli saklı kalan bazı gerçekler gün yüzüne çıkabilir.",
+        "ters_gecmis": "Geçmişte yapılan hatalar veya hırsızlıklar ortaya dökülmüş, itiraflar gelmiş.",
+        "ters_simdi": "Şu an dürüst olmama lüksün yok; sırların açığa çıkmasından korkuyorsun.",
+        "ters_gelecek": "Gelecekte dürüstlüğün en iyi politika olduğunu anlayıp her şeyi açıklayacaksın."
     },
-    58: {
-        "isim": "KILIÇ SEKİZLİSİ (EIGHT OF SWORDS)",
+    "KILIÇLARIN SEKİZLİSİ (EIGHT OF SWORDS)": {
         "duz_gecmis": "Geçmişte kendi zihinsel hapishaneni kurmuş, eli kolu bağlı çaresiz bir kurban psikolojisiyle yaşmışsın.",
         "duz_simdi": "Şu an kendini çıkmazda ve kapana kısılmış hissediyorsun ama o ipler aslında o kadar da sıkı değil.",
         "duz_gelecek": "Gelecekte gözlerindeki bağı çözecek ve o zihinsel hapishaneden kendi gücünle çıkıp özgürleşeceksin.",
         "ters_gecmis": "Geçmişte kurban psikolojisinden kurtulmuş, zincirlerini kırarak özgürlüğünü ilan etmişsin.",
-        "ters_simdi": "Şu sıralar çaresizlik hissinden yavaş yavaş sıyrılıyor, durumu değiştirebilecek gücü fark ediyorsun.",
-        "ters_gelecek": "Gelecekte zihinsel engelleri tamamen yıkarak çok daha özgür kararlar alacaksın."
+        "ters_simdi": "Şu an özgürlüğe doğru ilk adımları atıyor, korkularını yavaş yavaş kırmaya başlıyorsun.",
+        "ters_gelecek": "Gelecekte kısıtlamalardan tamamen kurtulup kendi hayatının lideri olacaksın."
     },
-    59: {
-        "isim": "KILIÇ DOKUZLUSU (NINE OF SWORDS)",
-        "duz_gecmis": "Geçmişte kabuslar gördüğün, uykusuz geceler geçirdiğin, kaygı ve endişeden zihnini tüketmişsin.",
-        "duz_simdi": "Şu an aşırı kaygı, kuruntu ve stres yüzünden geceleri uyuyamadığın zihinsel bir tükenmişliktesin.",
-        "duz_gelecek": "Gelecekte bu korkuların çoğunun yersiz olduğunu anlayacak ve derin bir nefes alarak rahatlayacaksın.",
-        "ters_gecmis": "Geçmişte kaygılarla baş etmeyi öğrenmiş, zihinsel kabusları geride bırakarak şifa bulmuşsun.",
-        "ters_simdi": "Şu sıralar endişelerin yavaş yavaş hafifliyor; fırtınanın en şiddetli anı geride kalıyor.",
-        "ters_gelecek": "Gelecekte zihnini kemiren o vesveselerden kurtularak çok daha huzurlu uykular uyuyacaksın."
+    "KILIÇLARIN DOKUZLUSU (NINE OF SWORDS)": {
+        "duz_gecmis": "Geçmişte aşırı kuruntular, kabuslar, kaygı ve uykusuz geceler seni yıpratmış.",
+        "duz_simdi": "Şu an kafaya taktığın vesveseler ve kaygılar yüzünden huzursuz ve endişelisin.",
+        "duz_gelecek": "Gelecekte bu korkuların çoğunun yersiz olduğunu görüp derin bir 'oh' çekeceksin.",
+        "ters_gecmis": "Geçmişte anksiyete dönemi geride kalmış, iç huzuru yavaşça sağlanmış.",
+        "ters_simdi": "Şu an kaygıların hafiflemeye başlıyor, gizli korkularınla yüzleşiyorsun.",
+        "ters_gelecek": "Gelecekte kabusların bittiği, sabahı aydınlık göreceğin bir döneme giriyorsun."
     },
-    60: {
-        "isim": "KILIÇ ONLUSU (TEN OF SWORDS)",
-        "duz_gecmis": "Geçmişte hayatının en büyük sırt darbesini almış, dibe vurduğun ve her şeyin bittiğini sandığın bir yıkım yaşamışsın.",
-        "duz_simdi": "Şu an acı verici bir sonun son aşamasındasın; bundan daha kötü olamaz dediğin bir dip noktasındasın.",
-        "duz_gelecek": "Gelecekte bu dip noktası senin için yepyeni bir başlangıç olacak; çünkü daha fazla düşemezsin, yönün yukarı.",
-        "ters_gecmis": "Geçmişteki o büyük yıkımın ardından yaralarını sarmış ve yavaş yavaş toparlanmaya başlamışsın.",
-        "ters_simdi": "Şu sıralar en kötü günlerin geride kalıyor; felaket senaryoları yerini toparlanmaya bırakıyor.",
-        "ters_gelecek": "Gelecekte o enkazdan güçlenerek çıkacak ve hayatını yeniden inşa edeceksin."
+    "KILIÇLARIN ONLUSU (TEN OF SWORDS)": {
+        "duz_gecmis": "Geçmişte dip noktayı gördüğün, en ağır ihaneti veya yıkımı yaşayıp dibe vurmuşsun.",
+        "duz_simdi": "Şu an 'daha kötü ne olabilir ki' diyeceğin bir bitiş noktasındasın ama en azından dibe vurdun.",
+        "duz_gelecek": "Gelecekte bu durumun en dip nokta olduğunu, bundan sonra sadece yukarı çıkabileceğini göreceksin.",
+        "ters_gecmis": "Geçmişte felaketten kıl payı kurtulmuş veya yavaş yavaş toparlanmaya başlamışsın.",
+        "ters_simdi": "Şu an yaralarını sarmaya ve en kötü günleri geride bırakmaya çalışıyorsun.",
+        "ters_gelecek": "Gelecekte bu acı tecrübe sayesinde eskisinden çok daha güçlü ayağa kalkacaksın."
     },
-    61: {
-        "isim": "KILIÇ PRENSİ (PAGE OF SWORDS)",
-        "duz_gecmis": "Geçmişte her şeyi sorgulayan, araştırmacı, dedikoduları toplayan ama biraz da sivri dilli biriyle karşılaşmışsın.",
-        "duz_simdi": "Şu an etrafı gözlemleyen, meraklı, her şeyi didik didik eden ve keskin sözler sarf eden bir zihin yapısındasın.",
-        "duz_gelecek": "Gelecekte beklenmedik haberler alacak, arkandan dönen bazı dedikoduları öğreneceksin.",
-        "ters_gecmis": "Geçmişte düşünmeden konuşmuş, sivri dilin yüzünden insanları kırmış ve yanlış bilgiler yaymışsın.",
-        "ters_simdi": "Şu sıralar dedikodulara ve asılsız bilgilere karşı dikkatli olmalı, dilinin kemiğine kulak vermelisin.",
-        "ters_gelecek": "Gelecekte fevri ve patavatsız açıklamalar yapmaktan kaçınman gereken durumlar oluşabilir."
+    "KILIÇLARIN VALESİ (PAGE OF SWORDS)": {
+        "duz_gecmis": "Geçmişte meraklı, araştırmacı, her şeyi sorgulayan ve tetikte bir tutum sergilenmiş.",
+        "duz_simdi": "Şu an gözlem yapıyor, bilgi topluyor ve etrafında dönen olayları dikkatle inceliyorsun.",
+        "duz_gelecek": "Gelecekte beklenmedik haberler alacak ve zihinsel olarak zekice hamleler yapacaksın.",
+        "ters_gecmis": "Geçmişte patavatsız sözler, dedikodular veya fevri çıkışlar sorun yaratmış.",
+        "ters_simdi": "Şu an sivri dilli olmaktan kaçınmalı, fevri açıklamalar yapmamalısın.",
+        "ters_gelecek": "Gelecekte iletişimde daha yapıcı ve sakin bir üslup benimseyeceksin."
     },
-    62: {
-        "isim": "KILIÇ ŞÖVALYESİ (KNIGHT OF SWORDS)",
-        "duz_gecmis": "Geçmişte fırtına gibi estiren, zekasıyla ve hırsıyla hedeflerine doğru koşan keskin bir mücadele vermişsin.",
-        "duz_simdi": "Şu an inanılmaz hızlı, aceleci, mantığınla hareket eden ve engelleri bıçak gibi kesip atan bir enerjidesin.",
-        "duz_gelecek": "Gelecekte ani bir mücadele, hızlı kararlar ve zihinsel olarak çok yoğun bir koşturmaca seni bekliyor.",
-        "ters_gecmis": "Geçmişte düşüncesizce ve saldırgan bir üslupla hareket ederek etrafındaki herkesi kırmışsın.",
-        "ters_simdi": "Şu sıralar çok sert ve agresif çıkışlar yapıyorsun; sakinleşmezsen bu öfke sana zarar verecek.",
-        "ters_gelecek": "Gelecekte fevri ve yıkıcı tartışmalardan kaçınman gerektiğini acı bir tecrübeyle anlayabilirsin."
+    "KILIÇLARIN ŞÖVALYESİ (KNIGHT OF SWORDS)": {
+        "duz_gecmis": "Geçmişte hızla hareket eden, aceleci, keskin kararlar alan ve hedefine odaklanan biri olmuş.",
+        "duz_simdi": "Şu an fırtına gibi esiyor, zihnindeki planları hızla ve hiç durmadan hayata geçirmeye çalışıyorsun.",
+        "duz_gelecek": "Gelecekte engelleri fırtına hızıyla aşacağın çok keskin bir mücadele dönemi seni bekliyor.",
+        "ters_gecmis": "Geçmişte düşünmeden söylenen sert sözler ve patavatsızlıklar kalpleri kırmış.",
+        "ters_simdi": "Şu an agresif ve aceleci tavırların etrafındakileri germesine yol açabilir.",
+        "ters_gelecek": "Gelecekte hızını biraz yavaşlatıp stratejik düşünmeyi öğreneceksin."
     },
-    63: {
-        "isim": "KILIÇ KRALİÇESİ (QUEEN OF SWORDS)",
-        "duz_gecmis": "Geçmişte duygulardan ziyade mantığı, adaleti ve dürüstlüğü ön planda tutan keskin kararlar almışsın.",
-        "duz_simdi": "Şu an olaylara son derece objektif, mantıklı, net ve tarafsız bir gözle yaklaşıyorsun.",
-        "duz_gelecek": "Gelecekte hayatında sana net kurallar koyacak, duygusallığa yer vermeyen ama adil bir kadın figürü olacak.",
-        "ters_gecmis": "Geçmişte aşırı soğuk, eleştirel, kırıcı ve buz gibi mesafeli tavırlar sergilemişsin.",
-        "ters_simdi": "Şu sıralar çok yargılayıcı ve acımasız olabiliyorsun; insanlara karşı empatiyi unutmaman gerekiyor.",
-        "ters_gelecek": "Gelecekte yalnızlaşmamak için keskin eleştirilerini biraz yumuşatman gerekebilir."
+    "KILIÇLARIN KRALİÇESİ (QUEEN OF SWORDS)": {
+        "duz_gecmis": "Geçmişte mantığına öncelik veren, dürüst, keskin zekalı ve sınırları net bir kadın figürü olmuş.",
+        "duz_simdi": "Şu an duygulardan ziyade mantıkla hareket ediyor, insanlara net ve mesafeli sınırlar koyuyorsun.",
+        "duz_gelecek": "Gelecekte adaleti ve objektifliği elden bırakmadan profesyonel kararlar alacaksın.",
+        "ters_gecmis": "Geçmişte aşırı soğuk, eleştirel ve katı kalpli tutumlar yalnızlık getirmiş.",
+        "ters_simdi": "Şu an insanlara karşı çok keskin ve kırıcı olmamaya özen göstermelisin.",
+        "ters_gelecek": "Gelecekte mantığınla birlikte empati yeteneğini de yeniden harmanlayacaksın."
     },
-    64: {
-        "isim": "KILIÇ KRALI (KING OF SWORDS)",
-        "duz_gecmis": "Geçmişte entelektüel zekasıyla yasaları koruyan, son derece adil, stratejik ve mantıksal bir otorite kurmuşsun.",
-        "duz_simdi": "Şu an mantığın, hukukun ve stratejik zekanın emirdesin; duygulara yer vermeden analitik kararlar alıyorsun.",
-        "duz_gelecek": "Gelecekte hukuki veya resmi konularda çok güçlü, mantıklı ve adil bir destek göreceksin.",
-        "ters_gecmis": "Geçmişte adaleti kendi çıkarları doğrultusunda kullanan, manipülatif ve katı bir zihniyet hakim olmuş.",
-        "ters_simdi": "Şu sıralar aşırı kuralcı, inatçı ve duygusuz kararlarla çevrendekileri bunaltıyorsun.",
-        "ters_gelecek": "Gelecekte otorite figürleriyle yaşanabilecek zihinsel çatışmalara ve katı kurallara karşı dikkatli ol."
+    "KILIÇLARIN KRALI (KING OF SWORDS)": {
+        "duz_gecmis": "Geçmişte entelektüel, adil, hukuki konularda uzman ve tarafsız kararlar alınmış.",
+        "duz_simdi": "Şu an mantığın, hukukun ve akılcı stratejilerin hakim olduğu bir karar verme aşamasındasın.",
+        "duz_gelecek": "Gelecekte akılcı ve otoriter yapın sayesinde büyük krizleri profesyonellikle çözeceksin.",
+        "ters_gecmis": "Geçmişte aşırı despot, adaletsiz veya manipülatif zihinsel baskılar kurulmuş.",
+        "ters_simdi": "Şu an olaylara çok katı ve entelektüel bir kibirle yaklaşıyor olabilirsiz.",
+        "ters_gelecek": "Gelecekte daha esnek ve adil bir bakış açısı geliştireceksin."
     },
-    65: {
-        "isim": "TABAK/TOPRAK ASI (ACE OF PENTACLES)",
-        "duz_gecmis": "Geçmişte maddi ve somut anlamda çok sağlam bir fırsat yakalamış, yeni bir yatırım veya işe adım atmışsın.",
-        "duz_simdi": "Şu an elinde para, iş, sağlık veya kariyer anlamında çok somut ve bereketli bir fırsat duruyor.",
-        "duz_gelecek": "Gelecekte maddi refah getirecek, uzun vadeli ve kalıcı temelleri olan harika bir başlangıç seni bekliyor.",
-        "ters_gecmis": "Geçmişte kaçırılan maddi fırsatlar, kötü yatırımlar veya finansal sıkıntılar yaşanmış.",
-        "ters_simdi": "Şu sıralar maddi konularda temkinli olmalısın; fırsat gibi görünen bazı tuzaklar para kaybına yol açabilir.",
-        "ters_gelecek": "Gelecekte bütçe dengeni sarsacak harcamalardan ve riskli finansal hamlelerden kaçınmalısın."
+
+    # --- KÜÇÜK ARKANA: TILSIMLAR / PENTAGRAMLAR (PENTACLES) ---
+    "TILSIMLARIN ASI (ACE OF PENTACLES)": {
+        "duz_gecmis": "Geçmişte maddi anlamda yepyeni bir fırsat, iş teklifi veya bolluk kapısı aralanmış.",
+        "duz_simdi": "Şu an eline somut bir fırsat geçiyor; finansal ya da kariyer anlamında harika bir başlangıçtasın.",
+        "duz_gelecek": "Gelecekte yatırımlarının meyvesini alacak, kalıcı ve kazançlı bir döneme gireceksin.",
+        "ters_gecmis": "Geçmişte kaçan maddi fırsatlar veya bütçe açıkları can sıkmış.",
+        "ters_simdi": "Şu an finansal konularda temkinli olmalı, fırsatları elinden kaçırmamalısın.",
+        "ters_gelecek": "Gelecekte bütçeni doğru yöneterek maddi güvenliğini yeniden inşa edeceksin."
     },
-    66: {
-        "isim": "TABAK/TOPRAK İKİLİSİ (TWO OF PENTACLES)",
-        "duz_gecmis": "Geçmişte bütçeyi denkleştirmek, iki işi birden idare etmek ve hayatın akışında hokkabazlık yapmak zorunda kalmışsın.",
-        "duz_simdi": "Şu an hayatındaki birden fazla sorumluluğu veya finansal kalemi dengelemeye çalıştığın esnek bir dönemdesin.",
-        "duz_gelecek": "Gelecekte hayatın temposuna ayak uydurmayı öğrenecek ve ekonomik dengeni sağlamayı başaracaksın.",
-        "ters_gecmis": "Geçmişte dengeler altüst olmuş, borçlar birikmiş ve hayatın yönetimi kontrolden çıkmış.",
-        "ters_simdi": "Şu sıralar ekonomik olarak zorlanıyor, ödemeleri denkleştirmekte büyük bir karmaşa yaşıyorsun.",
-        "ters_gelecek": "Gelecekte finansal dalgalanmalara karşı daha disiplinli bir bütçe planlaması yapman şart."
+    "TILSIMLARIN İKİLİSİ (TWO OF PENTACLES)": {
+        "duz_gecmis": "Geçmişte hayatın koşturmacası içinde iki işi veya bütçeyi dengelemeye çalışmışsın.",
+        "duz_simdi": "Şu an hayatındaki birden fazla sorumluluğu jonglör gibi dengede tutmaya çalışıyorsun.",
+        "duz_gelecek": "Gelecekte bu esneklik yeteneğin sayesinde maddi ve manevi dengeyi kuracaksın.",
+        "ters_gecmis": "Geçmişte dengeler şaşmış, borçlar ve işler birbirine girmiş.",
+        "ters_simdi": "Şu an finansal veya zamansal olarak aşırı bunalmış, kontrolü kaybetmek üzeresin.",
+        "ters_gelecek": "Gelecekte önceliklerini yeniden belirleyerek bu dağınıklığı toparlayacaksın."
     },
-    67: {
-        "isim": "TABAK/TOPRAK ÜÇLÜSÜ (THREE OF PENTACLES)",
-        "duz_gecmis": "Geçmişte ekip çalışmasıyla harika bir iş çıkarılmış, usta ellerden çıkan projeler takdir edilmiş.",
-        "duz_simdi": "Şu an iş yerinde veya bir projede ortaklaşa çalışarak emeklerinin karşılığını aldığın verimli bir süreçtesin.",
-        "duz_gelecek": "Gelecekte kariyerinde terfi alacağın, uzmanlığının tescilleneceği ve takdir göreceğin günler çok yakın.",
-        "ters_gecmis": "Geçmişte ekip içinde uyumsuzluklar, iş bilmezlikler ve projelerin aksaması gibi sorunlar yaşanmış.",
-        "ters_simdi": "Şu sıralar iş arkadaşlarınla uyum sorunu yaşıyor, ortak projelerde fikir ayrılıklarıyla boğuşuyorsun.",
-        "ters_gelecek": "Gelecekte profesyonel hayatta daha uyumlu çalışmayı öğrenmediğin sürece ilerlemekte zorlanabilirsin."
+    "TILSIMLARIN ÜÇLÜSÜ (THREE OF PENTACLES)": {
+        "duz_gecmis": "Geçmişte takım çalışmasıyla, ustalıkla ve ortaklaşa harika bir iş ortaya konmuş.",
+        "duz_simdi": "Şu an projelerinde başkalarıyla işbirliği yapıyor, emeklerinin takdir edildiği bir yerdesin.",
+        "duz_gelecek": "Gelecekte kariyerinde terfi, ustalık belgesi veya ortak projelerle büyük başarılar kazanacaksın.",
+        "ters_gecmis": "Geçmişte uyumsuz ekip arkadaşları ve kalitesiz işler yüzünden sorunlar çıkmış.",
+        "ters_simdi": "Şu an iş yerinde iletişim eksikliği ve takım çalışmasının bozulması seni zorlayabilir.",
+        "ters_gelecek": "Gelecekte uyumlu işbirlikleri kurarak projeni başarıyla tamamlayacaksın."
     },
-    68: {
-        "isim": "TABAK/TOPRAK DÖRTLÜSÜ (FOUR OF PENTACLES)",
-        "duz_gecmis": "Geçmişte maddiyata ve güvenliğe aşırı derecede bağlanmış, elindekileri sıkı sıkı tutarak risk almaktan kaçınmışsın.",
-        "duz_simdi": "Şu an para, mal veya ilişkiler konusunda son derece tutucu, cimri ve kontrolcü bir duruş sergiliyorsun.",
-        "duz_gelecek": "Gelecekte bu katı tutumundan vazgeçmediğin sürece bolluk enerjisinin akışını tıkama riskin var.",
-        "ters_gecmis": "Geçmişte parasal konularda esnemeyi öğrenmiş, elindekileri paylaşarak rahatlamışsın.",
-        "ters_simdi": "Şu sıralar para harcama korkusundan veya kaybetme endişesinden yavaş yavaş arınmaya başlıyorsun.",
-        "ters_gelecek": "Gelecekte cimriliği bırakıp hayatın akışına güvenmeyi seçtiğin an bolluk sana da gelecektir."
+    "TILSIMLARIN DÖRDÜLSÜ (FOUR OF PENTACLES)": {
+        "duz_gecmis": "Geçmişte parasını ve pozisyonunu sıkıca elinde tutmuş, risk almaktan kaçınmışsın.",
+        "duz_simdi": "Şu an elindekileri kaybetme korkusuyla cimrilik yapıyor, konfor alanına sıkıca tutunuyorsun.",
+        "duz_gelecek": "Gelecekte bu maddi güven sağlasa da ilişkilerde izolasyon yaratabilir, esnemelisin.",
+        "ters_gecmis": "Geçmişte ani para harcamaları veya maddi kayıplar yaşanmış.",
+        "ters_simdi": "Şu an paradan veya kontrolcülükten vazgeçmeye başladığın bir esneme dönemindesin.",
+        "ters_gelecek": "Gelecekte cimrilik kalkanını indirerek hayatın akışına güveneceksin."
     },
-    69: {
-        "isim": "TABAK/TOPRAK BEŞLİSİ (FIVE OF PENTACLES)",
-        "duz_gecmis": "Geçmişte maddi ve manevi yokluk, yalnızlık, kriz veya sağlık sorunlarıyla sınandığın zorlu bir kış dönemi atlatmışsın.",
-        "duz_simdi": "Şu an kendini dışlanmış, parasız, desteksiz ve adeta karanlıkta kalmış hissettiğin bir yoksulluk/kriz sürecindesin.",
-        "duz_gelecek": "Gelecekte bu zorluklar geride kalacak; yardım eli uzatılacak ve sıcak bir yuvaya kavuşacaksın.",
-        "ters_gecmis": "Geçmişteki o yoksulluk ve yalnızlık dönemi yavaş yavaş bitmiş, yardımlar sayesinde toparlanmışsın.",
-        "ters_simdi": "Şu sıralar en kötü kriz atlatılıyor; tünelin ucundaki ışığı görmeye başladığın bir iyileşme anındasın.",
-        "ters_gelecek": "Gelecekte maddi ve manevi kayıpların telafi edileceği çok daha güvenli bir döneme giriyorsun."
+    "TILSIMLARIN BEŞLİSİ (FIVE OF PENTACLES)": {
+        "duz_gecmis": "Geçmişte maddi sıkıntılar, yalnızlık, kriz veya sağlık sorunlarıyla dolu zorlu bir soğukluk yaşanmış.",
+        "duz_simdi": "Şu an yokluk psikolojisinde hissediyor, dışlanmış veya maddi darlıkta kalmış gibi hissedebilirsin.",
+        "duz_gelecek": "Gelecekte bu zorlu kriz dönemi geride kalacak ve yardım eli uzanacak.",
+        "ters_gecmis": "Geçmişte maddi krizler yavaş yavaş atlatılmış, yardımlar alınmış.",
+        "ters_simdi": "Şu an en kötü günlerin geride kalmaya başladığı, toparlanma evresindesin.",
+        "ters_gelecek": "Gelecekte ekonomik ve ruhsal olarak yeniden güvenli bir yuvaya kavuşacaksın."
     },
-    70: {
-        "isim": "TABAK/TOPRAK ALTILISI (SIX OF PENTACLES)",
-        "duz_gecmis": "Geçmişte ya başkalarına cömertçe yardım etmiş ya da zor anında hak ettiğin desteği ve sadakayı görmüşsün.",
-        "duz_simdi": "Şu an hayatında dengeli bir verme-alma ilişkisi var; maddi veya manevi destek alışverişi içindesin.",
-        "duz_gelecek": "Gelecekte parasal konularda rahatlayacağın, hak ettiğin finansal desteği veya yardımı bulacağın günler var.",
-        "ters_gecmis": "Geçmişte adaletsiz yardımlar, borç batağı veya karşılıklı çıkara dayalı ilişkiler yaşanmış.",
-        "ters_simdi": "Şu sıralar maddi yardımlarda veya borç alıp verme süreçlerinde dengesizlikler yaşayabilirsin.",
-        "ters_gelecek": "Gelecekte finansal konularda kimseye kefil olmamaya ve dengesiz para ilişkilerinden kaçınmaya dikkat et."
+    "TILSIMLARIN ALTILISI (SIX OF PENTACLES)": {
+        "duz_gecmis": "Geçmişte hem maddi yardımda bulunmuşsun hem de hak ettiğin desteği görmüşsün (verme-alma dengesi).",
+        "duz_simdi": "Şu an cömertlik, hayır işleri ya da hak ettiğin finansal desteği alma zamanındasın.",
+        "duz_gelecek": "Gelecekte verme-alma dengesinin adil olduğu huzurlu bir maddi düzen kuracaksın.",
+        "ters_gecmis": "Geçmişte adaletsiz para ilişkileri veya borç-alacak sorunları yaşanmış.",
+        "ters_simdi": "Şu an maddi konularda manipülasyona veya karşılıksız fedakarlıklara dikkat etmelisin.",
+        "ters_gelecek": "Gelecekte finansal ilişkilerinde daha adil ve net sınır çizeceksin."
     },
-    71: {
-        "isim": "TABAK/TOPRAK YEDİLİSİ (SEVEN OF PENTACLES)",
-        "duz_gecmis": "Geçmişte ektiğin tohumların büyümesini sabırla beklemiş, uzun vadeli yatırımlar için emek harcamışsın.",
-        "duz_simdi": "Şu an yaptığın yatırımların ve harcadığın emeklerin meyvesini alıp almayacağını hesapladığın bir bekleme ve değerlendirme aşamasındasın.",
-        "duz_gelecek": "Gelecekte sabrının karşılığını fazlasıyla alacak, ürünlerini toplamanın keyfini süreceksin.",
-        "ters_gecmis": "Geçmişte sabırsızlık yapmış, ektiğin mahsulü hemen almak isterken boşa kürek çekmişsin.",
-        "ters_simdi": "Şu sıralar harcadığın emeklerin karşılığını alamadığını düşünerek hayal kırıklığı ve sabırsızlık yaşıyorsun.",
-        "ters_gelecek": "Gelecekte yanlış alanlara yatırım yaptığını fark edebilir veya projeni gözden geçirmek zorunda kalabilirsin."
+    "TILSIMLARIN YEDİLİSİ (SEVEN OF PENTACLES)": {
+        "duz_gecmis": "Geçmişte uzun vadeli yatırımlar yapmış ve sabırla ekdiklerinin büyümesini beklemişsin.",
+        "duz_simdi": "Şu an 'Acaba değdi mi?' diye durup yaptıklarını değerlendiriyor, sabırlı bir hasat bekliyorsun.",
+        "duz_gelecek": "Gelecekte sabrının karşılığını fazlasıyla alacak, ektiğin tohumların meyvesini yiyeceksin.",
+        "ters_gecmis": "Geçmişte sabırsızlık yüzünden erken vazgeçilen projeler hayal kırıklığı yaratmış.",
+        "ters_simdi": "Şu an emeklerinin boşa gittiğini düşünerek karamsarlığa kapılabilirsin.",
+        "ters_gelecek": "Gelecekte biraz daha sabırlı olmanın ne kadar doğru olduğunu göreceksin."
     },
-    72: {
-        "isim": "TABAK/TOPRAK SEKİZLİSİ (EIGHT OF PENTACLES)",
-        "duz_gecmis": "Geçmişte işine büyük bir titizlikle sarılmış, ustalık kazanmak için saatlerce alın teri dökerek çalışmışsın.",
-        "duz_simdi": "Şu an detaylarla uğraştığın, işini mükemmel yapmak için büyük bir özveriyle çalıştığın çıraklıkten ustaçılığa geçiş sürecindesin.",
-        "duz_gelecek": "Gelecekte bu yoğun emek ve ustalığın sayesinde kariyerinde aranan bir uzman haline geleceksin.",
-        "ters_gecmis": "Geçmişte kalitesiz işler yapmış, detayları önemsemeden aceleye getirerek çalışmışsın.",
-        "ters_simdi": "Şu sıralar işine karşı motivasyonun düşük; detaylarda boğuluyor veya ezbere işler yapıyorsun.",
-        "ters_gelecek": "Gelecekte iş disiplinine daha çok sarılman gerekecek, aksi takdirde kaliteden ödün verebilirsin."
+    "TILSIMLARIN SEKİZLİSİ (EIGHT OF PENTACLES)": {
+        "duz_gecmis": "Geçmişte büyük bir özveriyle çalışmış, zanaatini geliştirerek emek vermiştin.",
+        "duz_simdi": "Şu an işine odaklandığın, ince eleyip sık dokuyarak kaliteli eserler çıkardığın bir çalışma dönemindesin.",
+        "duz_gelecek": "Gelecekte bu çalışkanlığın ve ustalığın kariyerinde seni zirveye taşıyacak.",
+        "ters_gecmis": "Geçmişte özensiz çalışmalar, odak eksikliği ve kalitesiz işler sorun yaratmış.",
+        "ters_simdi": "Şu an işinden sıkılmış, detaylarda boğuluyor veya kaliteden ödün veriyor olabilirsin.",
+        "ters_gelecek": "Gelecekte odağını yeniden toplayarak işine olan sevgini tazeleyeceksin."
     },
-    73: {
-        "isim": "TABAK/TOPRAK DOKUZLUSU (NINE OF PENTACLES)",
-        "duz_gecmis": "Geçmişte kendi ayakları üzerinde duran, finansal özgürlüğünü ilan etmiş ve konforlu bir yaşam kurmuşsun.",
-        "duz_simdi": "Şu an emeklerinin lüksünü ve konforunu çıkardığın, bağımsız, özgür ve huzurlu bir zenginlik dönemindesin.",
-        "duz_gelecek": "Gelecekte maddi ve manevi tüm lükslerin, konforun ve kendi kendine yetmenin gururunu yaşayacaksın.",
-        "ters_gecmis": "Geçmişte maddi bağımlılıklar yaşamış, başkalarına muhtaç kalmış veya konfor uğruna özgürlüğünü satmışsın.",
-        "ters_simdi": "Şu sıralar finansal konularda geçici darlıklar veya lüks harcamalardan ötürü bütçe sarsıntıları yaşayabilirsin.",
-        "ters_gelecek": "Gelecekte kendi öz değerini parasal varlıklarla ölçme yanlışına düşmemeye dikkat etmelisin."
+    "TILSIMLARIN DOKUZLUSU (NINE OF PENTACLES)": {
+        "duz_gecmis": "Geçmişte kendi ayakları üstünde duran, maddi bağımsızlığını ve konforunu ilan etmiş bir kadın/kişi profili var.",
+        "duz_simdi": "Şu an lüksün, huzurun, finansal bağımsızlığın ve kendi emeğinin tadını çıkarıyorsun.",
+        "duz_gelecek": "Gelecekte kimseye muhtaç olmadan kendi bahçenin meyvelerini keyifle yiyeceksin.",
+        "ters_gecmis": "Geçmişte maddi bağımlılıklar veya yanlış yatırımlar konforu sarsmış.",
+        "ters_simdi": "Şu an dışarıdan her şey iyi görünse de yalnızlık hissi veya maddi kaygı yaşayabilirsin.",
+        "ters_gelecek": "Gelecekte öz değerini yeniden hatırlayarak refahını artıracaksın."
     },
-    74: {
-        "isim": "TABAK/TOPRAK ONLUSU (TEN OF PENTACLES)",
-        "duz_gecmis": "Geçmişte kalıcı bir aile serveti, büyük mülkler ve nesiller boyu sürecek sağlam bir refah temeli atmışsın.",
-        "duz_simdi": "Şu an aile bağlarının, mal mülk güvencesinin ve köklü bir aile şirketinin/mirasın getirdiği huzurdasın.",
-        "duz_gelecek": "Gelecekte gayrimenkul sahibi olacağın, aile boyu büyük bir refaha ve kalıcı başarılara kavuşacağın bir dönem var.",
-        "ters_gecmis": "Geçmişte aile içi miras kavgaları, iflaslar veya maddi temellerin sarsılması gibi büyük krizler yaşanmış.",
-        "ters_simdi": "Şu sıralar aile içinde parasal anlaşmazlıklar veya mal mülk paylaşımlarından ötürü gerginlikler var.",
-        "ters_gelecek": "Gelecekte finansal temellerini korumak için aile içi yatırımlarda çok daha dikkatli olmalısın."
+    "TILSIMLARIN ONLUSU (TEN OF PENTACLES)": {
+        "duz_gecmis": "Geçmişte kalıcı aile mirası, köklü aile şirketleri ve uzun vadeli maddi refah kurulmuş.",
+        "duz_simdi": "Şu an yuvanın huzuru, aile desteği, mülk edinme ve finansal istikrarın en güçlü anındasın.",
+        "duz_gelecek": "Gelecekte nesiller boyu sürecek maddi ve manevi kalıcı başarılar, miraslar seni bekliyor.",
+        "ters_gecmis": "Geçmişte aile içi miras kavgaları veya maddi iflaslar yaşanmış.",
+        "ters_simdi": "Şu an aile bağları ile maddi sorumluluklar arasında bazı anlaşmazlıklar çıkabilir.",
+        "ters_gelecek": "Gelecekte aile içi ortak değerleri yeniden inşa ederek huzuru bulacaksın."
     },
-    75: {
-        "isim": "TABAK/TOPRAK PRENSİ (PAGE OF PENTACLES)",
-        "duz_gecmis": "Geçmişte yeni bir eğitime başlayan, kariyer planları yapan, çalışkan ve öğrenmeye hevesli biriyle karşılaşmışsın.",
-        "duz_simdi": "Şu an somut adımlar atmak için dersine çalışan, yeni bir iş teklifi veya eğitim fırsatı bekleyen bir konumdasın.",
-        "duz_gelecek": "Gelecekte kariyerine yön verecek harika bir iş teklifi, burs veya somut bir fırsat kapını çalacak.",
-        "ters_gecmis": "Geçmişte tembellik yapmış, fırsatları elinin tersiyle itmiş ve çalışma disiplininden yoksun kalmışsın.",
-        "ters_simdi": "Şu sıralar odaklanma sorunu yaşıyor, somut adımlar atmak yerine hayallerle vakit kaybediyorsun.",
-        "ters_gelecek": "Gelecekte tembellik ve disiplinsizlik yüzünden kaçan fırsatlar sonradan pişmanlık yaratabilir."
+    "TILSIMLARIN VALESİ (PAGE OF PENTACLES)": {
+        "duz_gecmis": "Geçmişte yeni bir eğitim, iş teklifi veya somut bir para haberi müjdelenmiş.",
+        "duz_simdi": "Şu an somut adımlar atmaya, yeni bir beceri öğrenmeye ve pratik planlar yapmaya hazırsın.",
+        "duz_gelecek": "Gelecekte kariyerinde veya eğitiminde seni sevindirecek somut bir teklif alacaksın.",
+        "ters_gecmis": "Geçmişte tembellik, parayı yanlış yönetme veya fırsatları elden kaçırma olmuş.",
+        "ters_simdi": "Şu an gerçekçi olmayan hayaller peşinde koşup pratik adımları ihmal ediyorsun.",
+        "ters_gelecek": "Gelecekte ayakları yere basan planlarla yeniden yükselişe geçeceksin."
     },
-    76: {
-        "isim": "TABAK/TOPRAK ŞÖVALYESİ (KNIGHT OF PENTACLES)",
-        "duz_gecmis": "Geçmişte yavaş ama emin adımlarla ilerleyen, sorumluluk sahibi, güvenilir ve işini asla yarım bırakmayan biri olmuşsun.",
-        "duz_simdi": "Şu an yavaş ama çok sağlam adımlarla ilerliyor, sabırla ve inatla işini sonuna kadar götürüyorsun.",
-        "duz_gelecek": "Gelecekte istikrarlı ve güvenilir adımların sayesinde işlerini başarıyla sonuca ulaştıracaksın.",
-        "ters_gecmis": "Geçmişte aşırı inatçılık, hantallık ve rutine saplanıp kalmak projelerin yavaşlamasına yol açmış.",
-        "ters_simdi": "Şu sıralar işler adeta yerinde sayıyor; inatçılığın ve esnek olmaman yüzünden ilerleme kaydedemiyorsun.",
-        "ters_gelecek": "Gelecekte aşırı tutuculuk ve hantallıktan kaçınarak biraz daha esnek olman gerekebilir."
+    "TILSIMLARIN ŞÖVALYESİ (KNIGHT OF PENTACLES)": {
+        "duz_gecmis": "Geçmişte yavaş ama emin adımlarla, sabırla ve sorumluluk bilinciyle çalışılmış.",
+        "duz_simdi": "Şu an acele etmeden, işini garantiye alarak sabırlı ve istikrarlı bir ilerleme kaydediyorsun.",
+        "duz_gelecek": "Gelecekte bu disiplinli ve yavaş ama sağlam adımlar sayesinde hedefine kesinlikle ulaşacaksın.",
+        "ters_gecmis": "Geçmişte aşırı inatçılık, hantallık ve işlerin durma noktasına gelmesi yaşanmış.",
+        "ters_simdi": "Şu an tembellik, motivasyon düşüklüğü veya her şeyi çok fazla erteleme eğilimindesin.",
+        "ters_gelecek": "Gelecekte üzerindeki o hantallığı atarak rutinini yeniden canlandıracaksın."
     },
-    77: {
-        "isim": "TABAK/TOPRAK KRALİÇESİ (QUEEN OF PENTACLES)",
-        "duz_gecmis": "Geçmişte doğayı seven, bereketli, çevresindekileri besleyip kollayan, maddiyatta usta bir anne figürü olmuşsun.",
-        "duz_simdi": "Şu an elindekileri en iyi şekilde değerlendiren, güven veren, yuvasına ve işine çok düşkün bir konumdasın.",
-        "duz_gelecek": "Gelecekte maddi ve manevi bolluk içinde yaşayacağın, konforlu ve güvenli bir düzen seni bekliyor.",
-        "ters_gecmis": "Geçmişte aşırı maddiyata düşkünlük, cimrilik veya evine/işine yabancılaşma durumları yaşanmış.",
-        "ters_simdi": "Şu sıralar kendine ve çevrene yeterince özen göstermiyor, maddi kaygılarla huzurunu kaçırıyorsun.",
-        "ters_gelecek": "Gelecekte maddiyata aşırı odaklanıp maneviyatı ihmal etmemeye özen göstermelisin."
+    "TILSIMLARIN KRALİÇESİ (QUEEN OF PENTACLES)": {
+        "duz_gecmis": "Geçmişte bereketli, eli açık, evine ve konforuna düşkün, üretken bir figür etkili olmuş.",
+        "duz_simdi": "Şu an pratik, güvenilir, etrafındakileri besleyen ve finansal güvenliği sağlayan bir konumdasın.",
+        "duz_gelecek": "Gelecekte maddiyatta ve ev hayatında büyük bir refah, güven ve huzur dönemi seni bekliyor.",
+        "ters_gecmis": "Geçmişte maddi kaybetme korkusu, cimrilik veya aşırı madde odaklılık sorun yaratmış.",
+        "ters_simdi": "Şu an öz bakımını ihmal edip sadece başkalarının maddi sorunlarıyla ilgileniyor olabilirsin.",
+        "ters_gelecek": "Gelecekte hem kendi konforunu hem de maddesel dengeni yeniden kuracaksın."
     },
-    78: {
-        "isim": "TABAK/TOPRAK KRALI (KING OF PENTACLES)",
-        "duz_gecmis": "Geçmişte büyük bir servet yönetmiş, finansal imparatorluk kurmuş, son derece güvenilir ve cömert bir iş insanı olmuşsun.",
-        "duz_simdi": "Şu an maddi gücün zirvesinde, işleri ustalıkla yöneten, güvenilir ve sağlam bir otorite figürüsün.",
-        "duz_gelecek": "Gelecekte finansal anlamda tam güvenceye kavuşacağın, büyük yatırımlarla adını duyuracağın bir dönem var.",
-        "ters_gecmis": "Geçmişte rüşvet, yolsuzluk, maddi açgözlülük veya iflaslar gibi finansal krizler yaşanmış.",
-        "ters_simdi": "Şu sıralar maddi gücünü kötüye kullanan, bencil veya parayı her şeyin üstünde tutan bir yapın var.",
-        "ters_gelecek": "Gelecekte parasal konularda aşırı risk almaktan ve açgözlü tavırlardan kesinlikle kaçınmalısın."
+    "TILSIMLARIN KRALI (KING OF PENTACLES)": {
+        "duz_gecmis": "Geçmişte finansal imparatorluk kurmuş, başarılı iş insanı vizyonuyla sağlam yatırımlar yapılmış.",
+        "duz_simdi": "Şu an maddi gücün zirvesindesin; güvenilir, zengin, tecrübeli ve somut sonuçlar üretiyorsun.",
+        "duz_gelecek": "Gelecekte iş ve para piyasalarında adından söz ettirecek kalıcı bir servet ve konuma geleceksin.",
+        "ters_gecmis": "Geçmişte maddi hırs uğruna insanları ezen, rüşvetçi veya katı tutumlar sergilenmiş.",
+        "ters_simdi": "Şu an maddi riskler alırken aşırı katı davranıyor veya parayı kontrol etmekte zorlanıyorsun.",
+        "ters_gelecek": "Gelecekte finansal gücünü doğru yatırımlarla çok daha güvenli bir boyuta taşıyacaksın."
+    }
+}
     }
 }
 
