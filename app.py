@@ -926,13 +926,18 @@ elif st.session_state.adim == "secim":
       # Sıralama: 1. Seçilen = Geçmiş, 2. Seçilen = Şimdi, 3. Seçilen = Gelecek
       zamanlar = ["gecmis", "simdi", "gelecek"]
       final_fal = []
-
-      for i, k_adi in enumerate(secilenler_listesi):
-        durum = random.choice(["duz", "ters"])
-        zaman_anahtari = zamanlar[i]
+for i, k_adi in enumerate(secilenler_listesi):
+    durum = random.choice(["duz", "ters"])
+    zaman_anahtari = zamanlar[i]
+    
+    # Güvenli kontrol ile KeyError'ü önleme
+    try:
         yorum_metni = tarot_veritabani[k_adi][durum][zaman_anahtari]
-        durum_str = "Düz Akış" if durum == "duz" else "Ters Enerji"
-        final_fal.append((k_adi, durum_str, yorum_metni, zaman_anahtari))
+    except KeyError:
+        yorum_metni = f"Bu kart ({k_adi}) için seçilen durumda yorum bulunamadı."
+        
+    durum_str = "Düz Akış" if durum == "duz" else "Ters Enerji"
+    final_fal.append((k_adi, durum_str, yorum_metni, zaman_anahtari))
 
       st.session_state.gercek_fal = final_fal
       st.session_state.adim = "sonuc"
