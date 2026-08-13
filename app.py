@@ -3,13 +3,13 @@ import random
 import streamlit as st
 
 st.set_page_config(
-    page_title="Tarot bakımı",
+    page_title="Tarot Bakımı",
     page_icon="💎",
     layout="centered",
     initial_sidebar_state="collapsed",
 )
 
-# Gönderdiğin görsellere tam uyumlu: Beyaz/gold tül dalgaları ve yıldız tozlu arka plan estetiği
+# Beyaz/gold tül dalgaları ve yıldız tozlu arka plan estetiği
 page_bg_img = """
 <style>
 /* Ana uygulama arka planı: Derin gece mavisi, beyaz dalgalı tül hissi ve gold parıltılar */
@@ -59,7 +59,7 @@ backdrop-filter: blur(16px);
 box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
 }
 
-/* SEÇİM EKRANI İÇİN KARTLARIN ARKA YÜZÜ: Gönderdiğin tül, gold yıldız ve işlemeli estetik */
+/* SEÇİM EKRANI İÇİN KARTLARIN ARKA YÜZÜ: Tül, gold yıldız ve işlemeli estetik */
 .tarot-back {
 background: 
     radial-gradient(circle at 50% 50%, rgba(255, 215, 0, 0.15) 0%, transparent 70%),
@@ -224,7 +224,7 @@ tum_kartlar = {
     "Kader Çarkı (Wheel of Fortune)": {
         "duz": (
             "Şansın dönmesi, sürpriz gelişmeler ve ilahi akış.",
-            "Kader çarkı senin lehinə dönüyor; hayatında çok keyifli ve şanslı bir rüzgar esmeye başlıyor.",
+            "Kader çarkı senin lehine dönüyor; hayatında çok keyifli ve şanslı bir rüzgar esmeye başlıyor.",
         ),
         "ters": (
             "Geçici aksilikler veya değişime direnç.",
@@ -384,7 +384,7 @@ if st.session_state.adim == "giriş":
   col1, col2, col3 = st.columns([1, 2, 1])
   with col2:
     st.markdown(
-        "<h1 style='text-align: center;'>  Tarot bakımı🤍</h1>",
+        "<h1 style='text-align: center;'>✨ Tarot Bakımı ✨</h1>",
         unsafe_allow_html=True,
     )
     st.markdown(
